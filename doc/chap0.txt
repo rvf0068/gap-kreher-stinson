@@ -42,7 +42,8 @@
   
   1 [33X[0;0YBactracking[133X
     1.1 [33X[0;0YKnapsack[133X
-      1.1-1 Knapsack1
+      1.1-1 CheckKnapsackInput
+      1.1-2 Knapsack1
   
   
   [32X

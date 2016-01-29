@@ -4,7 +4,13 @@
   
   [1X1.1 [33X[0;0YKnapsack[133X[101X
   
-  [1X1.1-1 Knapsack1[101X
+  [1X1.1-1 CheckKnapsackInput[101X
+  
+  [29X[2XCheckKnapsackInput[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  
+  [33X[0;0YChecks for valid input data for the Knapsack problems (Problems 1.1-1.4).[133X
+  
+  [1X1.1-2 Knapsack1[101X
   
   [29X[2XKnapsack1[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
   

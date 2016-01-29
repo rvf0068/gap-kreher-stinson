@@ -12,6 +12,8 @@ entries :=
   [ "\033[1X\033[33X\033[0;-2YKnapsack\033[133X\033[101X", "1.1", 
       [ 1, 1, 0 ], 4, 4, "knapsack", "X872264E47F34A84F" ], 
   [ "Index", "ind", [ "Ind", 0, 0 ], 1, 5, "index", "X83A0356F839C696F" ], 
-  [ "\033[2XKnapsack1\033[102X", "1.1-1", [ 1, 1, 1 ], 7, 4, "knapsack1", 
+  [ "\033[2XCheckKnapsackInput\033[102X", "1.1-1", [ 1, 1, 1 ], 7, 4, 
+      "checkknapsackinput", "X7ED93B58865D568A" ], 
+  [ "\033[2XKnapsack1\033[102X", "1.1-2", [ 1, 1, 2 ], 13, 4, "knapsack1", 
       "X8571A9367BA7B3EC" ] ]
 );

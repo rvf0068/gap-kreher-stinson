@@ -7,9 +7,27 @@
 ##
 #############################################################################
 
+#F  CheckKnapsackInput( <P>, <W>, <M> )
+##
+InstallGlobalFunction(
+    CheckKnapsackInput, function(P, W, M)
+    if not(IsList(P) and IsList(W)) then
+        Print("Error. First two arguments must be lists.\n");
+        return false;
+    elif not (Length(P)=Length(W)) then
+        Print("Error. The first two arguments must be lists of the same length.\n");
+        return false;
+    elif not(IsInt(M)) then
+        Print("Error. The third arguments must be an integer.\n");
+        return false;
+    else
+        return true;
+    fi;
+end);
+
 #F  Knapsack1( <P>, <W>, <M> ) 
 ##
-InstallGlobalFunction(Knapsack1, function(P, W, M)
+InstallGlobalFunction( Knapsack1, function(P, W, M)
     local knapaux, n, XX, OptP, OptX, CurP;
     XX := [];
     OptP := 0;
@@ -38,8 +56,10 @@ InstallGlobalFunction(Knapsack1, function(P, W, M)
             knapaux(l);
         fi;
     end;
-    knapaux(0);
-    Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
+    if CheckKnapsackInput(P, W, M) then
+        knapaux(0);
+        Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
+    fi;
     return;
 end );
 
