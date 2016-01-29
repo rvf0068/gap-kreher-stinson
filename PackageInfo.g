@@ -1,6 +1,11 @@
 SetPackageInfo( rec(
   PackageName := "kreher-stinson",
   Version := "1.0",
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY VERSION "1.0">
+##  <!ENTITY RELEASEDATE "29 January 2016">
+##  <#/GAPDoc>
+
   PackageDoc := rec(
       BookName  := "test",
       SixFile   := "doc/manual.six",

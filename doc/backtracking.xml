@@ -1,0 +1,12 @@
+<Chapter Label="backtracking">
+
+  <Heading>Bactracking</Heading>
+
+  <Section Label="knapsack">
+
+    <Heading>Knapsack</Heading>
+
+    <#Include Label="Knapsack1">
+
+  </Section>
+</Chapter>

@@ -1,0 +1,17 @@
+#SIXFORMAT  GapDocGAP
+HELPBOOKINFOSIXTMP := rec(
+encoding := "UTF-8",
+bookname := "rvf-grp",
+entries :=
+[ [ "Title page", ".", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" ],
+  [ "Copyright", ".-1", [ 0, 0, 1 ], 28, 2, "copyright", "X81488B807F2A1CF1" ]
+    , [ "Table of Contents", ".-2", [ 0, 0, 2 ], 39, 3, "table of contents", 
+      "X8537FEB07AF2BEC8" ], 
+  [ "\033[1X\033[33X\033[0;-2YBactracking\033[133X\033[101X", "1", 
+      [ 1, 0, 0 ], 1, 4, "bactracking", "X82385A297FD5AFF5" ], 
+  [ "\033[1X\033[33X\033[0;-2YKnapsack\033[133X\033[101X", "1.1", 
+      [ 1, 1, 0 ], 4, 4, "knapsack", "X872264E47F34A84F" ], 
+  [ "Index", "ind", [ "Ind", 0, 0 ], 1, 5, "index", "X83A0356F839C696F" ], 
+  [ "\033[2XKnapsack1\033[102X", "1.1-1", [ 1, 1, 1 ], 7, 4, "knapsack1", 
+      "X8571A9367BA7B3EC" ] ]
+);

@@ -1,0 +1,48 @@
+  
+  
+                                 [1X[5Xkreher-stinson[105X[101X
+  
+  
+                  [1XAlgorithms from the book implemented in GAP[101X
+  
+  
+                                  Version 1.0
+  
+  
+                                29 January 2016
+  
+  
+                            Rafael Villarroel-Flores
+  
+                             Citlalli Zamora-Mejía
+  
+  
+  
+  Rafael Villarroel-Flores
+      Email:    [7Xmailto:rvf0068@gmail.com[107X
+      Homepage: [7Xhttp://rvf0068.github.io[107X
+  Citlalli Zamora-Mejía
+      Email:    [7Xmailto:cizame@gmail.com[107X
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2016 by Rafael Villarroel-Flores and Citlalli Zamora-Mejía[133X
+  
+  [33X[0;0Y[5Xkreher-stinson[105X  package  is  free  software;  you can redistribute it and/or
+  modify   it   under   the   terms   of   the   GNU  General  Public  License
+  ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
+  Foundation;  either  version 2 of the License, or (at your option) any later
+  version.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (kreher-stinson)[101X
+  
+  1 [33X[0;0YBactracking[133X
+    1.1 [33X[0;0YKnapsack[133X
+      1.1-1 Knapsack1
+  
+  
+  [32X
