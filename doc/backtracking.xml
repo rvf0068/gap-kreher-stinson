@@ -10,5 +10,7 @@
 
     <#Include Label="Knapsack1">
 
+    <#Include Label="Knapsack2">
+
   </Section>
 </Chapter>

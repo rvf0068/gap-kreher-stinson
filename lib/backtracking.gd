@@ -20,7 +20,6 @@
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "CheckKnapsackInput" );
 
-
 #F  Knapsack1( <P>, <W>, <M> ) 
 ##
 ##  <#GAPDoc Label="Knapsack1">
@@ -32,5 +31,17 @@ DeclareGlobalFunction( "CheckKnapsackInput" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "Knapsack1" );
+
+#F  Knapsack2( <P>, <W>, <M> ) 
+##
+##  <#GAPDoc Label="Knapsack2">
+##  <ManSection>
+##  <Func Name="Knapsack2" Arg="profits, weights, capacity"/>
+##  <Description>
+##  Implementation of Algorithm 4.3.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "Knapsack2" );
 
 

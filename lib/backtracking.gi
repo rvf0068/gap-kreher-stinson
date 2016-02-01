@@ -63,3 +63,41 @@ InstallGlobalFunction( Knapsack1, function(P, W, M)
     return;
 end );
 
+#F  Knapsack2( <P>, <W>, <M> ) 
+##
+InstallGlobalFunction( Knapsack2, function(P, W, M)
+    local knapaux, n, x, XX, OptP, OptX, C;
+    XX := [];
+    C := [];
+    OptP := 0;
+    OptX := 0;
+    n := Length(P);
+    knapaux := function(l,CurW)
+        if l = n+1 then
+            Print("Checking ",XX,"\n");
+            if Sum(List([1..n], i -> P[i]*XX[i])) > OptP then
+                Print("Improved profit!\n");
+                OptP := Sum(List([1..n], i -> P[i]*XX[i]));
+                OptX := ShallowCopy(XX);
+            fi;
+            C[l] := [];
+        else
+            if CurW + W[l] <= M then
+                C[l] := [1,0];
+            else
+                C[l] := [0];
+                Print("Pruning!\n");
+            fi;
+        fi;
+        for x in C[l] do
+            XX[l] := x;
+            knapaux(l+1, CurW + W[l]*XX[l]);
+        od;
+    end;
+    if CheckKnapsackInput(P, W, M) then
+        knapaux(1,0);
+        Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
+    fi;
+    return;
+end );
+
