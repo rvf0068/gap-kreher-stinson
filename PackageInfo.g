@@ -7,7 +7,7 @@ SetPackageInfo( rec(
 ##  <#/GAPDoc>
 
   PackageDoc := rec(
-      BookName  := "test",
+      BookName  := "kreher-stinson",
       SixFile   := "doc/manual.six",
       Autoload  := true ),
   Dependencies := rec(

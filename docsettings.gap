@@ -6,6 +6,6 @@
 path := Directory("~/Dropbox/gaplocal/pkg/kreher-stinson/doc");;
 main := "main.xml";;
 files := ["../lib/backtracking.gd", "../lib/backtracking.gi","../PackageInfo.g"];;
-bookname := "rvf-grp";;
+bookname := "kreher-stinson";;
 
 MakeGAPDocDoc(path, main, files, bookname);;
