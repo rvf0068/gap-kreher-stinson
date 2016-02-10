@@ -3,4 +3,5 @@
 \contentsline {subsection}{\numberline {1.1.1}\leavevmode {\color {Chapter }CheckKnapsackInput}}{4}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}\leavevmode {\color {Chapter }Knapsack1}}{4}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}\leavevmode {\color {Chapter }Knapsack2}}{4}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}\leavevmode {\color {Chapter }KSAllCliques}}{4}{subsection.1.1.4}
 \contentsline {chapter}{Index}{5}{section*.3}

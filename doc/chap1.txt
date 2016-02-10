@@ -22,3 +22,9 @@
   
   [33X[0;0YImplementation of Algorithm 4.3.[133X
   
+  [1X1.1-4 KSAllCliques[101X
+  
+  [29X[2XKSAllCliques[102X( [3Xgraph[103X ) [32X function
+  
+  [33X[0;0YImplementation of Algorithm 4.4.[133X
+  

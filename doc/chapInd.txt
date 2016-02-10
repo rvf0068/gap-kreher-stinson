@@ -5,6 +5,7 @@
   [2XCheckKnapsackInput[102X  1.1-1
   [2XKnapsack1[102X  1.1-2
   [2XKnapsack2[102X  1.1-3
+  [2XKSAllCliques[102X  1.1-4
   
   
   -------------------------------------------------------

@@ -12,5 +12,7 @@
 
     <#Include Label="Knapsack2">
 
+    <#Include Label="KSAllCliques">
+
   </Section>
 </Chapter>
