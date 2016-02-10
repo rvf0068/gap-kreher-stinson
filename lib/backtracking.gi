@@ -101,3 +101,42 @@ InstallGlobalFunction( Knapsack2, function(P, W, M)
     return;
 end );
 
+#F  KSAllCliques( <G> ) 
+##
+InstallGlobalFunction( KSAllCliques, function( G )
+    local allcliques, C, all, V, x, N, n, B, XX;
+    C := [];
+    all := [];
+    N := [];
+    XX := [];
+    V := Union( G );
+    n := Length( V );
+    B := List( [1..n], i -> Filtered( [1..n], x->( x>i ) ) );
+    allcliques := function(l)
+        if l = 0 then
+            Add( all, [] );
+        else
+            Add( all, ShallowCopy(XX) );  
+        fi;
+        if l = 0 then
+            N[l+1] := V;
+        else
+            N[l+1] := Intersection( G[XX[l]], N[l] );
+        fi;
+        if N[l+1] = [] then
+            Print(XX," is maximal!\n");
+        fi;
+        if l = 0 then
+            C[l+1] := V;
+        else
+            C[l+1] := Intersection( G[XX[l]], C[l], B[XX[l]] );
+        fi;
+        for x in C[l+1] do
+            XX[l+1] := x;
+            XX := XX{[1..l+1]};
+            allcliques(l+1);
+        od;
+    end;
+    allcliques(0);
+    return all;
+end );

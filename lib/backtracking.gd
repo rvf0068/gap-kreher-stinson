@@ -44,4 +44,16 @@ DeclareGlobalFunction( "Knapsack1" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "Knapsack2" );
 
+#F  KSAllCliques( <G> ) 
+##
+##  <#GAPDoc Label="KSAllCliques">
+##  <ManSection>
+##  <Func Name="KSAllCliques" Arg="graph"/>
+##
+##  <Description>
+##  Implementation of Algorithm 4.4.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSAllCliques" );
 
