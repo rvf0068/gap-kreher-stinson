@@ -111,7 +111,7 @@ InstallGlobalFunction( KSAllCliques, function( G )
     XX := [];
     n := Length( G );
     V := [1..n];
-    B := List( V, i -> Filtered( V, x->( x>i ) ) );
+    B := List( V, i -> [i+1..n] );
     allcliques := function(l)
         if l = 0 then
             Add( all, [] );
