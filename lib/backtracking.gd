@@ -57,3 +57,16 @@ DeclareGlobalFunction( "Knapsack2" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSAllCliques" );
 
+
+#F  KSQueens( n ) 
+##
+##  <#GAPDoc Label="KSQueens">
+##  <ManSection>
+##  <Func Name="KSQueens" Arg="Size of board"/>
+##
+##  <Description>
+##  Solve the <M>n</M> queens problem.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSQueens" );
