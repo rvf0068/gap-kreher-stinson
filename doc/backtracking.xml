@@ -14,5 +14,7 @@
 
     <#Include Label="KSAllCliques">
 
+    <#Include Label="KSQueens">
+
   </Section>
 </Chapter>
