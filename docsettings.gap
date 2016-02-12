@@ -1,9 +1,6 @@
-# after reading this, with, say
-# Read("~/Dropbox/gaplocal/pkg/kreher-stinson/docsettings.gap");
-# run
-# MakeGAPDocDoc(path, main, files, bookname);;
+# Useful to create GAP documentation of this package
 
-path := Directory("~/Dropbox/gaplocal/pkg/kreher-stinson/doc");;
+path := Directory("./doc");;
 main := "main.xml";;
 files := ["../lib/backtracking.gd", "../lib/backtracking.gi","../PackageInfo.g"];;
 bookname := "kreher-stinson";;
