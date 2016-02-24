@@ -1,11 +1,15 @@
 \begin{theindex}
 
-  \item \texttt  {CheckKnapsackInput}, \hyperpage{4}
+  \item \texttt  {CheckKnapsackInput}, \hyperpage{5}
 
   \indexspace
 
-  \item \texttt  {Knapsack1}, \hyperpage{4}
-  \item \texttt  {Knapsack2}, \hyperpage{4}
-  \item \texttt  {KSAllCliques}, \hyperpage{4}
+  \item \texttt  {Knapsack1}, \hyperpage{5}
+  \item \texttt  {Knapsack2}, \hyperpage{5}
+  \item \texttt  {KSAllCliques}, \hyperpage{5}
+  \item \texttt  {KSExactCover}, \hyperpage{6}
+  \item \texttt  {KSQueens}, \hyperpage{5}
+  \item \texttt  {KSSubsetLexRank}, \hyperpage{4}
+  \item \texttt  {KSSubsetLexUnrank}, \hyperpage{4}
 
 \end{theindex}

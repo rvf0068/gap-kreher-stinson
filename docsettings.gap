@@ -2,7 +2,12 @@
 
 path := Directory("./doc");;
 main := "main.xml";;
-files := ["../lib/backtracking.gd", "../lib/backtracking.gi","../PackageInfo.g"];;
+files := [
+           "../lib/generating.gd", 
+           "../lib/generating.gi", 
+           "../lib/backtracking.gd", 
+           "../lib/backtracking.gi",
+           "../PackageInfo.g"];;
 bookname := "kreher-stinson";;
 
 MakeGAPDocDoc(path, main, files, bookname);;

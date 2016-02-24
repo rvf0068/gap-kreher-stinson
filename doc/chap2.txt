@@ -1,0 +1,43 @@
+  
+  [1X2 [33X[0;0YBactracking[133X[101X
+  
+  
+  [1X2.1 [33X[0;0YKnapsack[133X[101X
+  
+  [1X2.1-1 CheckKnapsackInput[101X
+  
+  [29X[2XCheckKnapsackInput[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  
+  [33X[0;0YChecks for valid input data for the Knapsack problems (Problems 1.1-1.4).[133X
+  
+  [1X2.1-2 Knapsack1[101X
+  
+  [29X[2XKnapsack1[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  
+  [33X[0;0YImplementation of Algorithm 4.1.[133X
+  
+  [1X2.1-3 Knapsack2[101X
+  
+  [29X[2XKnapsack2[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  
+  [33X[0;0YImplementation of Algorithm 4.3.[133X
+  
+  [1X2.1-4 KSAllCliques[101X
+  
+  [29X[2XKSAllCliques[102X( [3Xgraph[103X ) [32X function
+  
+  [33X[0;0YImplementation of Algorithm 4.4.[133X
+  
+  [1X2.1-5 KSQueens[101X
+  
+  [29X[2XKSQueens[102X( [3XSize[103X, [3Xof[103X, [3Xboard[103X ) [32X function
+  
+  [33X[0;0YSolves the [22Xn[122X queens problem.[133X
+  
+  [1X2.1-6 KSExactCover[101X
+  
+  [29X[2XKSExactCover[102X( [3Xnumber[103X, [3Xcover[103X ) [32X function
+  
+  [33X[0;0YFinds  an subcollection of [22XS[122X (which is a set of subsets of [22X{1,..,n}[122X) that is
+  an exact cover of [22X{1,..,n}[122X, if it exists.[133X
+  

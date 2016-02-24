@@ -40,12 +40,18 @@
   
   [1XContents (kreher-stinson)[101X
   
-  1 [33X[0;0YBactracking[133X
-    1.1 [33X[0;0YKnapsack[133X
-      1.1-1 CheckKnapsackInput
-      1.1-2 Knapsack1
-      1.1-3 Knapsack2
-      1.1-4 KSAllCliques
+  1 [33X[0;0YGenerating Combinatorial Objects[133X
+    1.1 [33X[0;0YSubsets[133X
+      1.1-1 KSSubsetLexRank
+      1.1-2 KSSubsetLexUnrank
+  2 [33X[0;0YBactracking[133X
+    2.1 [33X[0;0YKnapsack[133X
+      2.1-1 CheckKnapsackInput
+      2.1-2 Knapsack1
+      2.1-3 Knapsack2
+      2.1-4 KSAllCliques
+      2.1-5 KSQueens
+      2.1-6 KSExactCover
   
   
   [32X

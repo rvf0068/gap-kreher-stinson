@@ -1,0 +1,14 @@
+<Chapter Label="generating">
+
+  <Heading>Generating Combinatorial Objects</Heading>
+
+  <Section Label="subsets">
+
+    <Heading>Subsets</Heading>
+
+    <#Include Label="KSSubsetLexRank">
+
+    <#Include Label="KSSubsetLexUnrank">
+
+  </Section>
+</Chapter>

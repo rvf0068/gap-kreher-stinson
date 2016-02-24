@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<title>GAP (kreher-stinson) - Chapter 1: Bactracking</title>
+<title>GAP (kreher-stinson) - Chapter 1: Generating Combinatorial Objects</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="GAPDoc2HTML" />
 <link rel="stylesheet" type="text/css" href="manual.css" />
@@ -15,61 +15,45 @@
 <body class="chap1"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chapInd.html">Ind</a>  </div>
 
-<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd.html">[Next Chapter]</a>&nbsp;  </div>
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
 
-<p><a id="X82385A297FD5AFF5" name="X82385A297FD5AFF5"></a></p>
-<div class="ChapSects"><a href="chap1.html#X82385A297FD5AFF5">1 <span class="Heading">Bactracking</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X872264E47F34A84F">1.1 <span class="Heading">Knapsack</span></a>
+<p><a id="X817B7D9F78E96B39" name="X817B7D9F78E96B39"></a></p>
+<div class="ChapSects"><a href="chap1.html#X817B7D9F78E96B39">1 <span class="Heading">Generating Combinatorial Objects</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X87BB51CD81E9D34A">1.1 <span class="Heading">Subsets</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7ED93B58865D568A">1.1-1 CheckKnapsackInput</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X8571A9367BA7B3EC">1.1-2 Knapsack1</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7CE13C2D783F6020">1.1-3 Knapsack2</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X86D20A268630B591">1.1-4 KSAllCliques</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7DF749F9873EBFAC">1.1-1 KSSubsetLexRank</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X85B1636183D7350D">1.1-2 KSSubsetLexUnrank</a></span>
 </div></div>
 </div>
 
-<h3>1 <span class="Heading">Bactracking</span></h3>
+<h3>1 <span class="Heading">Generating Combinatorial Objects</span></h3>
 
-<p><a id="X872264E47F34A84F" name="X872264E47F34A84F"></a></p>
+<p><a id="X87BB51CD81E9D34A" name="X87BB51CD81E9D34A"></a></p>
 
-<h4>1.1 <span class="Heading">Knapsack</span></h4>
+<h4>1.1 <span class="Heading">Subsets</span></h4>
 
-<p><a id="X7ED93B58865D568A" name="X7ED93B58865D568A"></a></p>
+<p><a id="X7DF749F9873EBFAC" name="X7DF749F9873EBFAC"></a></p>
 
-<h5>1.1-1 CheckKnapsackInput</h5>
+<h5>1.1-1 KSSubsetLexRank</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CheckKnapsackInput</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Checks for valid input data for the Knapsack problems (Problems 1.1-1.4).</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSubsetLexRank</code>( <var class="Arg">number</var>, <var class="Arg">subset</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the rank of <var class="Arg">subset</var> as a subset of the set of numbers from 1 to <var class="Arg">number</var> (Algorithm 2.1).</p>
 
-<p><a id="X8571A9367BA7B3EC" name="X8571A9367BA7B3EC"></a></p>
+<p><a id="X85B1636183D7350D" name="X85B1636183D7350D"></a></p>
 
-<h5>1.1-2 Knapsack1</h5>
+<h5>1.1-2 KSSubsetLexUnrank</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Knapsack1</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Implementation of Algorithm 4.1.</p>
-
-<p><a id="X7CE13C2D783F6020" name="X7CE13C2D783F6020"></a></p>
-
-<h5>1.1-3 Knapsack2</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Knapsack2</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Implementation of Algorithm 4.3.</p>
-
-<p><a id="X86D20A268630B591" name="X86D20A268630B591"></a></p>
-
-<h5>1.1-4 KSAllCliques</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSAllCliques</code>( <var class="Arg">graph</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Implementation of Algorithm 4.4.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSubsetLexUnrank</code>( <var class="Arg">number</var>, <var class="Arg">rank</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the subset of 1..number whose rank is rank (Algorithm 2.2).</p>
 
 
-<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd.html">[Next Chapter]</a>&nbsp;  </div>
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

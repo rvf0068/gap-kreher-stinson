@@ -57,7 +57,6 @@ DeclareGlobalFunction( "Knapsack2" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSAllCliques" );
 
-
 #F  KSQueens( n ) 
 ##
 ##  <#GAPDoc Label="KSQueens">
@@ -65,8 +64,23 @@ DeclareGlobalFunction( "KSAllCliques" );
 ##  <Func Name="KSQueens" Arg="Size of board"/>
 ##
 ##  <Description>
-##  Solve the <M>n</M> queens problem.
+##  Solves the <M>n</M> queens problem.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSQueens" );
+
+#F  KSExactCover( n, S ) 
+##
+##  <#GAPDoc Label="KSExactCover">
+##  <ManSection>
+##  <Func Name="KSExactCover" Arg="number,cover"/>
+##
+##  <Description>
+##  Finds an subcollection of <M>S</M> (which is a set of subsets of 
+##  <M>\{1,..,n\}</M>) that is an exact cover of <M>\{1,..,n\}</M>, 
+##  if it exists.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSExactCover" );
