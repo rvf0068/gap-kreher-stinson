@@ -40,8 +40,8 @@
   
   [29X[2XKSExactCover[102X( [3Xnumber[103X, [3Xcover[103X ) [32X function
   
-  [33X[0;0YFinds   an   subcollection   of  [3Xconver[103X  (which  is  a  set  of  subsets  of
-  [22X{1,..,[3Xnumber[103X}[122X) that is an exact cover of [22X{1,..,[3Xnumber[103X}[122X, if it exists.[133X
+  [33X[0;0YFinds an subcollection of [3Xcover[103X (which is a set of subsets of [22X{1,..,[3Xnumber[103X}[122X)
+  that is an exact cover of [22X{1,..,[3Xnumber[103X}[122X, if it exists.[133X
   
   
   [1X2.4 [33X[0;0YExercises[133X[101X
