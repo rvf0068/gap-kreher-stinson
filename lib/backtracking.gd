@@ -7,7 +7,7 @@
 ##
 #############################################################################
 
-#F  KSCheckKnapsackInput( <P>, <W>, <M> ) 
+#F  KSCheckKnapsackInput( P, W, M ) 
 ##
 ##  <#GAPDoc Label="KSCheckKnapsackInput">
 ##  <ManSection>
@@ -20,7 +20,7 @@
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSCheckKnapsackInput" );
 
-#F  KSKnapsack1( <P>, <W>, <M> ) 
+#F  KSKnapsack1( P, W, M ) 
 ##
 ##  <#GAPDoc Label="KSKnapsack1">
 ##  <ManSection>
@@ -32,7 +32,7 @@ DeclareGlobalFunction( "KSCheckKnapsackInput" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSKnapsack1" );
 
-#F  KSKnapsack2( <P>, <W>, <M> ) 
+#F  KSKnapsack2( P, W, M ) 
 ##
 ##  <#GAPDoc Label="KSKnapsack2">
 ##  <ManSection>
@@ -44,14 +44,17 @@ DeclareGlobalFunction( "KSKnapsack1" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSKnapsack2" );
 
-#F  KSAllCliques( <G> ) 
+#F  KSAllCliques( G ) 
 ##
 ##  <#GAPDoc Label="KSAllCliques">
 ##  <ManSection>
 ##  <Func Name="KSAllCliques" Arg="graph"/>
 ##
 ##  <Description>
-##  Implementation of Algorithm 4.4.
+##  Implementation of Algorithm 4.4. A graph <M>G</M> is defined by
+##  the list <A>graph</A>, which must be a list of subsets of
+##  <M>\{1,...,n\}</M>, for some integer <M>n</M>. The neighbors of 
+##  vertex <M>i</M> are the elements of <A>graph[i]</A>.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -61,10 +64,11 @@ DeclareGlobalFunction( "KSAllCliques" );
 ##
 ##  <#GAPDoc Label="KSQueens">
 ##  <ManSection>
-##  <Func Name="KSQueens" Arg="Size of board"/>
+##  <Func Name="KSQueens" Arg="size"/>
 ##
 ##  <Description>
-##  Solves the <M>n</M> queens problem.
+##  Solves the <M>n</M> queens problem for a
+##  <M><A>size</A>\times<A>size</A></M> board.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -77,8 +81,9 @@ DeclareGlobalFunction( "KSQueens" );
 ##  <Func Name="KSExactCover" Arg="number,cover"/>
 ##
 ##  <Description>
-##  Finds an subcollection of <M>S</M> (which is a set of subsets of 
-##  <M>\{1,..,n\}</M>) that is an exact cover of <M>\{1,..,n\}</M>, 
+##  Finds an subcollection of <A>cover</A> (which is a set of subsets of 
+##  <M>\{1,..,<A>number</A>\}</M>) that is an exact cover of 
+##  <M>\{1,..,<A>number</A>\}</M>, 
 ##  if it exists.
 ##  </Description>
 ##  </ManSection>

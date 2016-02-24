@@ -2,7 +2,7 @@
 
   \item \texttt  {KSAllCliques}, \hyperpage{5}
   \item \texttt  {KSCheckKnapsackInput}, \hyperpage{5}
-  \item \texttt  {KSExactCover}, \hyperpage{5}
+  \item \texttt  {KSExactCover}, \hyperpage{6}
   \item \texttt  {KSKnapsack1}, \hyperpage{5}
   \item \texttt  {KSKnapsack2}, \hyperpage{5}
   \item \texttt  {KSQueens}, \hyperpage{6}

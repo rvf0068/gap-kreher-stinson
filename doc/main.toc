@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {2.1.3}\leavevmode {\color {Chapter }KSKnapsack2}}{5}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}\leavevmode {\color {Chapter }Generating all cliques}}{5}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}\leavevmode {\color {Chapter }KSAllCliques}}{5}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}\leavevmode {\color {Chapter }Exact cover}}{5}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}\leavevmode {\color {Chapter }KSExactCover}}{5}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.3}\leavevmode {\color {Chapter }Exact cover}}{6}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\leavevmode {\color {Chapter }KSExactCover}}{6}{subsection.2.3.1}
 \contentsline {section}{\numberline {2.4}\leavevmode {\color {Chapter }Exercises}}{6}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}\leavevmode {\color {Chapter }KSQueens}}{6}{subsection.2.4.1}
 \contentsline {chapter}{Index}{7}{section*.3}

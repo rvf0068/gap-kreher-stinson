@@ -7,7 +7,7 @@
 ##
 #############################################################################
 
-#F  KSCheckKnapsackInput( <P>, <W>, <M> )
+#F  KSCheckKnapsackInput( P, W, M )
 ##
 InstallGlobalFunction(
     KSCheckKnapsackInput, function(P, W, M)
@@ -25,7 +25,7 @@ InstallGlobalFunction(
     fi;
 end);
 
-#F  KSKnapsack1( <P>, <W>, <M> ) 
+#F  KSKnapsack1( P, W, M ) 
 ##
 InstallGlobalFunction( KSKnapsack1, function(P, W, M)
     local knapaux, n, XX, OptP, OptX, CurP;
@@ -63,7 +63,7 @@ InstallGlobalFunction( KSKnapsack1, function(P, W, M)
     return;
 end );
 
-#F  KSKnapsack2( <P>, <W>, <M> ) 
+#F  KSKnapsack2( P, W, M ) 
 ##
 InstallGlobalFunction( KSKnapsack2, function(P, W, M)
     local knapaux, n, x, XX, OptP, OptX, C;
@@ -101,7 +101,7 @@ InstallGlobalFunction( KSKnapsack2, function(P, W, M)
     return;
 end );
 
-#F  KSAllCliques( <G> ) 
+#F  KSAllCliques( G ) 
 ##
 InstallGlobalFunction( KSAllCliques, function( G )
     local allcliques, C, all, V, x, N, n, B, XX;
@@ -141,7 +141,7 @@ InstallGlobalFunction( KSAllCliques, function( G )
     return all;
 end );
 
-#F  KSQueens( <n> ) 
+#F  KSQueens( n ) 
 ##
 InstallGlobalFunction( KSQueens, function( n )
     local C, XX, queens,k;
@@ -173,7 +173,7 @@ InstallGlobalFunction( KSQueens, function( n )
     return;
 end);
 
-#F  KSExactCover( <n>, <S> ) 
+#F  KSExactCover( n, S ) 
 ##
 InstallGlobalFunction( KSExactCover, function( n, S )
     local C, XX, cover, m, A, B, H, i, j, U, Cp;
