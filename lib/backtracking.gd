@@ -69,6 +69,11 @@ DeclareGlobalFunction( "KSAllCliques" );
 ##  <Description>
 ##  Solves the <M>n</M> queens problem for a
 ##  <M><A>size</A>\times<A>size</A></M> board.
+##  <Example>
+##  gap> KSQueens(4);
+##  [ 2, 4, 1, 3 ]
+##  [ 3, 1, 4, 2 ]
+##  </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

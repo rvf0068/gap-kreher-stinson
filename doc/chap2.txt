@@ -52,3 +52,9 @@
   
   [33X[0;0YSolves the [22Xn[122X queens problem for a [22X[3Xsize[103X×[3Xsize[103X[122X board.[133X
   
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XKSQueens(4);[127X[104X
+    [4X[28X[ 2, 4, 1, 3 ][128X[104X
+    [4X[28X[ 3, 1, 4, 2 ][128X[104X
+  [4X[32X[104X
+  
