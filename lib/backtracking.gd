@@ -7,42 +7,42 @@
 ##
 #############################################################################
 
-#F  CheckKnapsackInput( <P>, <W>, <M> ) 
+#F  KSCheckKnapsackInput( <P>, <W>, <M> ) 
 ##
-##  <#GAPDoc Label="CheckKnapsackInput">
+##  <#GAPDoc Label="KSCheckKnapsackInput">
 ##  <ManSection>
-##  <Func Name="CheckKnapsackInput" Arg="profits, weights, capacity"/>
+##  <Func Name="KSCheckKnapsackInput" Arg="profits, weights, capacity"/>
 ##
 ##  <Description>
 ##  Checks for valid input data for the Knapsack problems (Problems 1.1-1.4).
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareGlobalFunction( "CheckKnapsackInput" );
+DeclareGlobalFunction( "KSCheckKnapsackInput" );
 
-#F  Knapsack1( <P>, <W>, <M> ) 
+#F  KSKnapsack1( <P>, <W>, <M> ) 
 ##
-##  <#GAPDoc Label="Knapsack1">
+##  <#GAPDoc Label="KSKnapsack1">
 ##  <ManSection>
-##  <Func Name="Knapsack1" Arg="profits, weights, capacity"/>
+##  <Func Name="KSKnapsack1" Arg="profits, weights, capacity"/>
 ##  <Description>
 ##  Implementation of Algorithm 4.1.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareGlobalFunction( "Knapsack1" );
+DeclareGlobalFunction( "KSKnapsack1" );
 
-#F  Knapsack2( <P>, <W>, <M> ) 
+#F  KSKnapsack2( <P>, <W>, <M> ) 
 ##
-##  <#GAPDoc Label="Knapsack2">
+##  <#GAPDoc Label="KSKnapsack2">
 ##  <ManSection>
-##  <Func Name="Knapsack2" Arg="profits, weights, capacity"/>
+##  <Func Name="KSKnapsack2" Arg="profits, weights, capacity"/>
 ##  <Description>
 ##  Implementation of Algorithm 4.3.
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareGlobalFunction( "Knapsack2" );
+DeclareGlobalFunction( "KSKnapsack2" );
 
 #F  KSAllCliques( <G> ) 
 ##

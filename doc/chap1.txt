@@ -15,5 +15,5 @@
   
   [29X[2XKSSubsetLexUnrank[102X( [3Xnumber[103X, [3Xrank[103X ) [32X function
   
-  [33X[0;0YReturns the subset of 1..number whose rank is rank (Algorithm 2.2).[133X
+  [33X[0;0YReturns the subset of [22X{1..[3Xnumber[103X}[122X whose rank is [3Xrank[103X. (Algorithm 2.2).[133X
   

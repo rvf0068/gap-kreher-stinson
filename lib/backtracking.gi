@@ -7,10 +7,10 @@
 ##
 #############################################################################
 
-#F  CheckKnapsackInput( <P>, <W>, <M> )
+#F  KSCheckKnapsackInput( <P>, <W>, <M> )
 ##
 InstallGlobalFunction(
-    CheckKnapsackInput, function(P, W, M)
+    KSCheckKnapsackInput, function(P, W, M)
     if not(IsList(P) and IsList(W)) then
         Print("Error. First two arguments must be lists.\n");
         return false;
@@ -25,9 +25,9 @@ InstallGlobalFunction(
     fi;
 end);
 
-#F  Knapsack1( <P>, <W>, <M> ) 
+#F  KSKnapsack1( <P>, <W>, <M> ) 
 ##
-InstallGlobalFunction( Knapsack1, function(P, W, M)
+InstallGlobalFunction( KSKnapsack1, function(P, W, M)
     local knapaux, n, XX, OptP, OptX, CurP;
     XX := [];
     OptP := 0;
@@ -56,16 +56,16 @@ InstallGlobalFunction( Knapsack1, function(P, W, M)
             knapaux(l);
         fi;
     end;
-    if CheckKnapsackInput(P, W, M) then
+    if KSCheckKnapsackInput(P, W, M) then
         knapaux(0);
         Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
     fi;
     return;
 end );
 
-#F  Knapsack2( <P>, <W>, <M> ) 
+#F  KSKnapsack2( <P>, <W>, <M> ) 
 ##
-InstallGlobalFunction( Knapsack2, function(P, W, M)
+InstallGlobalFunction( KSKnapsack2, function(P, W, M)
     local knapaux, n, x, XX, OptP, OptX, C;
     XX := [];
     C := [];
@@ -94,7 +94,7 @@ InstallGlobalFunction( Knapsack2, function(P, W, M)
             knapaux(l+1, CurW + W[l]*XX[l]);
         od;
     end;
-    if CheckKnapsackInput(P, W, M) then
+    if KSCheckKnapsackInput(P, W, M) then
         knapaux(1,0);
         Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
     fi;

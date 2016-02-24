@@ -24,12 +24,24 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X872264E47F34A84F">2.1 <span class="Heading">Knapsack</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7ED93B58865D568A">2.1-1 CheckKnapsackInput</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8571A9367BA7B3EC">2.1-2 Knapsack1</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7CE13C2D783F6020">2.1-3 Knapsack2</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86D20A268630B591">2.1-4 KSAllCliques</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86BA078279D66D0C">2.1-5 KSQueens</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86E5032879288555">2.1-6 KSExactCover</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7FB05C427FBC528B">2.1-1 KSCheckKnapsackInput</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X84E39E7E8371D3BB">2.1-2 KSKnapsack1</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7D730B657AEFF5DB">2.1-3 KSKnapsack2</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X8514296C86C716C8">2.2 <span class="Heading">Generating all cliques</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86D20A268630B591">2.2-1 KSAllCliques</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X83868AF47AD4244E">2.3 <span class="Heading">Exact cover</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86E5032879288555">2.3-1 KSExactCover</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X823A8E467E2D876D">2.4 <span class="Heading">Exercises</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86BA078279D66D0C">2.4-1 KSQueens</a></span>
 </div></div>
 </div>
 
@@ -39,47 +51,59 @@
 
 <h4>2.1 <span class="Heading">Knapsack</span></h4>
 
-<p><a id="X7ED93B58865D568A" name="X7ED93B58865D568A"></a></p>
+<p><a id="X7FB05C427FBC528B" name="X7FB05C427FBC528B"></a></p>
 
-<h5>2.1-1 CheckKnapsackInput</h5>
+<h5>2.1-1 KSCheckKnapsackInput</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CheckKnapsackInput</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSCheckKnapsackInput</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Checks for valid input data for the Knapsack problems (Problems 1.1-1.4).</p>
 
-<p><a id="X8571A9367BA7B3EC" name="X8571A9367BA7B3EC"></a></p>
+<p><a id="X84E39E7E8371D3BB" name="X84E39E7E8371D3BB"></a></p>
 
-<h5>2.1-2 Knapsack1</h5>
+<h5>2.1-2 KSKnapsack1</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Knapsack1</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSKnapsack1</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Implementation of Algorithm 4.1.</p>
 
-<p><a id="X7CE13C2D783F6020" name="X7CE13C2D783F6020"></a></p>
+<p><a id="X7D730B657AEFF5DB" name="X7D730B657AEFF5DB"></a></p>
 
-<h5>2.1-3 Knapsack2</h5>
+<h5>2.1-3 KSKnapsack2</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Knapsack2</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSKnapsack2</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Implementation of Algorithm 4.3.</p>
+
+<p><a id="X8514296C86C716C8" name="X8514296C86C716C8"></a></p>
+
+<h4>2.2 <span class="Heading">Generating all cliques</span></h4>
 
 <p><a id="X86D20A268630B591" name="X86D20A268630B591"></a></p>
 
-<h5>2.1-4 KSAllCliques</h5>
+<h5>2.2-1 KSAllCliques</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSAllCliques</code>( <var class="Arg">graph</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Implementation of Algorithm 4.4.</p>
 
-<p><a id="X86BA078279D66D0C" name="X86BA078279D66D0C"></a></p>
+<p><a id="X83868AF47AD4244E" name="X83868AF47AD4244E"></a></p>
 
-<h5>2.1-5 KSQueens</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSQueens</code>( <var class="Arg">Size</var>, <var class="Arg">of</var>, <var class="Arg">board</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Solves the <span class="SimpleMath">n</span> queens problem.</p>
+<h4>2.3 <span class="Heading">Exact cover</span></h4>
 
 <p><a id="X86E5032879288555" name="X86E5032879288555"></a></p>
 
-<h5>2.1-6 KSExactCover</h5>
+<h5>2.3-1 KSExactCover</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSExactCover</code>( <var class="Arg">number</var>, <var class="Arg">cover</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Finds an subcollection of <span class="SimpleMath">S</span> (which is a set of subsets of <span class="SimpleMath">{1,..,n}</span>) that is an exact cover of <span class="SimpleMath">{1,..,n}</span>, if it exists.</p>
+
+<p><a id="X823A8E467E2D876D" name="X823A8E467E2D876D"></a></p>
+
+<h4>2.4 <span class="Heading">Exercises</span></h4>
+
+<p><a id="X86BA078279D66D0C" name="X86BA078279D66D0C"></a></p>
+
+<h5>2.4-1 KSQueens</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSQueens</code>( <var class="Arg">Size</var>, <var class="Arg">of</var>, <var class="Arg">board</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Solves the <span class="SimpleMath">n</span> queens problem.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd.html">[Next Chapter]</a>&nbsp;  </div>

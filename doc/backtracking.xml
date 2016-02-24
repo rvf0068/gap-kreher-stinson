@@ -6,17 +6,35 @@
 
     <Heading>Knapsack</Heading>
 
-    <#Include Label="CheckKnapsackInput">
+    <#Include Label="KSCheckKnapsackInput">
 
-    <#Include Label="Knapsack1">
+    <#Include Label="KSKnapsack1">
 
-    <#Include Label="Knapsack2">
+    <#Include Label="KSKnapsack2">
 
+  </Section>
+
+  <Section Label="allcliques">
+
+    <Heading>Generating all cliques</Heading>
+    
     <#Include Label="KSAllCliques">
 
-    <#Include Label="KSQueens">
+  </Section>
+    
+  <Section Label="exactcover">
 
+    <Heading>Exact cover</Heading>
+    
     <#Include Label="KSExactCover">
+
+  </Section>
+    
+  <Section Label="exercises-backtracking">
+
+    <Heading>Exercises</Heading>
+    
+    <#Include Label="KSQueens">
 
   </Section>
 </Chapter>

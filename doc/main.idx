@@ -1,8 +1,8 @@
 \indexentry{KSSubsetLexRank@\texttt  {KSSubsetLexRank}|hyperpage}{4}
 \indexentry{KSSubsetLexUnrank@\texttt  {KSSubsetLexUnrank}|hyperpage}{4}
-\indexentry{CheckKnapsackInput@\texttt  {CheckKnapsackInput}|hyperpage}{5}
-\indexentry{Knapsack1@\texttt  {Knapsack1}|hyperpage}{5}
-\indexentry{Knapsack2@\texttt  {Knapsack2}|hyperpage}{5}
+\indexentry{KSCheckKnapsackInput@\texttt  {KSCheckKnapsackInput}|hyperpage}{5}
+\indexentry{KSKnapsack1@\texttt  {KSKnapsack1}|hyperpage}{5}
+\indexentry{KSKnapsack2@\texttt  {KSKnapsack2}|hyperpage}{5}
 \indexentry{KSAllCliques@\texttt  {KSAllCliques}|hyperpage}{5}
-\indexentry{KSQueens@\texttt  {KSQueens}|hyperpage}{5}
-\indexentry{KSExactCover@\texttt  {KSExactCover}|hyperpage}{6}
+\indexentry{KSExactCover@\texttt  {KSExactCover}|hyperpage}{5}
+\indexentry{KSQueens@\texttt  {KSQueens}|hyperpage}{6}

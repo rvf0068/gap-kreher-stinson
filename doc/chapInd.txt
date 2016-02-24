@@ -2,12 +2,12 @@
   
   [1XIndex[101X
   
-  [2XCheckKnapsackInput[102X  2.1-1
-  [2XKnapsack1[102X  2.1-2
-  [2XKnapsack2[102X  2.1-3
-  [2XKSAllCliques[102X  2.1-4
-  [2XKSExactCover[102X  2.1-6
-  [2XKSQueens[102X  2.1-5
+  [2XKSAllCliques[102X  2.2-1
+  [2XKSCheckKnapsackInput[102X  2.1-1
+  [2XKSExactCover[102X  2.3-1
+  [2XKSKnapsack1[102X  2.1-2
+  [2XKSKnapsack2[102X  2.1-3
+  [2XKSQueens[102X  2.4-1
   [2XKSSubsetLexRank[102X  1.1-1
   [2XKSSubsetLexUnrank[102X  1.1-2
   

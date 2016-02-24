@@ -19,7 +19,8 @@ DeclareGlobalFunction( "KSSubsetLexRank" );
 ##  <Func Name="KSSubsetLexUnrank" Arg="number, rank"/>
 ##
 ##  <Description>
-##  Returns the subset of 1..number whose rank is rank (Algorithm 2.2).
+##  Returns the subset of <M>\{1..<A>number</A>\}</M> whose rank 
+##  is <A>rank</A>. (Algorithm 2.2).
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
