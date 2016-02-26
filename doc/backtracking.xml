@@ -29,7 +29,21 @@
     <#Include Label="KSExactCover">
 
   </Section>
+
+  <Section Label="bounding-functions">
+
+    <Heading>Bounding functions</Heading>
     
+    <#Include Label="KSSortForRationalKnapsack">
+
+    <#Include Label="KSRationalKnapsackSorted">
+
+    <#Include Label="KSKnapsack3">
+
+    <#Include Label="KSRandomKnapsackInstance">
+
+  </Section>
+  
   <Section Label="exercises-backtracking">
 
     <Heading>Exercises</Heading>
@@ -37,4 +51,5 @@
     <#Include Label="KSQueens">
 
   </Section>
+
 </Chapter>

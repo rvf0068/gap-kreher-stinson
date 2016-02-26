@@ -225,3 +225,105 @@ InstallGlobalFunction( KSExactCover, function( n, S )
     H[n+1] := [];
     cover(0, 1);
 end);
+
+#F  KSSortForRationalKnapsack(P, W) 
+##
+InstallGlobalFunction( KSSortForRationalKnapsack, function(P, W)
+    local l, i, ls, perm;
+    l := List( [1..Length(P)], i -> P[i]/W[i] );
+    ls := ShallowCopy(l);
+    Sort(ls);
+    ls := Reversed(ls);
+    perm := PermListList(ls, l);
+    return [Permuted(P, perm), Permuted(W, perm)];
+end);
+
+#F  KSRationalKnapsackSorted( P, W, M ) 
+##
+InstallGlobalFunction( KSRationalKnapsackSorted, function( P, W, M )
+    local i, j, Ps, Ws, XX, n;
+    i := 1;
+    Ps := 0;
+    Ws := 0;
+    XX := [];
+    n := Length(P);
+    for j in [1..n] do
+        XX[j] := 0;
+    od;
+    while Ws < M and i < n+1 do
+        if Ws + W[i] <= M then
+            XX[i] := 1;
+            Ws := Ws + W[i];
+            Ps := Ps + P[i];
+        else
+            XX[i] := (M - Ws) / W[i];
+            Ws := M;
+            Ps := Ps + XX[i]*P[i];
+        fi;
+        i := i + 1;
+    od;
+    return Ps;
+end);
+
+#F  KSKnapsack3( P, W, M ) 
+##
+InstallGlobalFunction( KSKnapsack3, function( P, W, M )
+    local knapaux, n, x, XX, OptP, OptX, C, R;
+    XX := [];
+    C := [];
+    OptP := 0;
+    OptX := 0;
+    n := Length(P);
+    R := KSSortForRationalKnapsack(P, W);
+    P := R[1];
+    W := R[2];
+    knapaux := function(l, CurW)
+        local B;
+        if l = n+1 then
+            Print("Checking ", XX, "\n");
+            if Sum(List([1..n], i -> P[i]*XX[i])) > OptP then
+                Print("Improved profit!\n");
+                OptP := Sum(List([1..n], i -> P[i]*XX[i]));
+                OptX := ShallowCopy(XX);
+            fi;
+            C[l] := [];
+        else
+            if CurW + W[l] <= M then
+                C[l] := [1,0];
+            else
+                C[l] := [0];
+                Print("Pruning!\n");
+            fi;
+        fi;
+        B := Sum( List ( [1..l-1] , i -> P[i]*XX[i] ) );
+        B := B + KSRationalKnapsackSorted( P{[l..n]}, W{[l..n]}, M - CurW);
+        for x in C[l] do
+            if B <= OptP then
+                Print("Pruning using Bounding Function!\n");
+                return;
+            fi;
+            XX[l] := x;
+            knapaux(l+1, CurW + W[l]*XX[l]);
+        od;
+    end;
+    if KSCheckKnapsackInput(P, W, M) then
+        knapaux(1,0);
+        Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
+    fi;
+    return;
+end);
+
+#F  KSRandomKnapsackInstance( n, Wmax ) 
+##
+InstallGlobalFunction( KSRandomKnapsackInstance, function( n, Wmax )
+    local P, W, M, i, epsilon;
+    P := [];
+    W := [];
+    epsilon := 0.9 + (0.2/100)*(Random(GlobalMersenneTwister,[1..100]) - 1);
+    for i in [1..n] do
+        W[i] := Random(GlobalMersenneTwister, [1..Wmax]);
+        P[i] := Int(2*epsilon*W[i]);
+    od;
+    M := Int(Sum(W) / 2);
+    return [P, W, M];
+end);

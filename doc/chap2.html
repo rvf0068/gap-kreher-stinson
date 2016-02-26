@@ -38,10 +38,18 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86E5032879288555">2.3-1 KSExactCover</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X823A8E467E2D876D">2.4 <span class="Heading">Exercises</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7E9BE74B7B20F799">2.4 <span class="Heading">Bounding functions</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86BA078279D66D0C">2.4-1 KSQueens</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C63779C8478C20C">2.4-1 KSSortForRationalKnapsack</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X87F7D9DD7B0E9DE4">2.4-2 KSRationalKnapsackSorted</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7A03786C86F71827">2.4-3 KSKnapsack3</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F7AF9917C7513E0">2.4-4 KSRandomKnapsackInstance</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X823A8E467E2D876D">2.5 <span class="Heading">Exercises</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86BA078279D66D0C">2.5-1 KSQueens</a></span>
 </div></div>
 </div>
 
@@ -94,13 +102,45 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSExactCover</code>( <var class="Arg">number</var>, <var class="Arg">cover</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Finds an subcollection of <var class="Arg">cover</var> (which is a set of subsets of <span class="SimpleMath">{1,..,<var class="Arg">number</var>}</span>) that is an exact cover of <span class="SimpleMath">{1,..,<var class="Arg">number</var>}</span>, if it exists.</p>
 
+<p><a id="X7E9BE74B7B20F799" name="X7E9BE74B7B20F799"></a></p>
+
+<h4>2.4 <span class="Heading">Bounding functions</span></h4>
+
+<p><a id="X7C63779C8478C20C" name="X7C63779C8478C20C"></a></p>
+
+<h5>2.4-1 KSSortForRationalKnapsack</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSortForRationalKnapsack</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given two vectors <var class="Arg">profits</var>, <var class="Arg">weights</var> of the same length, this function returns a vector of the two vectors, sorted in non-decreasing order of values of <span class="SimpleMath"><var class="Arg">profits[i]</var>/<var class="Arg">weights[i]</var></span>.</p>
+
+<p><a id="X87F7D9DD7B0E9DE4" name="X87F7D9DD7B0E9DE4"></a></p>
+
+<h5>2.4-2 KSRationalKnapsackSorted</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRationalKnapsackSorted</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Solves the rational Knapsack problem with parameters given. The vectors <var class="Arg">profits</var>, <var class="Arg">weights</var> must already be sorted.</p>
+
+<p><a id="X7A03786C86F71827" name="X7A03786C86F71827"></a></p>
+
+<h5>2.4-3 KSKnapsack3</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSKnapsack3</code>( <var class="Arg">profits</var>, <var class="Arg">weights</var>, <var class="Arg">capacity</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Solves the Knapsack problem with parameters given, using the function KSRationalKnapsackSorted as bounding function.</p>
+
+<p><a id="X7F7AF9917C7513E0" name="X7F7AF9917C7513E0"></a></p>
+
+<h5>2.4-4 KSRandomKnapsackInstance</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRandomKnapsackInstance</code>( <var class="Arg">size</var>, <var class="Arg">maximum_weight</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns a random instance of a Knapsack problem, for <var class="Arg">size</var> objects. The maximum weight is <var class="Arg">maximum_weight</var>. For each <span class="SimpleMath">i</span>, the profit <span class="SimpleMath">P[i]</span> is <span class="SimpleMath">2*W[i]*ϵ</span>, where <span class="SimpleMath">ϵ</span> is a random number between <span class="SimpleMath">0.9</span> and <span class="SimpleMath">1.1</span>.</p>
+
 <p><a id="X823A8E467E2D876D" name="X823A8E467E2D876D"></a></p>
 
-<h4>2.4 <span class="Heading">Exercises</span></h4>
+<h4>2.5 <span class="Heading">Exercises</span></h4>
 
 <p><a id="X86BA078279D66D0C" name="X86BA078279D66D0C"></a></p>
 
-<h5>2.4-1 KSQueens</h5>
+<h5>2.5-1 KSQueens</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSQueens</code>( <var class="Arg">size</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Solves the <span class="SimpleMath">n</span> queens problem for a <span class="SimpleMath"><var class="Arg">size</var>times<var class="Arg">size</var></span> board.</p>

@@ -255,14 +255,71 @@ or (at your option) any later version. \mbox{}}\\[1cm]
  }
 
  
-\section{\textcolor{Chapter }{Exercises}}\label{exercises-backtracking}
+\section{\textcolor{Chapter }{Bounding functions}}\label{bounding-functions}
 \logpage{[ 2, 4, 0 ]}
+\hyperdef{L}{X7E9BE74B7B20F799}{}
+{
+  
+
+\subsection{\textcolor{Chapter }{KSSortForRationalKnapsack}}
+\logpage{[ 2, 4, 1 ]}\nobreak
+\hyperdef{L}{X7C63779C8478C20C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSortForRationalKnapsack({\mdseries\slshape profits, weights})\index{KSSortForRationalKnapsack@\texttt{KSSortForRationalKnapsack}}
+\label{KSSortForRationalKnapsack}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given two vectors \mbox{\texttt{\mdseries\slshape profits}}, \mbox{\texttt{\mdseries\slshape weights}} of the same length, this function returns a vector of the two vectors, sorted
+in non-decreasing order of values of $\mbox{\texttt{\mdseries\slshape profits[i]}}/\mbox{\texttt{\mdseries\slshape weights[i]}}$. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSRationalKnapsackSorted}}
+\logpage{[ 2, 4, 2 ]}\nobreak
+\hyperdef{L}{X87F7D9DD7B0E9DE4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRationalKnapsackSorted({\mdseries\slshape profits, weights, capacity})\index{KSRationalKnapsackSorted@\texttt{KSRationalKnapsackSorted}}
+\label{KSRationalKnapsackSorted}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Solves the rational Knapsack problem with parameters given. The vectors \mbox{\texttt{\mdseries\slshape profits}}, \mbox{\texttt{\mdseries\slshape weights}} must already be sorted. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSKnapsack3}}
+\logpage{[ 2, 4, 3 ]}\nobreak
+\hyperdef{L}{X7A03786C86F71827}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack3({\mdseries\slshape profits, weights, capacity})\index{KSKnapsack3@\texttt{KSKnapsack3}}
+\label{KSKnapsack3}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Solves the Knapsack problem with parameters given, using the function
+KSRationalKnapsackSorted as bounding function. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSRandomKnapsackInstance}}
+\logpage{[ 2, 4, 4 ]}\nobreak
+\hyperdef{L}{X7F7AF9917C7513E0}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomKnapsackInstance({\mdseries\slshape size, maximum{\textunderscore}weight})\index{KSRandomKnapsackInstance@\texttt{KSRandomKnapsackInstance}}
+\label{KSRandomKnapsackInstance}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a random instance of a Knapsack problem, for \mbox{\texttt{\mdseries\slshape size}} objects. The maximum weight is \mbox{\texttt{\mdseries\slshape maximum{\textunderscore}weight}}. For each $i$, the profit $P[i]$ is $2*W[i]*\epsilon$, where $\epsilon$ is a random number between $0.9$ and $1.1$. }
+
+ }
+
+ 
+\section{\textcolor{Chapter }{Exercises}}\label{exercises-backtracking}
+\logpage{[ 2, 5, 0 ]}
 \hyperdef{L}{X823A8E467E2D876D}{}
 {
   
 
 \subsection{\textcolor{Chapter }{KSQueens}}
-\logpage{[ 2, 4, 1 ]}\nobreak
+\logpage{[ 2, 5, 1 ]}\nobreak
 \hyperdef{L}{X86BA078279D66D0C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSQueens({\mdseries\slshape size})\index{KSQueens@\texttt{KSQueens}}
 \label{KSQueens}
