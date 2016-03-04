@@ -94,3 +94,17 @@ DeclareGlobalFunction( "KSQueens" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSExactCover" );
+
+#F KSWalks( n )
+##
+##  
+##  <#GAPDoc Label="KSWalks">
+##  <ManSection>
+##  <Func Name="KSWalks" Arg="number"/>
+##
+##  <Description>
+##  Finds all the walks in the plane of lenght <M> n </M>.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSWalks" );
