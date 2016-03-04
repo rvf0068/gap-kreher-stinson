@@ -233,17 +233,18 @@ InstallGlobalFunction( KSWalks, function( n )
                          C:=[];
                          steps:=[-1,1,-2,2];
                          walk:=[];
-                         walkaux:=function( l )
+                         walksaux := function( l )
                              if l=n+1 then 
-                                 Print("Walk" C[l], "n");
+                                 Print("Walk", C[l], "n");
                                  C[l]:=[];
                              else
                                  for x in steps do
-                                     if x + C[l-1]=0 or x + Sum(List([1..l-1], i ->C[i]))=0 do
-                                            Print("Pruning!" "\n");
-                                        else
+                                     if x + C[l-1]=0 or x + Sum(List([1..l-1], i -> C[i]))=0 then
+                                            Print("Pruning! \n");
+                                     else
                                             Append(C[l],[x]);
                                      fi;
+                                 od;
                              fi;
                              for x in C[l] do
                                  walksaux(l+1);
