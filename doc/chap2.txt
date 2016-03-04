@@ -44,9 +44,42 @@
   that is an exact cover of [22X{1,..,[3Xnumber[103X}[122X, if it exists.[133X
   
   
-  [1X2.4 [33X[0;0YExercises[133X[101X
+  [1X2.4 [33X[0;0YBounding functions[133X[101X
   
-  [1X2.4-1 KSQueens[101X
+  [1X2.4-1 KSSortForRationalKnapsack[101X
+  
+  [29X[2XKSSortForRationalKnapsack[102X( [3Xprofits[103X, [3Xweights[103X ) [32X function
+  
+  [33X[0;0YGiven two vectors [3Xprofits[103X, [3Xweights[103X of the same length, this function returns
+  a  vector  of  the  two vectors, sorted in non-decreasing order of values of
+  [22X[3Xprofits[i][103X/[3Xweights[i][103X[122X.[133X
+  
+  [1X2.4-2 KSRationalKnapsackSorted[101X
+  
+  [29X[2XKSRationalKnapsackSorted[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  
+  [33X[0;0YSolves  the  rational  Knapsack  problem  with parameters given. The vectors
+  [3Xprofits[103X, [3Xweights[103X must already be sorted.[133X
+  
+  [1X2.4-3 KSKnapsack3[101X
+  
+  [29X[2XKSKnapsack3[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  
+  [33X[0;0YSolves  the  Knapsack  problem  with  parameters  given,  using the function
+  KSRationalKnapsackSorted as bounding function.[133X
+  
+  [1X2.4-4 KSRandomKnapsackInstance[101X
+  
+  [29X[2XKSRandomKnapsackInstance[102X( [3Xsize[103X, [3Xmaximum_weight[103X ) [32X function
+  
+  [33X[0;0YReturns  a  random  instance  of  a  Knapsack problem, for [3Xsize[103X objects. The
+  maximum  weight  is [3Xmaximum_weight[103X. For each [22Xi[122X, the profit [22XP[i][122X is [22X2*W[i]*ϵ[122X,
+  where [22Xϵ[122X is a random number between [22X0.9[122X and [22X1.1[122X.[133X
+  
+  
+  [1X2.5 [33X[0;0YExercises[133X[101X
+  
+  [1X2.5-1 KSQueens[101X
   
   [29X[2XKSQueens[102X( [3Xsize[103X ) [32X function
   

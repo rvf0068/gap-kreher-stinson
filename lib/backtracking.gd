@@ -108,3 +108,64 @@ DeclareGlobalFunction( "KSExactCover" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSWalks" );
+
+#F  KSSortForRationalKnapsack( P, W ) 
+##
+##  <#GAPDoc Label="KSSortForRationalKnapsack">
+##  <ManSection>
+##  <Func Name="KSSortForRationalKnapsack" Arg="profits, weights"/>
+##
+##  <Description>
+##  Given two vectors <A>profits</A>, <A>weights</A> of the same
+##  length, this function returns a vector of the two vectors, sorted
+##  in non-decreasing order of values of
+##  <M><A>profits[i]</A>/<A>weights[i]</A></M>. 
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSSortForRationalKnapsack" );
+
+#F  KSRationalKnapsackSorted( P, W, M ) 
+##
+##  <#GAPDoc Label="KSRationalKnapsackSorted">
+##  <ManSection>
+##  <Func Name="KSRationalKnapsackSorted" Arg="profits, weights, capacity"/>
+##
+##  <Description>
+##  Solves the rational Knapsack problem with parameters given. The
+##  vectors <A>profits</A>, <A>weights</A> must already be sorted.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSRationalKnapsackSorted" );
+
+#F  KSKnapsack3( P, W, M ) 
+##
+##  <#GAPDoc Label="KSKnapsack3">
+##  <ManSection>
+##  <Func Name="KSKnapsack3" Arg="profits, weights, capacity"/>
+##
+##  <Description>
+##  Solves the Knapsack problem with parameters given, using the
+##  function KSRationalKnapsackSorted as bounding function.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSKnapsack3" );
+
+#F  KSRandomKnapsackInstance( n, Wmax ) 
+##
+##  <#GAPDoc Label="KSRandomKnapsackInstance">
+##  <ManSection>
+##  <Func Name="KSRandomKnapsackInstance" Arg="size, maximum_weight"/>
+##
+##  <Description>
+##  Returns a random instance of a Knapsack problem, for <A>size</A>
+##  objects. The maximum weight is <A>maximum_weight</A>. For each
+##  <M>i</M>, the profit <M>P[i]</M> is <M>2*W[i]*\epsilon</M>, where
+##  <M>\epsilon</M> is a random number between <M>0.9</M> and <M>1.1</M>.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSRandomKnapsackInstance" );
+

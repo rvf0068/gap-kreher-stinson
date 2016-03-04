@@ -53,8 +53,13 @@
       2.2-1 KSAllCliques
     2.3 [33X[0;0YExact cover[133X
       2.3-1 KSExactCover
-    2.4 [33X[0;0YExercises[133X
-      2.4-1 KSQueens
+    2.4 [33X[0;0YBounding functions[133X
+      2.4-1 KSSortForRationalKnapsack
+      2.4-2 KSRationalKnapsackSorted
+      2.4-3 KSKnapsack3
+      2.4-4 KSRandomKnapsackInstance
+    2.5 [33X[0;0YExercises[133X
+      2.5-1 KSQueens
   
   
   [32X
