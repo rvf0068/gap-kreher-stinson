@@ -3,9 +3,9 @@
 path := Directory("./doc");;
 main := "main.xml";;
 files := [
-           "../lib/generating.gd", 
-           "../lib/generating.gi", 
-           "../lib/backtracking.gd", 
+           "../lib/generating.gd",
+           "../lib/generating.gi",
+           "../lib/backtracking.gd",
            "../lib/backtracking.gi",
            "../PackageInfo.g"];;
 bookname := "kreher-stinson";;
