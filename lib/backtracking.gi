@@ -229,31 +229,44 @@ end);
 #F  KSWalks( n ) 
 ##
 InstallGlobalFunction( KSWalks, function( n )
-                         local walksaux, C, steps, walk, x;
-                         C:=[];
-                         steps:=[-1,1,-2,2];
-                         walk:=[];
-                         walksaux := function( l )
-                             if l=n+1 then 
-                                 Print("Walk", C[l], "n");
-                                 C[l]:=[];
+                         local walksaux, C, steps, walk, x, s, l, r, u, d, p, i, j, k, suma,valores;
+                         l:=[-1,0];
+                         r:=[1,0];
+                         u:=[0,1];
+                         d:=[0,-1];        
+                         steps:=[l,r,u,d];
+                         C:=[[]];                                                 
+                         walk:=[0,0];
+                         suma:=[0,0]; 
+                         valores:=[];                         
+                         walksaux:=function( s )
+                             if s=n+1 then
+                                 Print("Walk", walk, "\n");
+                                 C[s]:=[];
                              else
-                                 for x in steps do
-                                     if x + C[l-1]=0 or x + Sum(List([1..l-1], i -> C[i]))=0 then
-                                            Print("Pruning! \n");
-                                     else
-                                            Append(C[l],[x]);
+                                 suma:=[0,0];
+                                 Print("Entró el for", s, "\n");            
+                                 for i in [1..s] do
+                                     for p in [1..4] do                                  
+                                     if Sum(List([1..i], k -> C[k])) + steps[p]=[0,0] then
+                                         Print("Pruning", p, "\n"); break;                                         
+                                         else
+                                             Add(valores,p); Print("valores posibles", valores, "\n");
+                                             
                                      fi;
+                                     suma:=[0,0];
+                                     od;              
                                  od;
                              fi;
-                             for x in C[l] do
-                                 walksaux(l+1);
+                             for x in C[s] do
+                                 walk[s]:=x;                                 
+                                 walksaux(s+1);
                              od;
                          end;
-                         if IsPosInt(n) then
-                             walksaux(1);
+                         if IsPosInt(n) then 
+                             walksaux(1); Print("Empieza \n");                             
                          else
-                             Print("Requires a natural number! \n");
+                             Print("Needs a positive integer number \n");
                          fi;
                          return;
                      end );
