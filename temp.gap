@@ -11,6 +11,3 @@ KSRandomKnapsackInstance := function(n,Wmax)
     return [P, W, M];
 end;
 
-
-                 
-                                           
