@@ -351,9 +351,10 @@ InstallGlobalFunction( KSRandomKnapsackInstance, function( n, Wmax )
     local P, W, M, i, epsilon;
     P := [];
     W := [];
-    epsilon := 0.9 + (0.2/100)*(Random(GlobalMersenneTwister,[1..100]) - 1);
+    epsilon := 0.9 + (0.2/1000000)*Random(0,1000000);
+    # epsilon is a random real number between 0.9 and 1.1
     for i in [1..n] do
-        W[i] := Random(GlobalMersenneTwister, [1..Wmax]);
+        W[i] := Random(1,Wmax);
         P[i] := Int(2*epsilon*W[i]);
     od;
     M := Int(Sum(W) / 2);
