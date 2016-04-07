@@ -47,6 +47,10 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F7AF9917C7513E0">2.4-4 KSRandomKnapsackInstance</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X824023CC7A1DAEEE">2.4-5 KSRandomTSPInstance</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8208350A7F23DC4F">2.4-6 KSTSP1</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X845476007D8005D4">2.4-7 KSMinCostBound</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8683492082A8C4B4">2.4-8 KSReduce</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C74326D7CA8BA24">2.4-9 KSReduceBound</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7B98A011874A9B65">2.4-10 KSTSP2</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X823A8E467E2D876D">2.5 <span class="Heading">Exercises</span></a>
 </span>
@@ -149,6 +153,34 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSTSP1</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Solves the TSP problem, for the instance <var class="Arg">G</var>, traversing the whole tree space.</p>
+
+<p><a id="X845476007D8005D4" name="X845476007D8005D4"></a></p>
+
+<h5>2.4-7 KSMinCostBound</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSMinCostBound</code>( <var class="Arg">V</var>, <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>A bounding function for the TSP problem.</p>
+
+<p><a id="X8683492082A8C4B4" name="X8683492082A8C4B4"></a></p>
+
+<h5>2.4-8 KSReduce</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSReduce</code>( <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Reduce function for matrices, which will be useful to implement a secound bounding function for the TSP problem.</p>
+
+<p><a id="X7C74326D7CA8BA24" name="X7C74326D7CA8BA24"></a></p>
+
+<h5>2.4-9 KSReduceBound</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSReduceBound</code>( <var class="Arg">V</var>, <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>A second bounding function for the TSP problem. <var class="Arg">V</var> is a partial solution, and <var class="Arg">M</var> is the problem instance. This implements Algorithm 4.12.</p>
+
+<p><a id="X7B98A011874A9B65" name="X7B98A011874A9B65"></a></p>
+
+<h5>2.4-10 KSTSP2</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSTSP2</code>( <var class="Arg">G</var>, <var class="Arg">F</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Solves the TSP problem for instance <var class="Arg">G</var>, using the bounding function <var class="Arg">F</var>.</p>
 
 <p><a id="X823A8E467E2D876D" name="X823A8E467E2D876D"></a></p>
 

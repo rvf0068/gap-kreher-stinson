@@ -18,6 +18,10 @@
 \contentsline {subsection}{\numberline {2.4.4}\leavevmode {\color {Chapter }KSRandomKnapsackInstance}}{6}{subsection.2.4.4}
 \contentsline {subsection}{\numberline {2.4.5}\leavevmode {\color {Chapter }KSRandomTSPInstance}}{6}{subsection.2.4.5}
 \contentsline {subsection}{\numberline {2.4.6}\leavevmode {\color {Chapter }KSTSP1}}{7}{subsection.2.4.6}
+\contentsline {subsection}{\numberline {2.4.7}\leavevmode {\color {Chapter }KSMinCostBound}}{7}{subsection.2.4.7}
+\contentsline {subsection}{\numberline {2.4.8}\leavevmode {\color {Chapter }KSReduce}}{7}{subsection.2.4.8}
+\contentsline {subsection}{\numberline {2.4.9}\leavevmode {\color {Chapter }KSReduceBound}}{7}{subsection.2.4.9}
+\contentsline {subsection}{\numberline {2.4.10}\leavevmode {\color {Chapter }KSTSP2}}{7}{subsection.2.4.10}
 \contentsline {section}{\numberline {2.5}\leavevmode {\color {Chapter }Exercises}}{7}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}\leavevmode {\color {Chapter }KSQueens}}{7}{subsection.2.5.1}
 \contentsline {chapter}{Index}{8}{section*.3}

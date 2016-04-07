@@ -204,4 +204,72 @@ DeclareGlobalFunction( "KSRandomTSPInstance" );
 ##
 ##  </ManSection>
 ##  <#/GAPDoc>
-DeclareGlobalFunction( "KSTSP" );
+DeclareGlobalFunction( "KSTSP1" );
+
+#F  KSMinCostBound( V, G ) 
+##
+##  <#GAPDoc Label="KSMinCostBound">
+##  <ManSection>
+##  <Func Name="KSMinCostBound" Arg="V, G"/>
+##
+##  <Description>
+##
+##  A bounding function for the TSP problem.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSMinCostBound" );
+
+#F  KSReduce( M ) 
+##
+##  <#GAPDoc Label="KSReduce">
+##  <ManSection>
+##  <Func Name="KSReduce" Arg="M"/>
+##
+##  <Description>
+##
+##  Reduce function for matrices, which will be useful to implement a
+##  secound bounding function for the TSP problem.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSReduce" );
+
+#F  KSReduceBound( V, M ) 
+##
+##  <#GAPDoc Label="KSReduceBound">
+##  <ManSection>
+##  <Func Name="KSReduceBound" Arg="V, M"/>
+##
+##  <Description>
+##
+##  A second bounding function for the TSP problem. <A>V</A> is a
+##  partial solution, and <A>M</A> is the problem instance. This
+##  implements Algorithm 4.12.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSReduceBound" );
+
+#F  KSTSP2( G, F ) 
+##
+##  <#GAPDoc Label="KSTSP2">
+##  <ManSection>
+##  <Func Name="KSTSP2" Arg="G, F"/>
+##
+##  <Description>
+##
+##  Solves the TSP problem for instance <A>G</A>, using the bounding
+##  function <A>F</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSTSP2" );

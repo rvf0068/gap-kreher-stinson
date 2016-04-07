@@ -333,6 +333,55 @@ KSRationalKnapsackSorted as bounding function. }
 
  Solves the TSP problem, for the instance \mbox{\texttt{\mdseries\slshape G}}, traversing the whole tree space. }
 
+ 
+
+\subsection{\textcolor{Chapter }{KSMinCostBound}}
+\logpage{[ 2, 4, 7 ]}\nobreak
+\hyperdef{L}{X845476007D8005D4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMinCostBound({\mdseries\slshape V, G})\index{KSMinCostBound@\texttt{KSMinCostBound}}
+\label{KSMinCostBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A bounding function for the TSP problem. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSReduce}}
+\logpage{[ 2, 4, 8 ]}\nobreak
+\hyperdef{L}{X8683492082A8C4B4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSReduce({\mdseries\slshape M})\index{KSReduce@\texttt{KSReduce}}
+\label{KSReduce}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Reduce function for matrices, which will be useful to implement a secound
+bounding function for the TSP problem. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSReduceBound}}
+\logpage{[ 2, 4, 9 ]}\nobreak
+\hyperdef{L}{X7C74326D7CA8BA24}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSReduceBound({\mdseries\slshape V, M})\index{KSReduceBound@\texttt{KSReduceBound}}
+\label{KSReduceBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A second bounding function for the TSP problem. \mbox{\texttt{\mdseries\slshape V}} is a partial solution, and \mbox{\texttt{\mdseries\slshape M}} is the problem instance. This implements Algorithm 4.12. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSTSP2}}
+\logpage{[ 2, 4, 10 ]}\nobreak
+\hyperdef{L}{X7B98A011874A9B65}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSTSP2({\mdseries\slshape G, F})\index{KSTSP2@\texttt{KSTSP2}}
+\label{KSTSP2}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Solves the TSP problem for instance \mbox{\texttt{\mdseries\slshape G}}, using the bounding function \mbox{\texttt{\mdseries\slshape F}}. }
+
  }
 
  

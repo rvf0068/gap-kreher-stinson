@@ -380,7 +380,7 @@ InstallGlobalFunction( KSRandomTSPInstance, function( n, Wmax )
     return G;
 end);
 
-#F  TSP1( G ) 
+#F  KSTSP1( G ) 
 ##
 InstallGlobalFunction( KSTSP1, function( G )
     local C, XX, tsp, n, thecost, optcost, optX;
@@ -422,4 +422,142 @@ InstallGlobalFunction( KSTSP1, function( G )
     end;
     tsp(0);
     return;
+end);
+
+#F  KSMinCostBound( V, G ) 
+##
+InstallGlobalFunction( KSMinCostBound, function( V, G )
+    local c, i, len, Y, y, Yp, n;
+    n := Length(G);
+    len := Length(V);
+    c := 0;
+    for i in [1..len-1] do
+        c := c + G[V[i]][V[i+1]];
+    od;
+    if len = n then
+        c := c + G[V[len]][1];
+    else
+        Y := Difference([1..n], V);
+        c := c + Minimum(List(Y, x -> G[V[len]][x]));
+        Yp := Concatenation(Y, [V[1]]);
+        for y in Y do
+            c := c + Minimum(List(Yp, x -> G[y][x]));
+        od;
+    fi;
+    return c;
+end);
+
+#F  KSReduce( M ) 
+##
+InstallGlobalFunction( KSReduce, function( M )
+    local val, i, j, n, min, Mc;
+    val := 0;
+    n := Length(M);
+    Mc := StructuralCopy(M);
+    for i in [1..n] do
+        min := Mc[i][1];
+        for j in [2..n] do
+            if Mc[i][j] < min then
+                min := Mc[i][j];
+            fi;
+        od;
+        for j in [1..n] do
+            Mc[i][j] := Mc[i][j] - min;
+        od;
+        val := val + min;
+    od;
+    for j in [1..n] do
+        min := Mc[1][j];
+        for i in [2..n] do
+            if Mc[i][j] < min then
+                min := Mc[i][j];
+            fi;
+        od;
+        for i in [1..n] do
+            Mc[i][j] := Mc[i][j] - min;
+        od;
+        val := val + min;
+    od;
+    return val;
+end);
+
+#F  KSReduceBound( V, M ) 
+##
+InstallGlobalFunction( KSReduceBound, function( V, M )
+    local m, n, Mp, i, j, y, x, ans;
+    m := Length(V);
+    n := Length(M);
+    if m = n then 
+        return KSMinCostBound(V, M);
+    fi;
+    Mp := [];
+    for j in [1..n-m+1] do
+        Mp[j] := [];
+    od;
+    Mp[1] := [];
+    Mp[1][1] := infinity;
+    j := 2;
+    for y in Difference([1..n], V) do
+        Mp[1][j] := M[V[m]][y];
+        j := j + 1;
+    od;
+    i := 2;
+    for x in Difference([1..n], V) do
+        Mp[i][1] := M[x][V[1]];
+        i := i + 1;
+    od;
+    i := 2;
+    for x in Difference([1..n], V) do
+        j := 2;
+        for y in Difference([1..n], V) do
+            Mp[i][j] := M[x][y];
+            j := j + 1;
+        od;
+        i := i + 1;
+    od;
+    #Print(Mp);
+    ans := KSReduce(Mp);
+    for i in [1..m-1] do
+        ans := ans + M[V[i]][V[i+1]];
+    od;
+    return ans;
+end);
+
+#F  KSTSP2( G, F ) 
+##
+InstallGlobalFunction( KSTSP2, function( G, F )
+    local C, XX, tsp, n, thecost, optcost, optX, B;
+    C := [];
+    XX := [1];
+    optcost := infinity;
+    n := Length(G);
+    tsp := function(l)
+        local x;
+        if l = n then
+            thecost := KSMinCostBound(XX, G);
+            if thecost < optcost then
+                optcost := thecost;
+                optX := ShallowCopy(XX);
+                Print("Found better route ", optX, " with cost ", optcost, "\n");
+            fi;
+        fi;
+        if l = 1 then
+            C[l+1] := [2..n];
+        else
+            C[l+1] := Difference(C[l], [XX[l]]);
+        fi;
+        XX := XX{[1..l]};
+        B := F(XX, G);
+        if  B >= optcost then
+            Print("XX=",XX,", B=",B,", Opt=",optcost,", Bounding used!\n");
+            return;
+        else
+            for x in C[l+1] do
+                XX[l+1] := x;
+                tsp(l+1);
+            od;
+        fi;
+    end;
+    tsp(1);
+    return [optX, optcost];
 end);

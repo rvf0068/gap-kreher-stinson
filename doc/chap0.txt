@@ -60,6 +60,10 @@
       2.4-4 KSRandomKnapsackInstance
       2.4-5 KSRandomTSPInstance
       2.4-6 KSTSP1
+      2.4-7 KSMinCostBound
+      2.4-8 KSReduce
+      2.4-9 KSReduceBound
+      2.4-10 KSTSP2
     2.5 [33X[0;0YExercises[133X
       2.5-1 KSQueens
   

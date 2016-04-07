@@ -11,4 +11,8 @@
 \indexentry{KSRandomKnapsackInstance@\texttt  {KSRandomKnapsackInstance}|hyperpage}{6}
 \indexentry{KSRandomTSPInstance@\texttt  {KSRandomTSPInstance}|hyperpage}{6}
 \indexentry{KSTSP1@\texttt  {KSTSP1}|hyperpage}{7}
+\indexentry{KSMinCostBound@\texttt  {KSMinCostBound}|hyperpage}{7}
+\indexentry{KSReduce@\texttt  {KSReduce}|hyperpage}{7}
+\indexentry{KSReduceBound@\texttt  {KSReduceBound}|hyperpage}{7}
+\indexentry{KSTSP2@\texttt  {KSTSP2}|hyperpage}{7}
 \indexentry{KSQueens@\texttt  {KSQueens}|hyperpage}{7}

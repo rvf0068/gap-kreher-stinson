@@ -46,6 +46,14 @@
 
     <#Include Label="KSTSP1">
 
+    <#Include Label="KSMinCostBound">
+
+    <#Include Label="KSReduce">
+
+    <#Include Label="KSReduceBound">
+
+    <#Include Label="KSTSP2">
+
   </Section>
   
   <Section Label="exercises-backtracking">

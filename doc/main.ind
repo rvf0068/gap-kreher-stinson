@@ -6,13 +6,17 @@
   \item \texttt  {KSKnapsack1}, \hyperpage{5}
   \item \texttt  {KSKnapsack2}, \hyperpage{5}
   \item \texttt  {KSKnapsack3}, \hyperpage{6}
+  \item \texttt  {KSMinCostBound}, \hyperpage{7}
   \item \texttt  {KSQueens}, \hyperpage{7}
   \item \texttt  {KSRandomKnapsackInstance}, \hyperpage{6}
   \item \texttt  {KSRandomTSPInstance}, \hyperpage{6}
   \item \texttt  {KSRationalKnapsackSorted}, \hyperpage{6}
+  \item \texttt  {KSReduce}, \hyperpage{7}
+  \item \texttt  {KSReduceBound}, \hyperpage{7}
   \item \texttt  {KSSortForRationalKnapsack}, \hyperpage{6}
   \item \texttt  {KSSubsetLexRank}, \hyperpage{4}
   \item \texttt  {KSSubsetLexUnrank}, \hyperpage{4}
   \item \texttt  {KSTSP1}, \hyperpage{7}
+  \item \texttt  {KSTSP2}, \hyperpage{7}
 
 \end{theindex}

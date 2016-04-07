@@ -8,14 +8,18 @@
   [2XKSKnapsack1[102X  2.1-2
   [2XKSKnapsack2[102X  2.1-3
   [2XKSKnapsack3[102X  2.4-3
+  [2XKSMinCostBound[102X  2.4-7
   [2XKSQueens[102X  2.5-1
   [2XKSRandomKnapsackInstance[102X  2.4-4
   [2XKSRandomTSPInstance[102X  2.4-5
   [2XKSRationalKnapsackSorted[102X  2.4-2
+  [2XKSReduce[102X  2.4-8
+  [2XKSReduceBound[102X  2.4-9
   [2XKSSortForRationalKnapsack[102X  2.4-1
   [2XKSSubsetLexRank[102X  1.1-1
   [2XKSSubsetLexUnrank[102X  1.1-2
   [2XKSTSP1[102X  2.4-6
+  [2XKSTSP2[102X  2.4-10
   
   
   -------------------------------------------------------

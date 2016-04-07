@@ -91,6 +91,32 @@
   
   [33X[0;0YSolves the TSP problem, for the instance [3XG[103X, traversing the whole tree space.[133X
   
+  [1X2.4-7 KSMinCostBound[101X
+  
+  [29X[2XKSMinCostBound[102X( [3XV[103X, [3XG[103X ) [32X function
+  
+  [33X[0;0YA bounding function for the TSP problem.[133X
+  
+  [1X2.4-8 KSReduce[101X
+  
+  [29X[2XKSReduce[102X( [3XM[103X ) [32X function
+  
+  [33X[0;0YReduce  function  for  matrices, which will be useful to implement a secound
+  bounding function for the TSP problem.[133X
+  
+  [1X2.4-9 KSReduceBound[101X
+  
+  [29X[2XKSReduceBound[102X( [3XV[103X, [3XM[103X ) [32X function
+  
+  [33X[0;0YA second bounding function for the TSP problem. [3XV[103X is a partial solution, and
+  [3XM[103X is the problem instance. This implements Algorithm 4.12.[133X
+  
+  [1X2.4-10 KSTSP2[101X
+  
+  [29X[2XKSTSP2[102X( [3XG[103X, [3XF[103X ) [32X function
+  
+  [33X[0;0YSolves the TSP problem for instance [3XG[103X, using the bounding function [3XF[103X.[133X
+  
   
   [1X2.5 [33X[0;0YExercises[133X[101X
   
