@@ -34,6 +34,7 @@
 \contentsline {subsection}{\numberline {2.4.18}\leavevmode {\color {Chapter }KSInducedSubgraph}}{8}{subsection.2.4.18}
 \contentsline {subsection}{\numberline {2.4.19}\leavevmode {\color {Chapter }KSGreedyBound}}{8}{subsection.2.4.19}
 \contentsline {subsection}{\numberline {2.4.20}\leavevmode {\color {Chapter }KSGenerateRandomGraph2}}{9}{subsection.2.4.20}
+\contentsline {subsection}{\numberline {2.4.21}\leavevmode {\color {Chapter }KSTSP3}}{9}{subsection.2.4.21}
 \contentsline {section}{\numberline {2.5}\leavevmode {\color {Chapter }Exercises}}{9}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}\leavevmode {\color {Chapter }KSQueens}}{9}{subsection.2.5.1}
 \contentsline {chapter}{Index}{10}{section*.3}

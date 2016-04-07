@@ -189,6 +189,13 @@
   [33X[0;0YReturns  the list of edges of a random graph on [3Xn[103X vertices with edge density
   [3Xdelta[103X.[133X
   
+  [1X2.4-21 KSTSP3[101X
+  
+  [29X[2XKSTSP3[102X( [3XG[103X, [3XF[103X ) [32X function
+  
+  [33X[0;0YSolves  the  TSP problem for instance [3XG[103X, using bounding function [3XF[103X, applying
+  the branch and bound technique.[133X
+  
   
   [1X2.5 [33X[0;0YExercises[133X[101X
   

@@ -76,6 +76,7 @@
       2.4-18 KSInducedSubgraph
       2.4-19 KSGreedyBound
       2.4-20 KSGenerateRandomGraph2
+      2.4-21 KSTSP3
     2.5 [33X[0;0YExercises[133X
       2.5-1 KSQueens
   

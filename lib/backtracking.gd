@@ -450,3 +450,19 @@ DeclareGlobalFunction( "KSGreedyBound" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSGenerateRandomGraph2" );
 
+#F  KSTSP3( G, F ) 
+##
+##  <#GAPDoc Label="KSTSP3">
+##  <ManSection>
+##  <Func Name="KSTSP3" Arg="G, F"/>
+##
+##  <Description>
+##
+##  Solves the TSP problem for instance <A>G</A>, using bounding
+##  function <A>F</A>, applying the branch and bound technique.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSTSP3" );

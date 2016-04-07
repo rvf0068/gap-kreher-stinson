@@ -74,6 +74,8 @@
 
     <#Include Label="KSGenerateRandomGraph2">
 
+    <#Include Label="KSTSP3">
+
   </Section>
   
   <Section Label="exercises-backtracking">

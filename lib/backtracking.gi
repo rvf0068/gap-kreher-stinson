@@ -549,7 +549,7 @@ InstallGlobalFunction( KSTSP2, function( G, F )
         XX := XX{[1..l]};
         B := F(XX, G);
         if  B >= optcost then
-            Print("XX=",XX,", B=",B,", Opt=",optcost,", Bounding used!\n");
+            #Print("XX=",XX,", B=",B,", Opt=",optcost,", Bounding used!\n");
             return;
         else
             for x in C[l+1] do
@@ -743,4 +743,53 @@ InstallGlobalFunction( KSGenerateRandomGraph2, function( n, delta )
         od;
     od;
     return edges;
+end);
+
+#F  KSTSP3( G, F ) 
+##
+InstallGlobalFunction( KSTSP3, function( G, F )
+    local C, XX, tsp, n, thecost, optcost, optX, B, count, nextchoice, nextbound, i;
+    C := [];
+    XX := [1];
+    optcost := infinity;
+    n := Length(G);
+    nextchoice := [];
+    nextbound := [];
+    tsp := function(l)
+        local x;
+        if l = n then
+            thecost := KSMinCostBound(XX, G);
+            if thecost < optcost then
+                optcost := thecost;
+                optX := ShallowCopy(XX);
+                Print("Found better route ", optX, " with cost ", optcost, "\n");
+            fi;
+        fi;
+        if l = 1 then
+            C[l+1] := [2..n];
+        else
+            C[l+1] := Difference(C[l], [XX[l]]);
+        fi;
+        XX := XX{[1..l]};
+        count := 1;
+        nextchoice[l] := [];
+        nextbound[l] := [];
+        for x in C[l+1] do
+            XX[l+1] := x;
+            nextchoice[l][count] := x;
+            nextbound[l][count] := F(XX, G);
+            count := count + 1;
+        od;
+        SortParallel(nextbound[l], nextchoice[l]);
+        for i in [1..count-1] do
+            if nextbound[l][i] >= optcost then
+                return;
+            else
+                XX[l+1] := nextchoice[l][i];
+                tsp(l+1);
+            fi;
+        od;
+    end;
+    tsp(1);
+    return [optX, optcost];
 end);
