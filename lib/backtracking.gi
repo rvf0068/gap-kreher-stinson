@@ -66,7 +66,7 @@ end );
 #F  KSKnapsack2( P, W, M ) 
 ##
 InstallGlobalFunction( KSKnapsack2, function(P, W, M)
-    local knapaux, n, x, XX, OptP, OptX, C;
+    local knapaux, n, x, XX, OptP, OptX, CurP, C;
     XX := [];
     C := [];
     OptP := 0;
@@ -74,10 +74,11 @@ InstallGlobalFunction( KSKnapsack2, function(P, W, M)
     n := Length(P);
     knapaux := function(l,CurW)
         if l = n+1 then
+            CurP := Sum(List([1..n], i -> P[i]*XX[i]));
             Print("Checking ",XX,"\n");
-            if Sum(List([1..n], i -> P[i]*XX[i])) > OptP then
+            if CurP > OptP then
                 Print("Improved profit!\n");
-                OptP := Sum(List([1..n], i -> P[i]*XX[i]));
+                OptP := CurP;
                 OptX := ShallowCopy(XX);
             fi;
             C[l] := [];
