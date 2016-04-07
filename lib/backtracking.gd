@@ -189,11 +189,11 @@ DeclareGlobalFunction( "KSRandomKnapsackInstance" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSRandomTSPInstance" );
 
-#F  KSTSP( G ) 
+#F  KSTSP1( G ) 
 ##
-##  <#GAPDoc Label="KSTSP">
+##  <#GAPDoc Label="KSTSP1">
 ##  <ManSection>
-##  <Func Name="KSTSP" Arg="G"/>
+##  <Func Name="KSTSP1" Arg="G"/>
 ##
 ##  <Description>
 ##

@@ -85,9 +85,9 @@
   The  entries  in  the  diagonal  are  made equal to [22X∞[122X. Each cost is a random
   integer between 1 and [3XWmax[103X.[133X
   
-  [1X2.4-6 KSTSP[101X
+  [1X2.4-6 KSTSP1[101X
   
-  [29X[2XKSTSP[102X( [3XG[103X ) [32X function
+  [29X[2XKSTSP1[102X( [3XG[103X ) [32X function
   
   [33X[0;0YSolves the TSP problem, for the instance [3XG[103X, traversing the whole tree space.[133X
   

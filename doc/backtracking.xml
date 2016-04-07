@@ -44,7 +44,7 @@
 
     <#Include Label="KSRandomTSPInstance">
 
-    <#Include Label="KSTSP">
+    <#Include Label="KSTSP1">
 
   </Section>
   

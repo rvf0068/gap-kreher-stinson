@@ -51,8 +51,8 @@ X", "1", [ 1, 0, 0 ], 1, 4, "generating combinatorial objects",
       "ksrandomknapsackinstance", "X7F7AF9917C7513E0" ], 
   [ "\033[2XKSRandomTSPInstance\033[102X", "2.4-5", [ 2, 4, 5 ], 79, 6, 
       "ksrandomtspinstance", "X824023CC7A1DAEEE" ], 
-  [ "\033[2XKSTSP\033[102X", "2.4-6", [ 2, 4, 6 ], 88, 7, "kstsp", 
-      "X7ECD5144871807B3" ], 
+  [ "\033[2XKSTSP1\033[102X", "2.4-6", [ 2, 4, 6 ], 88, 7, "kstsp1", 
+      "X8208350A7F23DC4F" ], 
   [ "\033[2XKSQueens\033[102X", "2.5-1", [ 2, 5, 1 ], 97, 7, "ksqueens", 
       "X86BA078279D66D0C" ] ]
 );

@@ -380,9 +380,9 @@ InstallGlobalFunction( KSRandomTSPInstance, function( n, Wmax )
     return G;
 end);
 
-#F  TSP( G ) 
+#F  TSP1( G ) 
 ##
-InstallGlobalFunction( KSTSP, function( G )
+InstallGlobalFunction( KSTSP1, function( G )
     local C, XX, tsp, n, thecost, optcost, optX;
     C := [];
     XX := [];

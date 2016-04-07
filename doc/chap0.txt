@@ -59,7 +59,7 @@
       2.4-3 KSKnapsack3
       2.4-4 KSRandomKnapsackInstance
       2.4-5 KSRandomTSPInstance
-      2.4-6 KSTSP
+      2.4-6 KSTSP1
     2.5 [33X[0;0YExercises[133X
       2.5-1 KSQueens
   
