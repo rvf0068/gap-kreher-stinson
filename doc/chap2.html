@@ -51,6 +51,16 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8683492082A8C4B4">2.4-8 KSReduce</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C74326D7CA8BA24">2.4-9 KSReduceBound</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7B98A011874A9B65">2.4-10 KSTSP2</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7E670BAD7D143608">2.4-11 KSMaxClique1</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X87F79EB67A6DDB27">2.4-12 KSMaxClique2</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7A6A4127818EDC0E">2.4-13 KSSizeBound</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X78E238A984F3911E">2.4-14 KSGenerateRandomGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C0E333A7B200D4C">2.4-15 KSEdgeListToAdjacencyList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C4BB3897802A465">2.4-16 KSGreedyColor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X83A5C32080EA9396">2.4-17 KSSamplingBound</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X800A04C2811D4374">2.4-18 KSInducedSubgraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X807E30DC7CDAD9D3">2.4-19 KSGreedyBound</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7A8E9FCD8238638C">2.4-20 KSGenerateRandomGraph2</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X823A8E467E2D876D">2.5 <span class="Heading">Exercises</span></a>
 </span>
@@ -181,6 +191,76 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSTSP2</code>( <var class="Arg">G</var>, <var class="Arg">F</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Solves the TSP problem for instance <var class="Arg">G</var>, using the bounding function <var class="Arg">F</var>.</p>
+
+<p><a id="X7E670BAD7D143608" name="X7E670BAD7D143608"></a></p>
+
+<h5>2.4-11 KSMaxClique1</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSMaxClique1</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Adapts the function that lists the complete subgraphs of <var class="Arg">G</var>, to find the size of the largest clique of <var class="Arg">G</var>. This implements Algorithm 4.14.</p>
+
+<p><a id="X87F79EB67A6DDB27" name="X87F79EB67A6DDB27"></a></p>
+
+<h5>2.4-12 KSMaxClique2</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSMaxClique2</code>( <var class="Arg">G</var>, <var class="Arg">F</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Finds the size of the maximum clique in the graph <var class="Arg">G</var>, using the bounding function <var class="Arg">F</var>. This implements Algorithm 4.19.</p>
+
+<p><a id="X7A6A4127818EDC0E" name="X7A6A4127818EDC0E"></a></p>
+
+<h5>2.4-13 KSSizeBound</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSizeBound</code>( <var class="Arg">XX</var>, <var class="Arg">G</var>, <var class="Arg">Cl</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>A bounding function for the MaxClique problem. <var class="Arg">XX</var> is a complete subgraph of <var class="Arg">G</var>, and <var class="Arg">Cl</var> is the set of candidates to extend <var class="Arg">XX</var>.</p>
+
+<p><a id="X78E238A984F3911E" name="X78E238A984F3911E"></a></p>
+
+<h5>2.4-14 KSGenerateRandomGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSGenerateRandomGraph</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns a list of edges of a random graph on <var class="Arg">n</var> vertices. This implements Algorithm 4.20.</p>
+
+<p><a id="X7C0E333A7B200D4C" name="X7C0E333A7B200D4C"></a></p>
+
+<h5>2.4-15 KSEdgeListToAdjacencyList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSEdgeListToAdjacencyList</code>( <var class="Arg">Ged</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given the list of edges <var class="Arg">Ged</var> of a graph with <var class="Arg">n</var> vertices, returns the adjacency list of such graph.</p>
+
+<p><a id="X7C4BB3897802A465" name="X7C4BB3897802A465"></a></p>
+
+<h5>2.4-16 KSGreedyColor</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSGreedyColor</code>( <var class="Arg">G</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Colors the vertices of a graph <var class="Arg">G</var> using a greedy strategy. This implements Algorithm 4.16.</p>
+
+<p><a id="X83A5C32080EA9396" name="X83A5C32080EA9396"></a></p>
+
+<h5>2.4-17 KSSamplingBound</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSamplingBound</code>( <var class="Arg">XX</var>, <var class="Arg">G</var>, <var class="Arg">Cl</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>A bounding function for the MaxClique problem. <var class="Arg">XX</var> is a complete subgraph of <var class="Arg">G</var>, and <var class="Arg">Cl</var> is the set of candidates to extend <var class="Arg">XX</var>. This function uses a fixed greedy coloring of the graph <var class="Arg">G</var>. Implements Algorithm 4.17.</p>
+
+<p><a id="X800A04C2811D4374" name="X800A04C2811D4374"></a></p>
+
+<h5>2.4-18 KSInducedSubgraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSInducedSubgraph</code>( <var class="Arg">G</var>, <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the adjacency list of the subgraph of <var class="Arg">G</var> induced by the vertices in <var class="Arg">L</var>.</p>
+
+<p><a id="X807E30DC7CDAD9D3" name="X807E30DC7CDAD9D3"></a></p>
+
+<h5>2.4-19 KSGreedyBound</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSGreedyBound</code>( <var class="Arg">XX</var>, <var class="Arg">G</var>, <var class="Arg">Cl</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>A bounding function for the MaxClique problem. <var class="Arg">XX</var> is a complete subgraph of <var class="Arg">G</var>, and <var class="Arg">Cl</var> is the set of candidates to extend <var class="Arg">XX</var>. This uses a greedy coloring of the subgraph of <var class="Arg">G</var> induced by <var class="Arg">L</var>.</p>
+
+<p><a id="X7A8E9FCD8238638C" name="X7A8E9FCD8238638C"></a></p>
+
+<h5>2.4-20 KSGenerateRandomGraph2</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSGenerateRandomGraph2</code>( <var class="Arg">n</var>, <var class="Arg">delta</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the list of edges of a random graph on <var class="Arg">n</var> vertices with edge density <var class="Arg">delta</var>.</p>
 
 <p><a id="X823A8E467E2D876D" name="X823A8E467E2D876D"></a></p>
 

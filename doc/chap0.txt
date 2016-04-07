@@ -44,6 +44,8 @@
     1.1 [33X[0;0YSubsets[133X
       1.1-1 KSSubsetLexRank
       1.1-2 KSSubsetLexUnrank
+      1.1-3 KSkSubsetLexRank
+      1.1-4 KSkSubsetLexUnrank
   2 [33X[0;0YBactracking[133X
     2.1 [33X[0;0YKnapsack[133X
       2.1-1 KSCheckKnapsackInput
@@ -64,6 +66,16 @@
       2.4-8 KSReduce
       2.4-9 KSReduceBound
       2.4-10 KSTSP2
+      2.4-11 KSMaxClique1
+      2.4-12 KSMaxClique2
+      2.4-13 KSSizeBound
+      2.4-14 KSGenerateRandomGraph
+      2.4-15 KSEdgeListToAdjacencyList
+      2.4-16 KSGreedyColor
+      2.4-17 KSSamplingBound
+      2.4-18 KSInducedSubgraph
+      2.4-19 KSGreedyBound
+      2.4-20 KSGenerateRandomGraph2
     2.5 [33X[0;0YExercises[133X
       2.5-1 KSQueens
   

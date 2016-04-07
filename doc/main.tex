@@ -164,6 +164,30 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 
  Returns the subset of $\{1..\mbox{\texttt{\mdseries\slshape number}}\}$ whose rank is \mbox{\texttt{\mdseries\slshape rank}}. (Algorithm 2.2). }
 
+ 
+
+\subsection{\textcolor{Chapter }{KSkSubsetLexRank}}
+\logpage{[ 1, 1, 3 ]}\nobreak
+\hyperdef{L}{X83526EE47D6343F1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSkSubsetLexRank({\mdseries\slshape T, k, n})\index{KSkSubsetLexRank@\texttt{KSkSubsetLexRank}}
+\label{KSkSubsetLexRank}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Finds the rank of \mbox{\texttt{\mdseries\slshape T}}, among all \mbox{\texttt{\mdseries\slshape k}}-subsets of an \mbox{\texttt{\mdseries\slshape n}}-set. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSkSubsetLexUnrank}}
+\logpage{[ 1, 1, 4 ]}\nobreak
+\hyperdef{L}{X807C3B077BCCA874}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSkSubsetLexUnrank({\mdseries\slshape r, k, n})\index{KSkSubsetLexUnrank@\texttt{KSkSubsetLexUnrank}}
+\label{KSkSubsetLexUnrank}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given an integer \mbox{\texttt{\mdseries\slshape r}} between 0 and ${n \choose k}-1$, returns the \mbox{\texttt{\mdseries\slshape k}}-subset of an \mbox{\texttt{\mdseries\slshape n}}-set with rank \mbox{\texttt{\mdseries\slshape r}}. }
+
  }
 
  }
@@ -381,6 +405,126 @@ bounding function for the TSP problem. }
 
 
  Solves the TSP problem for instance \mbox{\texttt{\mdseries\slshape G}}, using the bounding function \mbox{\texttt{\mdseries\slshape F}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSMaxClique1}}
+\logpage{[ 2, 4, 11 ]}\nobreak
+\hyperdef{L}{X7E670BAD7D143608}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMaxClique1({\mdseries\slshape G})\index{KSMaxClique1@\texttt{KSMaxClique1}}
+\label{KSMaxClique1}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Adapts the function that lists the complete subgraphs of \mbox{\texttt{\mdseries\slshape G}}, to find the size of the largest clique of \mbox{\texttt{\mdseries\slshape G}}. This implements Algorithm 4.14. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSMaxClique2}}
+\logpage{[ 2, 4, 12 ]}\nobreak
+\hyperdef{L}{X87F79EB67A6DDB27}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMaxClique2({\mdseries\slshape G, F})\index{KSMaxClique2@\texttt{KSMaxClique2}}
+\label{KSMaxClique2}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Finds the size of the maximum clique in the graph \mbox{\texttt{\mdseries\slshape G}}, using the bounding function \mbox{\texttt{\mdseries\slshape F}}. This implements Algorithm 4.19. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSSizeBound}}
+\logpage{[ 2, 4, 13 ]}\nobreak
+\hyperdef{L}{X7A6A4127818EDC0E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSizeBound({\mdseries\slshape XX, G, Cl})\index{KSSizeBound@\texttt{KSSizeBound}}
+\label{KSSizeBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A bounding function for the MaxClique problem. \mbox{\texttt{\mdseries\slshape XX}} is a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}, and \mbox{\texttt{\mdseries\slshape Cl}} is the set of candidates to extend \mbox{\texttt{\mdseries\slshape XX}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGenerateRandomGraph}}
+\logpage{[ 2, 4, 14 ]}\nobreak
+\hyperdef{L}{X78E238A984F3911E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGenerateRandomGraph({\mdseries\slshape n})\index{KSGenerateRandomGraph@\texttt{KSGenerateRandomGraph}}
+\label{KSGenerateRandomGraph}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a list of edges of a random graph on \mbox{\texttt{\mdseries\slshape n}} vertices. This implements Algorithm 4.20. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSEdgeListToAdjacencyList}}
+\logpage{[ 2, 4, 15 ]}\nobreak
+\hyperdef{L}{X7C0E333A7B200D4C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSEdgeListToAdjacencyList({\mdseries\slshape Ged, n})\index{KSEdgeListToAdjacencyList@\texttt{KSEdgeListToAdjacencyList}}
+\label{KSEdgeListToAdjacencyList}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given the list of edges \mbox{\texttt{\mdseries\slshape Ged}} of a graph with \mbox{\texttt{\mdseries\slshape n}} vertices, returns the adjacency list of such graph. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGreedyColor}}
+\logpage{[ 2, 4, 16 ]}\nobreak
+\hyperdef{L}{X7C4BB3897802A465}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGreedyColor({\mdseries\slshape G})\index{KSGreedyColor@\texttt{KSGreedyColor}}
+\label{KSGreedyColor}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Colors the vertices of a graph \mbox{\texttt{\mdseries\slshape G}} using a greedy strategy. This implements Algorithm 4.16. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSSamplingBound}}
+\logpage{[ 2, 4, 17 ]}\nobreak
+\hyperdef{L}{X83A5C32080EA9396}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSamplingBound({\mdseries\slshape XX, G, Cl})\index{KSSamplingBound@\texttt{KSSamplingBound}}
+\label{KSSamplingBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A bounding function for the MaxClique problem. \mbox{\texttt{\mdseries\slshape XX}} is a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}, and \mbox{\texttt{\mdseries\slshape Cl}} is the set of candidates to extend \mbox{\texttt{\mdseries\slshape XX}}. This function uses a fixed greedy coloring of the graph \mbox{\texttt{\mdseries\slshape G}}. Implements Algorithm 4.17. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSInducedSubgraph}}
+\logpage{[ 2, 4, 18 ]}\nobreak
+\hyperdef{L}{X800A04C2811D4374}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSInducedSubgraph({\mdseries\slshape G, L})\index{KSInducedSubgraph@\texttt{KSInducedSubgraph}}
+\label{KSInducedSubgraph}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns the adjacency list of the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by the vertices in \mbox{\texttt{\mdseries\slshape L}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGreedyBound}}
+\logpage{[ 2, 4, 19 ]}\nobreak
+\hyperdef{L}{X807E30DC7CDAD9D3}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGreedyBound({\mdseries\slshape XX, G, Cl})\index{KSGreedyBound@\texttt{KSGreedyBound}}
+\label{KSGreedyBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A bounding function for the MaxClique problem. \mbox{\texttt{\mdseries\slshape XX}} is a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}, and \mbox{\texttt{\mdseries\slshape Cl}} is the set of candidates to extend \mbox{\texttt{\mdseries\slshape XX}}. This uses a greedy coloring of the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by \mbox{\texttt{\mdseries\slshape L}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGenerateRandomGraph2}}
+\logpage{[ 2, 4, 20 ]}\nobreak
+\hyperdef{L}{X7A8E9FCD8238638C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGenerateRandomGraph2({\mdseries\slshape n, delta})\index{KSGenerateRandomGraph2@\texttt{KSGenerateRandomGraph2}}
+\label{KSGenerateRandomGraph2}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns the list of edges of a random graph on \mbox{\texttt{\mdseries\slshape n}} vertices with edge density \mbox{\texttt{\mdseries\slshape delta}}. }
 
  }
 

@@ -561,3 +561,186 @@ InstallGlobalFunction( KSTSP2, function( G, F )
     tsp(1);
     return [optX, optcost];
 end);
+
+#F  KSMaxClique1( G ) 
+##
+InstallGlobalFunction( KSMaxClique1, function( G )
+    local allcliques, C, all, V, x, n, B, XX, optX, optS;
+    C := [];
+    all := [];
+    XX := [];
+    n := Length( G );
+    V := [1..n];
+    B := List( V, i -> [i+1..n] );
+    optX := [];
+    optS := 0;
+    allcliques := function(l)
+        if l = 0 then
+            Add( all, [] );
+        else
+            Add( all, ShallowCopy(XX) );  
+        fi;
+        if l = 0 then
+            C[l+1] := V;
+        else
+            C[l+1] := Intersection( G[XX[l]], C[l], B[XX[l]] );
+        fi;
+        if Length(XX) > optS then
+            optX := ShallowCopy(XX);
+            optS := Length(XX);
+        fi;
+        for x in C[l+1] do
+            XX[l+1] := x;
+            XX := XX{[1..l+1]};
+            allcliques(l+1);
+        od;
+    end;
+    allcliques(0);
+    return [optX,optS];
+end);
+
+#F  KSMaxClique2( G, F ) 
+##
+InstallGlobalFunction( KSMaxClique2, function( G, F )
+    local allcliques, C, all, V, x, n, B, BF, XX, optX, optS;
+    C := [];
+    all := [];
+    XX := [];
+    n := Length( G );
+    V := [1..n];
+    B := List( V, i -> [i+1..n] );
+    optX := [];
+    optS := 0;
+    allcliques := function(l)
+        if l = 0 then
+            Add( all, [] );
+        else
+            Add( all, ShallowCopy(XX) );  
+        fi;
+        if l = 0 then
+            C[l+1] := V;
+        else
+            C[l+1] := Intersection( G[XX[l]], C[l], B[XX[l]] );
+        fi;
+        if Length(XX) > optS then
+            optX := ShallowCopy(XX);
+            optS := Length(XX);
+        fi;
+        BF := F( XX, G, C[l+1] );
+        if BF <= optS then
+            #Print("XX=",XX,", B=",BF,", Opt=",optS,", Bounding used!\n");
+            return;
+        else
+            for x in C[l+1] do
+                XX[l+1] := x;
+                XX := XX{[1..l+1]};
+                allcliques(l+1);
+            od;
+        fi;
+    end;
+    allcliques(0);
+    return [optX,optS];
+end);
+
+
+#F  KSSizeBound( XX, G, Cl ) 
+##
+InstallGlobalFunction( KSSizeBound, function( XX, G, Cl )
+    return Length(XX) + Length(Cl);
+end);
+
+#F  KSGenerateRandomGraph( n ) 
+##
+InstallGlobalFunction( KSGenerateRandomGraph, function( n )
+    local r, u, T, edges, e, j;
+    u := NrCombinations([1..n],2);         # u= 10choose2 =45
+    r := Random(0,2^u-1);                  # r= random in [0..2^45-1]
+    T := KSSubsetLexUnrank(u, r);          # T= a subset of [1..45]
+    edges := [];
+    for j in T do
+        e := KSkSubsetLexUnrank(j-1, 2, n);  # e= a 2-subset of [1..10]
+        Add(edges,e);                        # j should be in [0..44]
+    od;
+    return edges;
+end);
+
+#F  KSEdgeListToAdjacencyList( Ged, n ) 
+##
+InstallGlobalFunction( KSEdgeListToAdjacencyList, function( Ged, n )
+    local e, G, i;
+    G := [];
+    for i in [1..n] do
+        G[i] := [];
+    od;
+    for e in Ged do
+        Add(G[e[1]],e[2]);
+        Add(G[e[2]],e[1]);
+    od;
+    return G;
+end);
+
+#F  KSGreedyColor( G ) 
+##
+InstallGlobalFunction( KSGreedyColor, function( G )
+    local k, color, i, h, colorclass, V;
+    color := [];
+    colorclass := [];
+    k := 0;
+    V := Filtered([1..Length(G)], x -> IsBound(G[x]));
+    for i in V do
+        h := 1;
+        while h <= k and IsBound(colorclass[h]) and Intersection(G[i],colorclass[h])<>[] do
+            h := h+1;
+        od;
+        if h-1 = k then
+            k := k+1;
+            colorclass[h] := [];
+        fi;
+        Add(colorclass[h],i);
+        color[i] := h;
+    od;
+    return [k, color, colorclass];
+end);
+
+#F  KSSamplingBound( XX, G, Cl ) 
+##
+InstallGlobalFunction( KSSamplingBound, function( XX, G, Cl )
+    local col;
+    col := KSGreedyColor(G)[2];
+    return Length(XX) + Length(Set(col{Cl}));
+end);
+
+#F  KSInducedSubgraph( G, L ) 
+##
+InstallGlobalFunction( KSInducedSubgraph, function( G, L )
+    local i, H;
+    H := [];
+    for i in L do
+        H[i] := Intersection(G[i], L);
+    od;
+    return H;
+end);
+
+#F  KSGreedyBound( XX, G, Cl ) 
+##
+InstallGlobalFunction( KSGreedyBound, function( XX, G, Cl )
+    local k;
+    k := KSGreedyColor(KSInducedSubgraph(G, Cl))[1];
+    return Length(XX) + k;
+end);
+
+#F  KSGenerateRandomGraph2( n, delta ) 
+##
+InstallGlobalFunction( KSGenerateRandomGraph2, function( n, delta )
+    local x, y, edges, r;
+    edges := [];
+    for x in [1..n-1] do
+        for y in [x+1..n] do
+            r:=0.0+(1/1000000)*Random(0,1000000);
+            if r >= 1-delta then
+                Add(edges,[x,y]);
+            fi;
+        od;
+    od;
+    return edges;
+end);

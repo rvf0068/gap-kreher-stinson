@@ -54,6 +54,26 @@
 
     <#Include Label="KSTSP2">
 
+    <#Include Label="KSMaxClique1">
+
+    <#Include Label="KSMaxClique2">
+
+    <#Include Label="KSSizeBound">
+
+    <#Include Label="KSGenerateRandomGraph">
+
+    <#Include Label="KSEdgeListToAdjacencyList">
+
+    <#Include Label="KSGreedyColor">
+
+    <#Include Label="KSSamplingBound">
+
+    <#Include Label="KSInducedSubgraph">
+
+    <#Include Label="KSGreedyBound">
+
+    <#Include Label="KSGenerateRandomGraph2">
+
   </Section>
   
   <Section Label="exercises-backtracking">

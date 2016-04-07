@@ -117,6 +117,78 @@
   
   [33X[0;0YSolves the TSP problem for instance [3XG[103X, using the bounding function [3XF[103X.[133X
   
+  [1X2.4-11 KSMaxClique1[101X
+  
+  [29X[2XKSMaxClique1[102X( [3XG[103X ) [32X function
+  
+  [33X[0;0YAdapts the function that lists the complete subgraphs of [3XG[103X, to find the size
+  of the largest clique of [3XG[103X. This implements Algorithm 4.14.[133X
+  
+  [1X2.4-12 KSMaxClique2[101X
+  
+  [29X[2XKSMaxClique2[102X( [3XG[103X, [3XF[103X ) [32X function
+  
+  [33X[0;0YFinds  the  size  of  the  maximum clique in the graph [3XG[103X, using the bounding
+  function [3XF[103X. This implements Algorithm 4.19.[133X
+  
+  [1X2.4-13 KSSizeBound[101X
+  
+  [29X[2XKSSizeBound[102X( [3XXX[103X, [3XG[103X, [3XCl[103X ) [32X function
+  
+  [33X[0;0YA  bounding function for the MaxClique problem. [3XXX[103X is a complete subgraph of
+  [3XG[103X, and [3XCl[103X is the set of candidates to extend [3XXX[103X.[133X
+  
+  [1X2.4-14 KSGenerateRandomGraph[101X
+  
+  [29X[2XKSGenerateRandomGraph[102X( [3Xn[103X ) [32X function
+  
+  [33X[0;0YReturns  a  list  of  edges of a random graph on [3Xn[103X vertices. This implements
+  Algorithm 4.20.[133X
+  
+  [1X2.4-15 KSEdgeListToAdjacencyList[101X
+  
+  [29X[2XKSEdgeListToAdjacencyList[102X( [3XGed[103X, [3Xn[103X ) [32X function
+  
+  [33X[0;0YGiven  the  list  of  edges  [3XGed[103X  of  a  graph  with [3Xn[103X vertices, returns the
+  adjacency list of such graph.[133X
+  
+  [1X2.4-16 KSGreedyColor[101X
+  
+  [29X[2XKSGreedyColor[102X( [3XG[103X ) [32X function
+  
+  [33X[0;0YColors  the  vertices  of a graph [3XG[103X using a greedy strategy. This implements
+  Algorithm 4.16.[133X
+  
+  [1X2.4-17 KSSamplingBound[101X
+  
+  [29X[2XKSSamplingBound[102X( [3XXX[103X, [3XG[103X, [3XCl[103X ) [32X function
+  
+  [33X[0;0YA  bounding function for the MaxClique problem. [3XXX[103X is a complete subgraph of
+  [3XG[103X,  and [3XCl[103X is the set of candidates to extend [3XXX[103X. This function uses a fixed
+  greedy coloring of the graph [3XG[103X. Implements Algorithm 4.17.[133X
+  
+  [1X2.4-18 KSInducedSubgraph[101X
+  
+  [29X[2XKSInducedSubgraph[102X( [3XG[103X, [3XL[103X ) [32X function
+  
+  [33X[0;0YReturns  the  adjacency list of the subgraph of [3XG[103X induced by the vertices in
+  [3XL[103X.[133X
+  
+  [1X2.4-19 KSGreedyBound[101X
+  
+  [29X[2XKSGreedyBound[102X( [3XXX[103X, [3XG[103X, [3XCl[103X ) [32X function
+  
+  [33X[0;0YA  bounding function for the MaxClique problem. [3XXX[103X is a complete subgraph of
+  [3XG[103X, and [3XCl[103X is the set of candidates to extend [3XXX[103X. This uses a greedy coloring
+  of the subgraph of [3XG[103X induced by [3XL[103X.[133X
+  
+  [1X2.4-20 KSGenerateRandomGraph2[101X
+  
+  [29X[2XKSGenerateRandomGraph2[102X( [3Xn[103X, [3Xdelta[103X ) [32X function
+  
+  [33X[0;0YReturns  the list of edges of a random graph on [3Xn[103X vertices with edge density
+  [3Xdelta[103X.[133X
+  
   
   [1X2.5 [33X[0;0YExercises[133X[101X
   

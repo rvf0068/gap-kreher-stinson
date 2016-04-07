@@ -273,3 +273,180 @@ DeclareGlobalFunction( "KSReduceBound" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSTSP2" );
+
+#F  KSMaxClique1( G ) 
+##
+##  <#GAPDoc Label="KSMaxClique1">
+##  <ManSection>
+##  <Func Name="KSMaxClique1" Arg="G"/>
+##
+##  <Description>
+##
+##  Adapts the function that lists the complete subgraphs of <A>G</A>,
+##  to find the size of the largest clique of <A>G</A>. This
+##  implements Algorithm 4.14.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSMaxClique1" );
+
+#F  KSMaxClique2( G, F ) 
+##
+##  <#GAPDoc Label="KSMaxClique2">
+##  <ManSection>
+##  <Func Name="KSMaxClique2" Arg="G, F"/>
+##
+##  <Description>
+##
+##  Finds the size of the maximum clique in the graph <A>G</A>, using
+##  the bounding function <A>F</A>. This implements Algorithm 4.19.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSMaxClique2" );
+
+#F  KSSizeBound( XX, G, Cl ) 
+##
+##  <#GAPDoc Label="KSSizeBound">
+##  <ManSection>
+##  <Func Name="KSSizeBound" Arg="XX, G, Cl"/>
+##
+##  <Description>
+##
+##  A bounding function for the MaxClique problem. <A>XX</A> is a
+##  complete subgraph of <A>G</A>, and <A>Cl</A> is the set of
+##  candidates to extend <A>XX</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSSizeBound" );
+
+#F  KSGenerateRandomGraph( n ) 
+##
+##  <#GAPDoc Label="KSGenerateRandomGraph">
+##  <ManSection>
+##  <Func Name="KSGenerateRandomGraph" Arg="n"/>
+##
+##  <Description>
+##
+##  Returns a list of edges of a random graph on <A>n</A>
+##  vertices. This implements Algorithm 4.20.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSGenerateRandomGraph" );
+
+#F  KSEdgeListToAdjacencyList( Ged, n ) 
+##
+##  <#GAPDoc Label="KSEdgeListToAdjacencyList">
+##  <ManSection>
+##  <Func Name="KSEdgeListToAdjacencyList" Arg="Ged, n"/>
+##
+##  <Description>
+##
+##  Given the list of edges <A>Ged</A> of a graph with <A>n</A>
+##  vertices, returns the adjacency list of such graph.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSEdgeListToAdjacencyList" );
+
+#F  KSGreedyColor( G ) 
+##
+##  <#GAPDoc Label="KSGreedyColor">
+##  <ManSection>
+##  <Func Name="KSGreedyColor" Arg="G"/>
+##
+##  <Description>
+##
+##  Colors the vertices of a graph <A>G</A> using a greedy
+##  strategy. This implements Algorithm 4.16.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSGreedyColor" );
+
+#F  KSSamplingBound( XX, G, Cl ) 
+##
+##  <#GAPDoc Label="KSSamplingBound">
+##  <ManSection>
+##  <Func Name="KSSamplingBound" Arg="XX, G, Cl"/>
+##
+##  <Description>
+##
+##  A bounding function for the MaxClique problem. <A>XX</A> is a
+##  complete subgraph of <A>G</A>, and <A>Cl</A> is the set of
+##  candidates to extend <A>XX</A>. This function uses a fixed greedy
+##  coloring of the graph <A>G</A>. Implements Algorithm 4.17.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSSamplingBound" );
+
+#F  KSInducedSubgraph( G, L ) 
+##
+##  <#GAPDoc Label="KSInducedSubgraph">
+##  <ManSection>
+##  <Func Name="KSInducedSubgraph" Arg="G, L"/>
+##
+##  <Description>
+##
+##  Returns the adjacency list of the subgraph of <A>G</A> induced by
+##  the vertices in <A>L</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSInducedSubgraph" );
+
+#F  KSGreedyBound( XX, G, Cl ) 
+##
+##  <#GAPDoc Label="KSGreedyBound">
+##  <ManSection>
+##  <Func Name="KSGreedyBound" Arg="XX, G, Cl"/>
+##
+##  <Description>
+##
+##  A bounding function for the MaxClique problem. <A>XX</A> is a
+##  complete subgraph of <A>G</A>, and <A>Cl</A> is the set of
+##  candidates to extend <A>XX</A>. This uses a greedy coloring of the
+##  subgraph of <A>G</A> induced by <A>L</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSGreedyBound" );
+
+#F  KSGenerateRandomGraph2( n, delta ) 
+##
+##  <#GAPDoc Label="KSGenerateRandomGraph2">
+##  <ManSection>
+##  <Func Name="KSGenerateRandomGraph2" Arg="n, delta"/>
+##
+##  <Description>
+##
+##  Returns the list of edges of a random graph on <A>n</A> vertices
+##  with edge density <A>delta</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSGenerateRandomGraph2" );
+
