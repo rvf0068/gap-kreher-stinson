@@ -42,6 +42,8 @@
 
     <#Include Label="KSRandomKnapsackInstance">
 
+    <#Include Label="KSRandomTSPInstance">
+
   </Section>
   
   <Section Label="exercises-backtracking">

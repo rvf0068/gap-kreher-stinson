@@ -169,3 +169,22 @@ DeclareGlobalFunction( "KSKnapsack3" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSRandomKnapsackInstance" );
 
+#F  KSRandomTSPInstance( n, Wmax ) 
+##
+##  <#GAPDoc Label="KSRandomTSPInstance">
+##  <ManSection>
+##  <Func Name="KSRandomTSPInstance" Arg="n, Wmax"/>
+##
+##  <Description>
+##
+##  Returns a random instance of the TSP problem, which is a symmetric
+##  <A>n</A> by <A>n</A> matrix, such that its <M>ij</M> entry is the
+##  cost to travel from city <M>i</M> to city <M>j</M>. The entries in
+##  the diagonal are made equal to <M>\infty</M>. Each cost is a
+##  random integer between 1 and <A>Wmax</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSRandomTSPInstance" );

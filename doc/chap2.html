@@ -45,6 +45,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X87F7D9DD7B0E9DE4">2.4-2 KSRationalKnapsackSorted</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7A03786C86F71827">2.4-3 KSKnapsack3</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7F7AF9917C7513E0">2.4-4 KSRandomKnapsackInstance</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X824023CC7A1DAEEE">2.4-5 KSRandomTSPInstance</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X823A8E467E2D876D">2.5 <span class="Heading">Exercises</span></a>
 </span>
@@ -133,6 +134,13 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRandomKnapsackInstance</code>( <var class="Arg">size</var>, <var class="Arg">maximum_weight</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns a random instance of a Knapsack problem, for <var class="Arg">size</var> objects. The maximum weight is <var class="Arg">maximum_weight</var>. For each <span class="SimpleMath">i</span>, the profit <span class="SimpleMath">P[i]</span> is <span class="SimpleMath">2*W[i]*ϵ</span>, where <span class="SimpleMath">ϵ</span> is a random number between <span class="SimpleMath">0.9</span> and <span class="SimpleMath">1.1</span>.</p>
+
+<p><a id="X824023CC7A1DAEEE" name="X824023CC7A1DAEEE"></a></p>
+
+<h5>2.4-5 KSRandomTSPInstance</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRandomTSPInstance</code>( <var class="Arg">n</var>, <var class="Arg">Wmax</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns a random instance of the TSP problem, which is a symmetric <var class="Arg">n</var> by <var class="Arg">n</var> matrix, such that its <span class="SimpleMath">ij</span> entry is the cost to travel from city <span class="SimpleMath">i</span> to city <span class="SimpleMath">j</span>. The entries in the diagonal are made equal to <span class="SimpleMath">∞</span>. Each cost is a random integer between 1 and <var class="Arg">Wmax</var>.</p>
 
 <p><a id="X823A8E467E2D876D" name="X823A8E467E2D876D"></a></p>
 

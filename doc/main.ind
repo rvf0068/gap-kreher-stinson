@@ -6,8 +6,9 @@
   \item \texttt  {KSKnapsack1}, \hyperpage{5}
   \item \texttt  {KSKnapsack2}, \hyperpage{5}
   \item \texttt  {KSKnapsack3}, \hyperpage{6}
-  \item \texttt  {KSQueens}, \hyperpage{6}
+  \item \texttt  {KSQueens}, \hyperpage{7}
   \item \texttt  {KSRandomKnapsackInstance}, \hyperpage{6}
+  \item \texttt  {KSRandomTSPInstance}, \hyperpage{6}
   \item \texttt  {KSRationalKnapsackSorted}, \hyperpage{6}
   \item \texttt  {KSSortForRationalKnapsack}, \hyperpage{6}
   \item \texttt  {KSSubsetLexRank}, \hyperpage{4}

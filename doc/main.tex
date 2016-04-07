@@ -309,6 +309,18 @@ KSRationalKnapsackSorted as bounding function. }
 
  Returns a random instance of a Knapsack problem, for \mbox{\texttt{\mdseries\slshape size}} objects. The maximum weight is \mbox{\texttt{\mdseries\slshape maximum{\textunderscore}weight}}. For each $i$, the profit $P[i]$ is $2*W[i]*\epsilon$, where $\epsilon$ is a random number between $0.9$ and $1.1$. }
 
+ 
+
+\subsection{\textcolor{Chapter }{KSRandomTSPInstance}}
+\logpage{[ 2, 4, 5 ]}\nobreak
+\hyperdef{L}{X824023CC7A1DAEEE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomTSPInstance({\mdseries\slshape n, Wmax})\index{KSRandomTSPInstance@\texttt{KSRandomTSPInstance}}
+\label{KSRandomTSPInstance}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a random instance of the TSP problem, which is a symmetric \mbox{\texttt{\mdseries\slshape n}} by \mbox{\texttt{\mdseries\slshape n}} matrix, such that its $ij$ entry is the cost to travel from city $i$ to city $j$. The entries in the diagonal are made equal to $\infty$. Each cost is a random integer between 1 and \mbox{\texttt{\mdseries\slshape Wmax}}. }
+
  }
 
  

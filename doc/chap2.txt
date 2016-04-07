@@ -76,6 +76,15 @@
   maximum  weight  is [3Xmaximum_weight[103X. For each [22Xi[122X, the profit [22XP[i][122X is [22X2*W[i]*ϵ[122X,
   where [22Xϵ[122X is a random number between [22X0.9[122X and [22X1.1[122X.[133X
   
+  [1X2.4-5 KSRandomTSPInstance[101X
+  
+  [29X[2XKSRandomTSPInstance[102X( [3Xn[103X, [3XWmax[103X ) [32X function
+  
+  [33X[0;0YReturns  a  random  instance of the TSP problem, which is a symmetric [3Xn[103X by [3Xn[103X
+  matrix,  such that its [22Xij[122X entry is the cost to travel from city [22Xi[122X to city [22Xj[122X.
+  The  entries  in  the  diagonal  are  made equal to [22X∞[122X. Each cost is a random
+  integer between 1 and [3XWmax[103X.[133X
+  
   
   [1X2.5 [33X[0;0YExercises[133X[101X
   

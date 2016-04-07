@@ -362,3 +362,20 @@ InstallGlobalFunction( KSRandomKnapsackInstance, function( n, Wmax )
     return [P, W, M];
 end);
 
+#F  KSRandomTSPInstance( n, Wmax ) 
+##
+InstallGlobalFunction( KSRandomTSPInstance, function( n, Wmax )
+    local G, i, j;
+    G := [];
+    for i in [1..n] do
+        G[i] := [];
+        G[i][i] := infinity;
+    od;
+    for i in [1..n] do
+        for j in [i+1..n] do
+            G[i][j] := Random(1,Wmax);
+            G[j][i] := G[i][j];
+        od;
+    od;
+    return G;
+end);
