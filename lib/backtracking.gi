@@ -379,3 +379,47 @@ InstallGlobalFunction( KSRandomTSPInstance, function( n, Wmax )
     od;
     return G;
 end);
+
+#F  TSP( G ) 
+##
+InstallGlobalFunction( KSTSP, function( G )
+    local C, XX, tsp, n, thecost, optcost, optX;
+    C := [];
+    XX := [];
+    optcost := infinity;
+    n := Length(G);
+    tsp := function(l)
+        local x,cost;
+        cost := function(V)
+            local c, i;
+            c := 0;
+            for i in [1..Length(V)-1] do
+                c := c + G[V[i]][V[i+1]];
+            od;
+            c := c + G[V[n]][1];
+            return c;
+        end;
+        if l = n then
+            thecost := cost(XX);
+            if thecost < optcost then
+                optcost := thecost;
+                optX := XX;
+                Print("Found better route ", optX, " with cost ", optcost, "\n");
+            fi;
+        fi;
+        if l = 0 then
+            C[l+1] := [1];
+        elif l = 1 then
+            C[l+1] := [2..n];
+        else
+            C[l+1] := Difference(C[l],[XX[l]]);
+        fi;
+        for x in C[l+1] do
+            XX[l+1] := x;
+            XX := XX{[1..l+1]};
+            tsp(l+1);
+        od;
+    end;
+    tsp(0);
+    return;
+end);

@@ -188,3 +188,20 @@ DeclareGlobalFunction( "KSRandomKnapsackInstance" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSRandomTSPInstance" );
+
+#F  KSTSP( G ) 
+##
+##  <#GAPDoc Label="KSTSP">
+##  <ManSection>
+##  <Func Name="KSTSP" Arg="G"/>
+##
+##  <Description>
+##
+##  Solves the TSP problem, for the instance <A>G</A>, traversing the
+##  whole tree space.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSTSP" );

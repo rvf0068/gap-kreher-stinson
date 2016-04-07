@@ -15,6 +15,7 @@
   [2XKSSortForRationalKnapsack[102X  2.4-1
   [2XKSSubsetLexRank[102X  1.1-1
   [2XKSSubsetLexUnrank[102X  1.1-2
+  [2XKSTSP[102X  2.4-6
   
   
   -------------------------------------------------------
