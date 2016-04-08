@@ -35,3 +35,5 @@
 \indexentry{KSGain@\texttt  {KSGain}|hyperpage}{10}
 \indexentry{KSRandomCostMatrix@\texttt  {KSRandomCostMatrix}|hyperpage}{10}
 \indexentry{KSAscend@\texttt  {KSAscend}|hyperpage}{11}
+\indexentry{KSConstructBlocks@\texttt  {KSConstructBlocks}|hyperpage}{11}
+\indexentry{KSRevisedStinsonAlgorithm@\texttt  {KSRevisedStinsonAlgorithm}|hyperpage}{11}

@@ -31,6 +31,12 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F66F41C836329D7">3.1-5 KSRandomCostMatrix</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8418E55085D15E1F">3.1-6 KSAscend</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X79DB42D47FB0C42A">3.2 <span class="Heading">Steiner systems</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F97E5CB831AA666">3.2-1 KSConstructBlocks</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X84C3665F829A89E6">3.2-2 KSRevisedStinsonAlgorithm</a></span>
+</div></div>
 </div>
 
 <h3>3 <span class="Heading">Heuristic Search</span></h3>
@@ -80,6 +86,24 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSAscend</code>( <var class="Arg">G</var>, <var class="Arg">P</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Given a partition <var class="Arg">P</var> of the vertices of the weighted graph <var class="Arg">G</var>, it returns a partition <var class="Arg">Q</var> with less cost than <var class="Arg">P</var>, by exchanging one vertex of the partition, if such partition exists. Otherwise, returns the same partition <var class="Arg">P</var>.</p>
+
+<p><a id="X79DB42D47FB0C42A" name="X79DB42D47FB0C42A"></a></p>
+
+<h4>3.2 <span class="Heading">Steiner systems</span></h4>
+
+<p><a id="X7F97E5CB831AA666" name="X7F97E5CB831AA666"></a></p>
+
+<h5>3.2-1 KSConstructBlocks</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSConstructBlocks</code>( <var class="Arg">v</var>, <var class="Arg">other</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Constructs a list of blocks of length <var class="Arg">v</var> from the list of lists <var class="Arg">other</var>. (Algorithm 5.12)</p>
+
+<p><a id="X84C3665F829A89E6" name="X84C3665F829A89E6"></a></p>
+
+<h5>3.2-2 KSRevisedStinsonAlgorithm</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRevisedStinsonAlgorithm</code>( <var class="Arg">v</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Constructs a Steiner triple system with <var class="Arg">v</var> points, using a hill-climbing algorithm. Implements Algorithm 5.19.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd.html">[Next Chapter]</a>&nbsp;  </div>

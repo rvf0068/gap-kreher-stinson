@@ -45,4 +45,7 @@
 \contentsline {subsection}{\numberline {3.1.4}\leavevmode {\color {Chapter }KSGain}}{10}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}\leavevmode {\color {Chapter }KSRandomCostMatrix}}{10}{subsection.3.1.5}
 \contentsline {subsection}{\numberline {3.1.6}\leavevmode {\color {Chapter }KSAscend}}{11}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Steiner systems}}{11}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}\leavevmode {\color {Chapter }KSConstructBlocks}}{11}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}\leavevmode {\color {Chapter }KSRevisedStinsonAlgorithm}}{11}{subsection.3.2.2}
 \contentsline {chapter}{Index}{12}{section*.3}

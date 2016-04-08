@@ -48,3 +48,20 @@
   partition,  if  such partition exists. Otherwise, returns the same partition
   [3XP[103X.[133X
   
+  
+  [1X3.2 [33X[0;0YSteiner systems[133X[101X
+  
+  [1X3.2-1 KSConstructBlocks[101X
+  
+  [29X[2XKSConstructBlocks[102X( [3Xv[103X, [3Xother[103X ) [32X function
+  
+  [33X[0;0YConstructs  a  list  of  blocks  of  length  [3Xv[103X from the list of lists [3Xother[103X.
+  (Algorithm 5.12)[133X
+  
+  [1X3.2-2 KSRevisedStinsonAlgorithm[101X
+  
+  [29X[2XKSRevisedStinsonAlgorithm[102X( [3Xv[103X ) [32X function
+  
+  [33X[0;0YConstructs  a  Steiner  triple  system  with [3Xv[103X points, using a hill-climbing
+  algorithm. Implements Algorithm 5.19.[133X
+  

@@ -3,6 +3,7 @@
   \item \texttt  {KSAllCliques}, \hyperpage{5}
   \item \texttt  {KSAscend}, \hyperpage{11}
   \item \texttt  {KSCheckKnapsackInput}, \hyperpage{5}
+  \item \texttt  {KSConstructBlocks}, \hyperpage{11}
   \item \texttt  {KSCost}, \hyperpage{10}
   \item \texttt  {KSEdgeListToAdjacencyList}, \hyperpage{8}
   \item \texttt  {KSExactCover}, \hyperpage{6}
@@ -28,6 +29,7 @@
   \item \texttt  {KSRationalKnapsackSorted}, \hyperpage{6}
   \item \texttt  {KSReduce}, \hyperpage{7}
   \item \texttt  {KSReduceBound}, \hyperpage{7}
+  \item \texttt  {KSRevisedStinsonAlgorithm}, \hyperpage{11}
   \item \texttt  {KSSamplingBound}, \hyperpage{8}
   \item \texttt  {KSSelectPartition}, \hyperpage{10}
   \item \texttt  {KSSizeBound}, \hyperpage{8}

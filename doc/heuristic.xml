@@ -21,9 +21,11 @@
   </Section>
 
   <Section Label="steiner">
-    <Heading>Steiner Systems</Heading>
+    <Heading>Steiner systems</Heading>
   
     <#Include Label="KSConstructBlocks">
+
+    <#Include Label="KSRevisedStinsonAlgorithm">
     
   </Section>
   
