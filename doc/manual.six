@@ -4,8 +4,8 @@ encoding := "UTF-8",
 bookname := "kreher-stinson",
 entries :=
 [ [ "Title page", ".", [ 0, 0, 0 ], 1, 1, "title page", "X7D2C85EC87DD46E5" ],
-  [ "Copyright", ".-1", [ 0, 0, 1 ], 28, 2, "copyright", "X81488B807F2A1CF1" ]
-    , [ "Table of Contents", ".-2", [ 0, 0, 2 ], 39, 3, "table of contents", 
+  [ "Copyright", ".-1", [ 0, 0, 1 ], 32, 2, "copyright", "X81488B807F2A1CF1" ]
+    , [ "Table of Contents", ".-2", [ 0, 0, 2 ], 44, 3, "table of contents", 
       "X8537FEB07AF2BEC8" ], 
   [ 
       "\033[1X\033[33X\033[0;-2YGenerating Combinatorial Objects\033[133X\033[101\

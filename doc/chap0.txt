@@ -6,11 +6,13 @@
                   [1XAlgorithms from the book implemented in GAP[101X
   
   
-                                  Version 1.0
+                                  Version 0.1
   
   
-                                29 January 2016
+                                  8 April 2016
   
+  
+                             Bertín Hernández-Trejo
   
                             Rafael Villarroel-Flores
   
@@ -18,6 +20,8 @@
   
   
   
+  Bertín Hernández-Trejo
+      Email:    [7Xmailto:bertin13@gmail.com[107X
   Rafael Villarroel-Flores
       Email:    [7Xmailto:rvf0068@gmail.com[107X
       Homepage: [7Xhttp://rvf0068.github.io[107X
@@ -26,7 +30,8 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2016 by Rafael Villarroel-Flores and Citlalli Zamora-Mejía[133X
+  [33X[0;0Y©  2016  by  Bertín  Hernández-Trejo,  Rafael Villarroel-Flores and Citlalli
+  Zamora-Mejía[133X
   
   [33X[0;0Y[5Xkreher-stinson[105X  package  is  free  software;  you can redistribute it and/or
   modify   it   under   the   terms   of   the   GNU  General  Public  License
