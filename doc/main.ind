@@ -1,9 +1,12 @@
 \begin{theindex}
 
   \item \texttt  {KSAllCliques}, \hyperpage{5}
+  \item \texttt  {KSAscend}, \hyperpage{11}
   \item \texttt  {KSCheckKnapsackInput}, \hyperpage{5}
+  \item \texttt  {KSCost}, \hyperpage{10}
   \item \texttt  {KSEdgeListToAdjacencyList}, \hyperpage{8}
   \item \texttt  {KSExactCover}, \hyperpage{6}
+  \item \texttt  {KSGain}, \hyperpage{10}
   \item \texttt  {KSGenerateRandomGraph}, \hyperpage{8}
   \item \texttt  {KSGenerateRandomGraph2}, \hyperpage{9}
   \item \texttt  {KSGreedyBound}, \hyperpage{8}
@@ -18,12 +21,15 @@
   \item \texttt  {KSMaxClique2}, \hyperpage{7}
   \item \texttt  {KSMinCostBound}, \hyperpage{7}
   \item \texttt  {KSQueens}, \hyperpage{9}
+  \item \texttt  {KSRandomCostMatrix}, \hyperpage{10}
   \item \texttt  {KSRandomKnapsackInstance}, \hyperpage{6}
+  \item \texttt  {KSRandomkSubset}, \hyperpage{10}
   \item \texttt  {KSRandomTSPInstance}, \hyperpage{6}
   \item \texttt  {KSRationalKnapsackSorted}, \hyperpage{6}
   \item \texttt  {KSReduce}, \hyperpage{7}
   \item \texttt  {KSReduceBound}, \hyperpage{7}
   \item \texttt  {KSSamplingBound}, \hyperpage{8}
+  \item \texttt  {KSSelectPartition}, \hyperpage{10}
   \item \texttt  {KSSizeBound}, \hyperpage{8}
   \item \texttt  {KSSortForRationalKnapsack}, \hyperpage{6}
   \item \texttt  {KSSubsetLexRank}, \hyperpage{4}

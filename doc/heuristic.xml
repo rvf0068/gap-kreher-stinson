@@ -1,0 +1,22 @@
+<Chapter Label="heuristic">
+
+  <Heading>Heuristic Search</Heading>
+
+  <Section Label="uniform">
+
+    <Heading>Uniform graph partition</Heading>
+
+    <#Include Label="KSRandomkSubset">
+
+    <#Include Label="KSSelectPartition">
+
+    <#Include Label="KSCost">
+
+    <#Include Label="KSGain">
+
+    <#Include Label="KSRandomCostMatrix">
+
+    <#Include Label="KSAscend">
+
+  </Section>
+</Chapter>

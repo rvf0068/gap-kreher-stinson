@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (kreher-stinson) - Chapter 3: Heuristic Search</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap3"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p><a id="X7A00AAD585C388D4" name="X7A00AAD585C388D4"></a></p>
+<div class="ChapSects"><a href="chap3.html#X7A00AAD585C388D4">3 <span class="Heading">Heuristic Search</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7FF662447A34596B">3.1 <span class="Heading">Uniform graph partition</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7FDB1D757B321B26">3.1-1 KSRandomkSubset</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X79D69A0584EEE941">3.1-2 KSSelectPartition</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7D5EA8347E9AE782">3.1-3 KSCost</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X81D593AB78665091">3.1-4 KSGain</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F66F41C836329D7">3.1-5 KSRandomCostMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8418E55085D15E1F">3.1-6 KSAscend</a></span>
+</div></div>
+</div>
+
+<h3>3 <span class="Heading">Heuristic Search</span></h3>
+
+<p><a id="X7FF662447A34596B" name="X7FF662447A34596B"></a></p>
+
+<h4>3.1 <span class="Heading">Uniform graph partition</span></h4>
+
+<p><a id="X7FDB1D757B321B26" name="X7FDB1D757B321B26"></a></p>
+
+<h5>3.1-1 KSRandomkSubset</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRandomkSubset</code>( <var class="Arg">k</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns a randomly chosen <var class="Arg">k</var>-subset of the set of integers from 1 to <var class="Arg">n</var>.</p>
+
+<p><a id="X79D69A0584EEE941" name="X79D69A0584EEE941"></a></p>
+
+<h5>3.1-2 KSSelectPartition</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSelectPartition</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns a random partition of the set <span class="SimpleMath">{1,2,...,2n}</span> into two subsets of size <var class="Arg">n</var> each. (Algorithm 5.7)</p>
+
+<p><a id="X7D5EA8347E9AE782" name="X7D5EA8347E9AE782"></a></p>
+
+<h5>3.1-3 KSCost</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSCost</code>( <var class="Arg">G</var>, <var class="Arg">P</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the cost of the partition <var class="Arg">P</var> of the vertices of the weighted graph <var class="Arg">G</var>.</p>
+
+<p><a id="X81D593AB78665091" name="X81D593AB78665091"></a></p>
+
+<h5>3.1-4 KSGain</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSGain</code>( <var class="Arg">G</var>, <var class="Arg">P</var>, <var class="Arg">u</var>, <var class="Arg">v</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">P</var> is a partition in equal parts of the vertices of <var class="Arg">G</var>. This function calculates the change in the value of the cost function when interchanging the vertex <var class="Arg">u</var> from the first set in the partition <var class="Arg">P</var> with the vertex <var class="Arg">v</var> which is in the second set of the partition.</p>
+
+<p><a id="X7F66F41C836329D7" name="X7F66F41C836329D7"></a></p>
+
+<h5>3.1-5 KSRandomCostMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRandomCostMatrix</code>( <var class="Arg">n</var>, <var class="Arg">Wmax</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns a symmetric <var class="Arg">n</var> by <var class="Arg">n</var> matrix, such that its entries are random integers from 0 to <var class="Arg">Wmax</var>, and with zeros in the main diagonal.</p>
+
+<p><a id="X8418E55085D15E1F" name="X8418E55085D15E1F"></a></p>
+
+<h5>3.1-6 KSAscend</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSAscend</code>( <var class="Arg">G</var>, <var class="Arg">P</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given a partition <var class="Arg">P</var> of the vertices of the weighted graph <var class="Arg">G</var>, it returns a partition <var class="Arg">Q</var> with less cost than <var class="Arg">P</var>, by exchanging one vertex of the partition, if such partition exists. Otherwise, returns the same partition <var class="Arg">P</var>.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

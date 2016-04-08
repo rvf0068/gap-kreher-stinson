@@ -41,6 +41,8 @@
     <#Include SYSTEM "generating.xml">
 
     <#Include SYSTEM "backtracking.xml">
+
+    <#Include SYSTEM "heuristic.xml">
     
   </Body>
 

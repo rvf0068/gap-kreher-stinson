@@ -29,3 +29,9 @@
 \indexentry{KSGenerateRandomGraph2@\texttt  {KSGenerateRandomGraph2}|hyperpage}{9}
 \indexentry{KSTSP3@\texttt  {KSTSP3}|hyperpage}{9}
 \indexentry{KSQueens@\texttt  {KSQueens}|hyperpage}{9}
+\indexentry{KSRandomkSubset@\texttt  {KSRandomkSubset}|hyperpage}{10}
+\indexentry{KSSelectPartition@\texttt  {KSSelectPartition}|hyperpage}{10}
+\indexentry{KSCost@\texttt  {KSCost}|hyperpage}{10}
+\indexentry{KSGain@\texttt  {KSGain}|hyperpage}{10}
+\indexentry{KSRandomCostMatrix@\texttt  {KSRandomCostMatrix}|hyperpage}{10}
+\indexentry{KSAscend@\texttt  {KSAscend}|hyperpage}{11}

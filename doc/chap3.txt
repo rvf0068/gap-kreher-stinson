@@ -1,0 +1,50 @@
+  
+  [1X3 [33X[0;0YHeuristic Search[133X[101X
+  
+  
+  [1X3.1 [33X[0;0YUniform graph partition[133X[101X
+  
+  [1X3.1-1 KSRandomkSubset[101X
+  
+  [29X[2XKSRandomkSubset[102X( [3Xk[103X, [3Xn[103X ) [32X function
+  
+  [33X[0;0YReturns a randomly chosen [3Xk[103X-subset of the set of integers from 1 to [3Xn[103X.[133X
+  
+  [1X3.1-2 KSSelectPartition[101X
+  
+  [29X[2XKSSelectPartition[102X( [3Xn[103X ) [32X function
+  
+  [33X[0;0YReturns  a random partition of the set [22X{1,2,...,2n}[122X into two subsets of size
+  [3Xn[103X each. (Algorithm 5.7)[133X
+  
+  [1X3.1-3 KSCost[101X
+  
+  [29X[2XKSCost[102X( [3XG[103X, [3XP[103X ) [32X function
+  
+  [33X[0;0YReturns the cost of the partition [3XP[103X of the vertices of the weighted graph [3XG[103X.[133X
+  
+  [1X3.1-4 KSGain[101X
+  
+  [29X[2XKSGain[102X( [3XG[103X, [3XP[103X, [3Xu[103X, [3Xv[103X ) [32X function
+  
+  [33X[0;0Y[3XP[103X  is  a  partition  in  equal  parts  of  the  vertices of [3XG[103X. This function
+  calculates  the  change in the value of the cost function when interchanging
+  the  vertex  [3Xu[103X from the first set in the partition [3XP[103X with the vertex [3Xv[103X which
+  is in the second set of the partition.[133X
+  
+  [1X3.1-5 KSRandomCostMatrix[101X
+  
+  [29X[2XKSRandomCostMatrix[102X( [3Xn[103X, [3XWmax[103X ) [32X function
+  
+  [33X[0;0YReturns a symmetric [3Xn[103X by [3Xn[103X matrix, such that its entries are random integers
+  from 0 to [3XWmax[103X, and with zeros in the main diagonal.[133X
+  
+  [1X3.1-6 KSAscend[101X
+  
+  [29X[2XKSAscend[102X( [3XG[103X, [3XP[103X ) [32X function
+  
+  [33X[0;0YGiven  a  partition  [3XP[103X of the vertices of the weighted graph [3XG[103X, it returns a
+  partition  [3XQ[103X  with  less  cost  than  [3XP[103X,  by  exchanging  one  vertex of the
+  partition,  if  such partition exists. Otherwise, returns the same partition
+  [3XP[103X.[133X
+  
