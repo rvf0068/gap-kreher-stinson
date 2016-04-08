@@ -84,6 +84,8 @@
     
     <#Include Label="KSQueens">
 
+    <#Include Label="KSWalks">
+
   </Section>
 
 </Chapter>
