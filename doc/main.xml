@@ -16,6 +16,9 @@
     <Subtitle>Algorithms from the book implemented in GAP</Subtitle>
     <Version>Version &VERSION;</Version>
     <Date>&RELEASEDATE;</Date>
+    <Author>Bertín Hernández-Trejo
+      <Email>bertin13@gmail.com</Email>
+    </Author>
     <Author> Rafael Villarroel-Flores
       <Email>rvf0068@gmail.com</Email>
       <Homepage>http://rvf0068.github.io</Homepage>
@@ -25,7 +28,7 @@
     </Author>
 
     <Copyright> 
-      &copyright; 2016 by Rafael Villarroel-Flores and Citlalli Zamora-Mejía<P/>
+      &copyright; 2016 by Bertín Hernández-Trejo, Rafael Villarroel-Flores and Citlalli Zamora-Mejía<P/>
       &kreher-stinson; package is free software; 
       you can redistribute it and/or modify it under the terms of the 
       <URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
