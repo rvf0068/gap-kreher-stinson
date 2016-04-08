@@ -123,3 +123,37 @@ DeclareGlobalFunction( "KSAscend" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSUGP" );
+
+#F  KSConstructBlocks( v, other ) 
+##
+##  <#GAPDoc Label="KSConstructBlocks">
+##  <ManSection>
+##  <Func Name="KSConstructBlocks" Arg="v, other"/>
+##
+##  <Description>
+##
+##  Constructs a list of blocks of length <A>v</A> from the list of
+##  lists <A>other</A>. (Algorithm 5.12)
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSConstructBlocks" );
+
+#F  KSRevisedStinsonAlgorithm( v ) 
+##
+##  <#GAPDoc Label="KSRevisedStinsonAlgorithm">
+##  <ManSection>
+##  <Func Name="KSRevisedStinsonAlgorithm" Arg="v"/>
+##
+##  <Description>
+##
+##  Constructs a Steiner triple system with <A>v</A> points, using a
+##  hill-climbing algorithm. Implements Algorithm 5.19.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSRevisedStinsonAlgorithm" );

@@ -19,4 +19,12 @@
     <#Include Label="KSAscend">
 
   </Section>
+
+  <Section Label="steiner">
+    <Heading>Steiner Systems</Heading>
+  
+    <#Include Label="KSConstructBlocks">
+    
+  </Section>
+  
 </Chapter>

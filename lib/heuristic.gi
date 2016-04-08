@@ -115,4 +115,171 @@ InstallGlobalFunction( KSUGP, function( G, cmax )
     od;
 end);
 
+#F  KSConstructBlocks( v, other ) 
+##
+InstallGlobalFunction( KSConstructBlocks, function( v, other )
+    local B, x, y, z;
+    B := [];
+    for x in [1..v] do
+        for y in [x+1..v] do
+            z := other[x][y];
+            if z > y then
+                Add(B,[x,y,z]);
+            fi;
+        od;
+    od;
+    return B;
+end);
 
+#F  KSRevisedStinsonAlgorithm( v ) 
+##
+InstallGlobalFunction( KSRevisedStinsonAlgorithm, function( v )
+    local RevisedSwitch, NumBlocks, other, Initialize, 
+          InsertPair, DeletePair,
+          NumLivePoints,
+          LivePoints,
+          IndexLivePoints,
+          NumLivePairs,
+          LivePairs,
+          IndexLivePairs;
+    
+    Initialize := function ()
+        local x, y;
+        LivePoints := [];
+        IndexLivePoints := [];
+        NumLivePairs := [];
+        NumLivePoints := v;
+        LivePairs := [];
+        IndexLivePairs := [];
+        other := [];
+        for x in [1..v] do
+            LivePoints[x] := x;
+            IndexLivePoints[x] := x;
+            NumLivePairs[x] := v-1;
+            LivePairs[x] := [];
+            IndexLivePairs[x] := [];
+            for y in [1..v-1] do
+                LivePairs[x][y] := ((y+x-1) mod v) + 1;
+            od;
+            other[x] := [];
+            for y in [1..v] do
+                IndexLivePairs[x][y] := (y-x) mod v;
+                other[x][y] := 0;
+            od;
+        od;
+        Print("LivePoints=",LivePoints,
+              ", IndexLivePoints=",IndexLivePoints,
+              ", NumLivePairs=",NumLivePairs,
+              ", NumLivePoints=",NumLivePoints,
+              ", LivePairs=",LivePairs,
+              ", IndexLivePairs=",IndexLivePairs,
+              ", other=",other,"\n");
+    end;
+    
+    InsertPair := function (x, y)
+        local posn;
+        if NumLivePairs[x] = 0 then
+            NumLivePoints := NumLivePoints + 1;
+            LivePoints[NumLivePoints] := x;
+            IndexLivePoints[x] := NumLivePoints;
+        fi;
+        NumLivePairs[x] := NumLivePairs[x] + 1;
+        posn := NumLivePairs[x];
+        LivePairs[x][posn] := y;
+        IndexLivePairs[x][y] := posn;
+    end;
+    
+    DeletePair := function (x, y)
+        local posn, num, z;
+        posn := IndexLivePairs[x][y];
+        num := NumLivePairs[x];
+        z := LivePairs[x][num];
+        LivePairs[x][posn] := z;
+        IndexLivePairs[x][z] := posn;
+        LivePairs[x][num] := 0;
+        IndexLivePairs[x][y] := 0;
+        NumLivePairs[x] := NumLivePairs[x] - 1;
+        if NumLivePairs[x] = 0 then
+            posn := IndexLivePoints[x];
+            z := LivePoints[NumLivePoints];
+            LivePoints[posn] := z;
+            IndexLivePoints[z] := posn;
+            LivePoints[NumLivePoints] := 0;
+            IndexLivePoints[x] := 0;
+            NumLivePoints := NumLivePoints - 1;
+        fi;
+    end;
+    
+    RevisedSwitch := function ()
+        local r, s, t, x, y, z, w, U,
+              AddBlock, ExchangeBlock;
+        
+        AddBlock := function (x, y, z)
+            other[x][y] := z;
+            other[y][x] := z;
+            other[x][z] := y;
+            other[z][x] := y;
+            other[y][z] := x;
+            other[z][y] := x;
+            DeletePair(x,y);
+            DeletePair(y,x);
+            DeletePair(x,z);
+            DeletePair(z,x);
+            DeletePair(y,z);
+            DeletePair(z,y);
+        end;
+        
+        ExchangeBlock := function (x, y, z, w)
+            other[x][y] := z;
+            other[y][x] := z;
+            other[x][z] := y;
+            other[z][x] := y;
+            other[y][z] := x;
+            other[z][y] := x;
+            other[w][y] := 0;
+            other[y][w] := 0;
+            other[w][z] := 0;
+            other[z][w] := 0;
+            InsertPair(w,y);
+            InsertPair(y,w);
+            InsertPair(w,z);
+            InsertPair(z,w);
+            DeletePair(x,y);
+            DeletePair(y,x);
+            DeletePair(x,z);
+            DeletePair(z,x);
+        end;
+            
+        r := Random(1, NumLivePoints);
+        x := LivePoints[r];
+        U := KSRandomkSubset(2, NumLivePairs[x]);
+        s := U[1];
+        t := U[2];
+        y := LivePairs[x][s];
+        z := LivePairs[x][t];
+        Print("x=",x,", y=",y,", z=",z,"\n");
+        if other[y][z] = 0 then
+            AddBlock(x, y, z);
+            NumBlocks := NumBlocks + 1;
+            Print("Adding: ",[x,y,z],"\n");
+        else
+            w := other[y][z];
+            ExchangeBlock(x, y, z, w);
+            Print("Exchange: ",[y,z,w]," by ",[x,y,z],"\n");
+        fi;
+        Print("LivePoints=",LivePoints,
+              ", IndexLivePoints=",IndexLivePoints,
+              ", NumLivePairs=",NumLivePairs,
+              ", NumLivePoints=",NumLivePoints,
+              ", LivePairs=",LivePairs,
+              ", IndexLivePairs=",IndexLivePairs,
+              ", other=",other,"\n");        
+    end;
+    
+    NumBlocks := 0;
+    Initialize();
+    while NumBlocks < v*(v-1)/6 do
+        RevisedSwitch();
+    od;
+    return KSConstructBlocks(v, other);
+end);
