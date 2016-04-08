@@ -68,7 +68,7 @@ DeclareGlobalFunction( "KSAllCliques" );
 ##
 ##  <Description>
 ##  Solves the <M>n</M> queens problem for a
-##  <M><A>size</A>\times<A>size</A></M> board. (Exercise 4.1. (a))
+##  <M><A>size</A>\times<A>size</A></M> board. (Exercise 4.1.(a))
 ##  <Example>
 ##  gap> KSQueens(4);
 ##  [ 2, 4, 1, 3 ]
@@ -103,7 +103,7 @@ DeclareGlobalFunction( "KSExactCover" );
 ##  <Func Name="KSWalks" Arg="number"/>
 ##
 ##  <Description>
-##  Finds all the walks in the plane of lenght <A>number </A>. (Exercise 4.1. (b))
+##  Finds all the walks in the plane of lenght <A>number</A>. (Exercise 4.1.(b))
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

@@ -79,6 +79,7 @@
       2.4-21 KSTSP3
     2.5 [33X[0;0YExercises[133X
       2.5-1 KSQueens
+      2.5-2 KSWalks
   3 [33X[0;0YHeuristic Search[133X
     3.1 [33X[0;0YUniform graph partition[133X
       3.1-1 KSRandomkSubset
