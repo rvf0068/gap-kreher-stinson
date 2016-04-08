@@ -167,13 +167,13 @@ InstallGlobalFunction( KSRevisedStinsonAlgorithm, function( v )
                 other[x][y] := 0;
             od;
         od;
-        Print("LivePoints=",LivePoints,
-              ", IndexLivePoints=",IndexLivePoints,
-              ", NumLivePairs=",NumLivePairs,
-              ", NumLivePoints=",NumLivePoints,
-              ", LivePairs=",LivePairs,
-              ", IndexLivePairs=",IndexLivePairs,
-              ", other=",other,"\n");
+        # Print("LivePoints=",LivePoints,
+        #       ", IndexLivePoints=",IndexLivePoints,
+        #       ", NumLivePairs=",NumLivePairs,
+        #       ", NumLivePoints=",NumLivePoints,
+        #       ", LivePairs=",LivePairs,
+        #       ", IndexLivePairs=",IndexLivePairs,
+        #       ", other=",other,"\n");
     end;
     
     InsertPair := function (x, y)
@@ -257,23 +257,23 @@ InstallGlobalFunction( KSRevisedStinsonAlgorithm, function( v )
         t := U[2];
         y := LivePairs[x][s];
         z := LivePairs[x][t];
-        Print("x=",x,", y=",y,", z=",z,"\n");
+        # Print("x=",x,", y=",y,", z=",z,"\n");
         if other[y][z] = 0 then
             AddBlock(x, y, z);
             NumBlocks := NumBlocks + 1;
-            Print("Adding: ",[x,y,z],"\n");
+            Print("Adding: ",Set([x,y,z]),"\n");
         else
             w := other[y][z];
             ExchangeBlock(x, y, z, w);
-            Print("Exchange: ",[y,z,w]," by ",[x,y,z],"\n");
+            Print("Exchange: ",Set([y,z,w])," by ",Set([x,y,z]),"\n");
         fi;
-        Print("LivePoints=",LivePoints,
-              ", IndexLivePoints=",IndexLivePoints,
-              ", NumLivePairs=",NumLivePairs,
-              ", NumLivePoints=",NumLivePoints,
-              ", LivePairs=",LivePairs,
-              ", IndexLivePairs=",IndexLivePairs,
-              ", other=",other,"\n");        
+        # Print("LivePoints=",LivePoints,
+        #       ", IndexLivePoints=",IndexLivePoints,
+        #       ", NumLivePairs=",NumLivePairs,
+        #       ", NumLivePoints=",NumLivePoints,
+        #       ", LivePairs=",LivePairs,
+        #       ", IndexLivePairs=",IndexLivePairs,
+        #       ", other=",other,"\n");        
     end;
     
     NumBlocks := 0;
