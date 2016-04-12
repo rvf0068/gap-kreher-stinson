@@ -672,7 +672,7 @@ end);
 #F  KSMaxClique2( G, F ) 
 ##
 InstallGlobalFunction( KSMaxClique2, function( G, F )
-    local allcliques, C, all, V, x, n, B, BF, XX, optX, optS;
+    local allcliques, C, all, V, x, n, B, BF, XX, optX, optS, col;
     C := [];
     all := [];
     XX := [];
@@ -696,7 +696,14 @@ InstallGlobalFunction( KSMaxClique2, function( G, F )
             optX := ShallowCopy(XX);
             optS := Length(XX);
         fi;
-        BF := F( XX, G, C[l+1] );
+        if F <> KSSamplingBound then
+            BF := F( XX, G, C[l+1] );
+        else
+            if l = 0 then
+                col := KSGreedyColor(G)[2];
+            fi;
+            BF := Length(XX) + Length(Set(col{C[l+1]}));
+        fi;
         if BF <= optS then
             Info(InfoKS, 2, "XX=", XX, ", B=", BF, ", Opt=", optS,
                  ", Bounding used!");
