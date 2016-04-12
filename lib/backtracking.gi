@@ -410,7 +410,7 @@ InstallGlobalFunction( KSKnapsack3, function( K )
     end;
     if KSCheckKnapsackInput(K) then
         knapaux(1,0);
-        Info(InfoKS, 1,"Maximum profit is ", OptP, " with vector ", OptX);
+        Info(InfoKS, 1, "Maximum profit is ", OptP, " with vector ", OptX);
     fi;
     return [Permuted(OptX,perm^-1), OptP];
 end);
@@ -422,7 +422,6 @@ InstallGlobalFunction( KSRandomKnapsackInstance, function( n, Wmax )
     P := [];
     W := [];
     epsilon := 0.8 + (0.4/1000000)*Random(0,1000000);
-    # epsilon is a random real number between 0.9 and 1.1
     for i in [1..n] do
         W[i] := Random(1,Wmax);
         P[i] := Int(2*epsilon*W[i]);
@@ -473,7 +472,8 @@ InstallGlobalFunction( KSTSP1, function( G )
             if thecost < optcost then
                 optcost := thecost;
                 optX := XX;
-                Print("Found better route ", optX, " with cost ", optcost, "\n");
+                Info(InfoKS, 1, "Found better route ", optX, " with cost ",
+                     optcost);
             fi;
         fi;
         if l = 0 then
@@ -584,7 +584,6 @@ InstallGlobalFunction( KSReduceBound, function( V, M )
         od;
         i := i + 1;
     od;
-    #Print(Mp);
     ans := KSReduce(Mp);
     for i in [1..m-1] do
         ans := ans + M[V[i]][V[i+1]];
@@ -607,7 +606,8 @@ InstallGlobalFunction( KSTSP2, function( G, F )
             if thecost < optcost then
                 optcost := thecost;
                 optX := ShallowCopy(XX);
-                Print("Found better route ", optX, " with cost ", optcost, "\n");
+                Info(InfoKS, 1, "Found better route ", optX, " with cost ",
+                     optcost);
             fi;
         fi;
         if l = 1 then
@@ -618,7 +618,8 @@ InstallGlobalFunction( KSTSP2, function( G, F )
         XX := XX{[1..l]};
         B := F(XX, G);
         if  B >= optcost then
-            #Print("XX=",XX,", B=",B,", Opt=",optcost,", Bounding used!\n");
+            Info(InfoKS, 2, "XX=", XX, ", B=", B, ", Opt=", optcost,
+                 ", Bounding used!");
             return;
         else
             for x in C[l+1] do
@@ -665,7 +666,7 @@ InstallGlobalFunction( KSMaxClique1, function( G )
         od;
     end;
     allcliques(0);
-    return [optX,optS];
+    return [optX, optS];
 end);
 
 #F  KSMaxClique2( G, F ) 
@@ -697,7 +698,8 @@ InstallGlobalFunction( KSMaxClique2, function( G, F )
         fi;
         BF := F( XX, G, C[l+1] );
         if BF <= optS then
-            #Print("XX=",XX,", B=",BF,", Opt=",optS,", Bounding used!\n");
+            Info(InfoKS, 2, "XX=", XX, ", B=", BF, ", Opt=", optS,
+                 ", Bounding used!");
             return;
         else
             for x in C[l+1] do
@@ -708,7 +710,7 @@ InstallGlobalFunction( KSMaxClique2, function( G, F )
         fi;
     end;
     allcliques(0);
-    return [optX,optS];
+    return [optX, optS];
 end);
 
 
@@ -742,8 +744,8 @@ InstallGlobalFunction( KSEdgeListToAdjacencyList, function( Ged, n )
         G[i] := [];
     od;
     for e in Ged do
-        Add(G[e[1]],e[2]);
-        Add(G[e[2]],e[1]);
+        Add(G[e[1]], e[2]);
+        Add(G[e[2]], e[1]);
     od;
     return G;
 end);
@@ -758,14 +760,15 @@ InstallGlobalFunction( KSGreedyColor, function( G )
     V := Filtered([1..Length(G)], x -> IsBound(G[x]));
     for i in V do
         h := 1;
-        while h <= k and IsBound(colorclass[h]) and Intersection(G[i],colorclass[h])<>[] do
+        while h <= k and IsBound(colorclass[h]) and
+              Intersection(G[i], colorclass[h]) <> [] do
             h := h+1;
         od;
         if h-1 = k then
             k := k+1;
             colorclass[h] := [];
         fi;
-        Add(colorclass[h],i);
+        Add(colorclass[h], i);
         color[i] := h;
     od;
     return [k, color, colorclass];
@@ -831,7 +834,8 @@ InstallGlobalFunction( KSTSP3, function( G, F )
             if thecost < optcost then
                 optcost := thecost;
                 optX := ShallowCopy(XX);
-                Print("Found better route ", optX, " with cost ", optcost, "\n");
+                Info(InfoKS, 1, "Found better route ", optX, " with cost ",
+                     optcost);
             fi;
         fi;
         if l = 1 then
