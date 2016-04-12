@@ -100,14 +100,14 @@ end);
 InstallGlobalFunction( KSUGP, function( G, cmax )
     local P, c, Q;
     P := KSSelectPartition(Length(G)/2);
-    Print("Start with partition ",P,", cost: ",KSCost(G,P),"\n");
+    Info(InfoKS, 1, "Start with partition ", P, ", cost: ", KSCost(G,P));
     c := 1;
     while c <= cmax do
-        Print("Attempt c=",c,"\n");
+        Info(InfoKS, 1, "Attempt c=", c);
         Q := KSAscend(G, P);
         if not Q[2] then
             P := Q[1];
-            Print("Better cost with ",P,", cost: ",KSCost(G,P),"\n");
+            Info(InfoKS, 1, "Better cost with ", P, ", cost: ", KSCost(G,P));
         else
             return P;
         fi;
@@ -167,13 +167,13 @@ InstallGlobalFunction( KSRevisedStinsonAlgorithm, function( v )
                 other[x][y] := 0;
             od;
         od;
-        # Print("LivePoints=",LivePoints,
-        #       ", IndexLivePoints=",IndexLivePoints,
-        #       ", NumLivePairs=",NumLivePairs,
-        #       ", NumLivePoints=",NumLivePoints,
-        #       ", LivePairs=",LivePairs,
-        #       ", IndexLivePairs=",IndexLivePairs,
-        #       ", other=",other,"\n");
+        Info(InfoKS, 2, "LivePoints=", LivePoints,
+              ", IndexLivePoints=", IndexLivePoints,
+              ", NumLivePairs=", NumLivePairs,
+              ", NumLivePoints=", NumLivePoints,
+              ", LivePairs=", LivePairs,
+              ", IndexLivePairs=", IndexLivePairs,
+              ", other=", other);
     end;
     
     InsertPair := function (x, y)
@@ -257,23 +257,23 @@ InstallGlobalFunction( KSRevisedStinsonAlgorithm, function( v )
         t := U[2];
         y := LivePairs[x][s];
         z := LivePairs[x][t];
-        # Print("x=",x,", y=",y,", z=",z,"\n");
+        Info(InfoKS, 2, "x=", x, ", y=", y, ", z=", z);
         if other[y][z] = 0 then
             AddBlock(x, y, z);
             NumBlocks := NumBlocks + 1;
-            Print("Adding: ",Set([x,y,z]),"\n");
+            Info(InfoKS, 1, "Adding: ", Set([x,y,z]));
         else
             w := other[y][z];
             ExchangeBlock(x, y, z, w);
-            Print("Exchange: ",Set([y,z,w])," by ",Set([x,y,z]),"\n");
+            Info(InfoKS, 1, "Exchange: ", Set([y,z,w]), " by ", Set([x,y,z]));
         fi;
-        # Print("LivePoints=",LivePoints,
-        #       ", IndexLivePoints=",IndexLivePoints,
-        #       ", NumLivePairs=",NumLivePairs,
-        #       ", NumLivePoints=",NumLivePoints,
-        #       ", LivePairs=",LivePairs,
-        #       ", IndexLivePairs=",IndexLivePairs,
-        #       ", other=",other,"\n");        
+        Info(InfoKS, 2, "LivePoints=", LivePoints,
+              ", IndexLivePoints=", IndexLivePoints,
+              ", NumLivePairs=", NumLivePairs,
+              ", NumLivePoints=", NumLivePoints,
+              ", LivePairs=", LivePairs,
+              ", IndexLivePairs=", IndexLivePairs,
+              ", other=", other);
     end;
     
     NumBlocks := 0;
