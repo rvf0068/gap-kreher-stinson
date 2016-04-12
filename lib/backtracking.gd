@@ -7,38 +7,51 @@
 ##
 #############################################################################
 
-#F  KSCheckKnapsackInput( P, W, M ) 
+#F  KSCheckKnapsackInput( K ) 
 ##
 ##  <#GAPDoc Label="KSCheckKnapsackInput">
 ##  <ManSection>
-##  <Func Name="KSCheckKnapsackInput" Arg="profits, weights, capacity"/>
+##  <Func Name="KSCheckKnapsackInput" Arg="K"/>
 ##
 ##  <Description>
-##  Checks for valid input data for the Knapsack problems (Problems 1.1-1.4).
+##
+##  Checks for valid input data for the Knapsack problems (Problems
+##  1.1-1.4). <A>K</A> is a list, which first element is the vector of
+##  profits, the second is the vector of weights, and the third is the
+##  capacity of the knapsack, which must be an integer.
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSCheckKnapsackInput" );
 
-#F  KSKnapsack1( P, W, M ) 
+#F  KSKnapsack1( K ) 
 ##
 ##  <#GAPDoc Label="KSKnapsack1">
 ##  <ManSection>
-##  <Func Name="KSKnapsack1" Arg="profits, weights, capacity"/>
+##  <Func Name="KSKnapsack1" Arg="K"/>
+##
 ##  <Description>
-##  Implementation of Algorithm 4.1.
+##
+##  Implementation of Algorithm 4.1. <A>K</A> is a list, which
+##  elements are profits, weights, capacity.
+##
 ##  </Description>
+##
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSKnapsack1" );
 
-#F  KSKnapsack2( P, W, M ) 
+#F  KSKnapsack2( K ) 
 ##
 ##  <#GAPDoc Label="KSKnapsack2">
 ##  <ManSection>
-##  <Func Name="KSKnapsack2" Arg="profits, weights, capacity"/>
+##  <Func Name="KSKnapsack2" Arg="K"/>
 ##  <Description>
-##  Implementation of Algorithm 4.3.
+##
+##  Implementation of Algorithm 4.3. <A>K</A> is a list, which
+##  elements are profits, weights, capacity.
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -116,57 +129,85 @@ DeclareGlobalFunction( "KSRandomSubsetOfSubsets" );
 
 #F KSWalks( n )
 ##
-##  
 ##  <#GAPDoc Label="KSWalks">
 ##  <ManSection>
 ##  <Func Name="KSWalks" Arg="number"/>
 ##
 ##  <Description>
-##  Finds all the walks in the plane of lenght <A>number</A>. (Exercise 4.1.(b))
+##
+##  Finds all non-overlapping walks in the plane of length
+##  <A>number</A>. (Exercise 4.1.(b))
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSWalks" );
 
-#F  KSSortForRationalKnapsack( P, W ) 
+#F  KSSortForRationalKnapsack( K ) 
 ##
 ##  <#GAPDoc Label="KSSortForRationalKnapsack">
 ##  <ManSection>
-##  <Func Name="KSSortForRationalKnapsack" Arg="profits, weights"/>
+##  <Func Name="KSSortForRationalKnapsack" Arg="K"/>
 ##
 ##  <Description>
-##  Given two vectors <A>profits</A>, <A>weights</A> of the same
-##  length, this function returns a vector of the two vectors, sorted
-##  in non-decreasing order of values of
-##  <M><A>profits[i]</A>/<A>weights[i]</A></M>. 
+##
+##  Given an instance <A>K</A> of the Knapsack Problem, where the two
+##  first components of <A>K</A> represent profits and weights, this
+##  function returns a list, where the first component is the same
+##  instance of the problem, but the profits and weights have been
+##  sorted in non-increasing order of values of
+##  <M><A>profits[i]</A>/<A>weights[i]</A></M>. The second component
+##  is the permutation applied to the original problem.
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSSortForRationalKnapsack" );
 
-#F  KSRationalKnapsackSorted( P, W, M ) 
+#F  KSRationalKnapsackSorted( K ) 
 ##
 ##  <#GAPDoc Label="KSRationalKnapsackSorted">
 ##  <ManSection>
-##  <Func Name="KSRationalKnapsackSorted" Arg="profits, weights, capacity"/>
+##  <Func Name="KSRationalKnapsackSorted" Arg="K"/>
 ##
 ##  <Description>
-##  Solves the rational Knapsack problem with parameters given. The
-##  vectors <A>profits</A>, <A>weights</A> must already be sorted.
+##
+##  Solves the rational Knapsack problem for the instance
+##  <A>K</A>. Profits and weights must be sorted in non-increasing
+##  order of values of <M><A>profits[i]</A>/<A>weights[i]</A></M>.
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSRationalKnapsackSorted" );
 
-#F  KSKnapsack3( P, W, M ) 
+#F  KSRationalKnapsack( K ) 
+##
+##  <#GAPDoc Label="KSRationalKnapsack">
+##  <ManSection>
+##  <Func Name="KSRationalKnapsack" Arg="K"/>
+##
+##  <Description>
+##
+##  Solves the rational Knapsack problem for the instance
+##  <A>K</A>. 
+##
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSRationalKnapsack" );
+
+#F  KSKnapsack3( K ) 
 ##
 ##  <#GAPDoc Label="KSKnapsack3">
 ##  <ManSection>
-##  <Func Name="KSKnapsack3" Arg="profits, weights, capacity"/>
+##  <Func Name="KSKnapsack3" Arg="K"/>
 ##
 ##  <Description>
-##  Solves the Knapsack problem with parameters given, using the
-##  function KSRationalKnapsackSorted as bounding function.
+##
+##  Solves the Knapsack problem for the instace <A>K</A>, using the
+##  function KSRationalKnapsack as bounding function.
+##
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

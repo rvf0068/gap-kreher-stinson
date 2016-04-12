@@ -40,6 +40,8 @@
 
     <#Include Label="KSRationalKnapsackSorted">
 
+    <#Include Label="KSRationalKnapsack">
+
     <#Include Label="KSKnapsack3">
 
     <#Include Label="KSRandomKnapsackInstance">

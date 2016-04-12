@@ -7,7 +7,7 @@
 ##
 #############################################################################
 
-#F  KSCheckKnapsackInput( P, W, M )
+#F  KSCheckKnapsackInput( K )
 ##
 InstallGlobalFunction( KSCheckKnapsackInput, function( K )
     local P, W, M;
@@ -28,14 +28,17 @@ InstallGlobalFunction( KSCheckKnapsackInput, function( K )
     fi;
 end);
 
-#F  KSKnapsack1( P, W, M ) 
+#F  KSKnapsack1( K ) 
 ##
-InstallGlobalFunction( KSKnapsack1, function(P, W, M)
-    local knapaux, n, XX, OptP, OptX, CurP;
+InstallGlobalFunction( KSKnapsack1, function( K )
+    local knapaux, n, XX, OptP, OptX, CurP, P, W, M;
     XX := [];
     OptP := 0;
     OptX := 0;
     CurP := 0;
+    P := K[1];
+    W := K[2];
+    M := K[3];
     n := Length(P);
     knapaux := function(l)
         if l = n then
@@ -59,21 +62,24 @@ InstallGlobalFunction( KSKnapsack1, function(P, W, M)
             knapaux(l);
         fi;
     end;
-    if KSCheckKnapsackInput(P, W, M) then
+    if KSCheckKnapsackInput(K) then
         knapaux(0);
-        Info(InfoKS, 1, "Maximum profit is ",OptP," with vector ",OptX,".");
+        Info(InfoKS, 1, "Maximum profit is ", OptP, " with vector ", OptX, ".");
     fi;
-    return [OptP,OptX];
+    return [OptX, OptP];
 end );
 
-#F  KSKnapsack2( P, W, M ) 
+#F  KSKnapsack2( K ) 
 ##
-InstallGlobalFunction( KSKnapsack2, function(P, W, M)
-    local knapaux, n, x, XX, OptP, OptX, CurP, C;
+InstallGlobalFunction( KSKnapsack2, function( K )
+    local knapaux, n, x, XX, OptP, OptX, CurP, C, P, W, M;
     XX := [];
     C := [];
     OptP := 0;
     OptX := 0;
+    P := K[1];
+    W := K[2];
+    M := K[3];
     n := Length(P);
     knapaux := function(l, CurW)
         if l = n+1 then
@@ -98,9 +104,9 @@ InstallGlobalFunction( KSKnapsack2, function(P, W, M)
             knapaux(l+1, CurW + W[l]*XX[l]);
         od;
     end;
-    if KSCheckKnapsackInput(P, W, M) then
+    if KSCheckKnapsackInput(K) then
         knapaux(1, 0);
-        Info(InfoKS, 1, "Maximum profit is ", OptP, " with vector ",OptX);
+        Info(InfoKS, 1, "Maximum profit is ", OptP, " with vector ", OptX);
     fi;
     return [OptX, OptP];
 end );
@@ -304,26 +310,31 @@ InstallGlobalFunction( KSWalks, function( n )
     return sols;
 end );
 
-#F  KSSortForRationalKnapsack(P, W) 
+#F  KSSortForRationalKnapsack( K ) 
 ##
-InstallGlobalFunction( KSSortForRationalKnapsack, function(P, W)
-    local l, i, ls, perm;
+InstallGlobalFunction( KSSortForRationalKnapsack, function( K )
+    local l, i, ls, perm, P, W;
+    P := K[1];
+    W := K[2];
     l := List( [1..Length(P)], i -> P[i]/W[i] );
     ls := ShallowCopy(l);
     Sort(ls);
     ls := Reversed(ls);
     perm := PermListList(ls, l);
-    return [Permuted(P, perm), Permuted(W, perm), perm];
+    return [[Permuted(P, perm), Permuted(W, perm), K[3]], perm];
 end);
 
-#F  KSRationalKnapsackSorted( P, W, M ) 
+#F  KSRationalKnapsackSorted( K ) 
 ##
-InstallGlobalFunction( KSRationalKnapsackSorted, function( P, W, M )
-    local i, j, Ps, Ws, XX, n;
+InstallGlobalFunction( KSRationalKnapsackSorted, function( K )
+    local i, j, Ps, Ws, XX, n, P, W, M;
     i := 1;
     Ps := 0;
     Ws := 0;
     XX := [];
+    P := K[1];
+    W := K[2];
+    M := K[3];
     n := Length(P);
     for j in [1..n] do
         XX[j] := 0;
@@ -340,27 +351,40 @@ InstallGlobalFunction( KSRationalKnapsackSorted, function( P, W, M )
         fi;
         i := i + 1;
     od;
-    return Ps;
+    return [XX, Ps];
 end);
 
-#F  KSKnapsack3( P, W, M ) 
+#F  KSRationalKnapsack( K ) 
 ##
-InstallGlobalFunction( KSKnapsack3, function( P, W, M )
-    local knapaux, n, x, XX, OptP, OptX, C, R;
+InstallGlobalFunction( KSRationalKnapsack, function( K )
+    local S, K1, perm, sol;
+    S := KSSortForRationalKnapsack(K);
+    K1 := S[1];
+    perm := S[2];
+    sol := KSRationalKnapsackSorted(K1);
+    return [Permuted(sol[1],perm^-1), sol[2]];
+end);
+
+#F  KSKnapsack3( K ) 
+##
+InstallGlobalFunction( KSKnapsack3, function( K )
+    local knapaux, n, x, XX, OptP, OptX, C, P, W, R, M, perm;
     XX := [];
     C := [];
     OptP := 0;
     OptX := 0;
+    R := KSSortForRationalKnapsack(K);
+    P := R[1][1];
+    W := R[1][2];
+    M := R[1][3];
+    perm := R[2];
     n := Length(P);
-    R := KSSortForRationalKnapsack(P, W);
-    P := R[1];
-    W := R[2];
     knapaux := function(l, CurW)
         local B;
         if l = n+1 then
-            Print("Checking ", XX, "\n");
+            Info(InfoKS, 1, "Checking ", XX);
             if Sum(List([1..n], i -> P[i]*XX[i])) > OptP then
-                Print("Improved profit!\n");
+                Info(InfoKS, 1, "Improved profit!");
                 OptP := Sum(List([1..n], i -> P[i]*XX[i]));
                 OptX := ShallowCopy(XX);
             fi;
@@ -370,25 +394,25 @@ InstallGlobalFunction( KSKnapsack3, function( P, W, M )
                 C[l] := [1,0];
             else
                 C[l] := [0];
-                Print("Pruning!\n");
+                Info(InfoKS, 1, "Pruning!");
             fi;
         fi;
         B := Sum( List ( [1..l-1] , i -> P[i]*XX[i] ) );
-        B := B + KSRationalKnapsackSorted( P{[l..n]}, W{[l..n]}, M - CurW);
+        B := B + KSRationalKnapsackSorted( [P{[l..n]}, W{[l..n]}, M - CurW])[2];
         for x in C[l] do
             if B <= OptP then
-                Print("Pruning using Bounding Function!\n");
+                Info(InfoKS, 1,"Pruning using bounding function!");
                 return;
             fi;
             XX[l] := x;
             knapaux(l+1, CurW + W[l]*XX[l]);
         od;
     end;
-    if KSCheckKnapsackInput(P, W, M) then
+    if KSCheckKnapsackInput(K) then
         knapaux(1,0);
-        Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
+        Info(InfoKS, 1,"Maximum profit is ", OptP, " with vector ", OptX);
     fi;
-    return;
+    return [Permuted(OptX,perm^-1), OptP];
 end);
 
 #F  KSRandomKnapsackInstance( n, Wmax ) 
