@@ -157,3 +157,22 @@ DeclareGlobalFunction( "KSConstructBlocks" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSRevisedStinsonAlgorithm" );
+
+#F  KSKnapsackSimulatedAnnealing( K, cmax, T0, alpha ) 
+##
+##  <#GAPDoc Label="KSKnapsackSimulatedAnnealing">
+##  <ManSection>
+##  <Func Name="KSKnapsackSimulatedAnnealing" Arg="K, cmax, T0, alpha"/>
+##
+##  <Description>
+##
+##  Implements Algorithm 5.20. <A>K</A> is the instance of the
+##  Knapsack problem to solve. <A>cmax</A> is the number of iterations
+##  to be done. <A>T0</A> is the initial "temperature" and
+##  <A>alpha</A> is the parameter of the "cooling schedule".
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSKnapsackSimulatedAnnealing" );

@@ -283,3 +283,47 @@ InstallGlobalFunction( KSRevisedStinsonAlgorithm, function( v )
     od;
     return KSConstructBlocks(v, other);
 end);
+
+#F  KSKnapsackSimulatedAnnealing( K, cmax, T0, alpha ) 
+##
+InstallGlobalFunction( KSKnapsackSimulatedAnnealing, function( K, cmax, T0, alpha )
+    local c, T, XX, CurW, CurP, Xbest, n, j, Y, P, W, M, r;
+    c := 0;
+    T := T0;
+    P := K[1];
+    W := K[2];
+    M := K[3];
+    n := Length(K[1]);
+    XX := List([1..n], x -> 0);
+    CurW := 0;
+    Xbest := XX;
+    while c <= cmax do
+        Info(InfoKS, 1, "Attempt: ", c);
+        j := Random(1,n);
+        Y := ShallowCopy(XX);
+        Y[j] := 1 - XX[j];
+        if not((Y[j] = 1) and (CurW + W[j] > M)) then
+            if Y[j] = 1 then
+                XX := ShallowCopy(Y);
+                CurW := CurW + W[j];
+                CurP := Sum(List([1..n], i -> P[i]*XX[i]));
+                if CurP > Sum(List([1..n], i -> P[i]*Xbest[i])) then
+                    Info(InfoKS, 1, "Improved profit: ", CurP);
+                    Xbest := ShallowCopy(XX);
+                fi;
+            else
+                r := 0.0 + (1/1000000)*Random(0,1000000);
+                Info(InfoKS, 1, "Downward move with probability ", Exp(-P[j]/T));
+                if r < Exp(-P[j]/T) then
+                    Info(InfoKS, 1, "Downward move!");
+                    XX := ShallowCopy(Y);
+                    CurW := CurW - W[j];
+                fi;
+            fi;
+        fi;
+        c := c + 1;
+        T := alpha*T;
+        Info(InfoKS, 2, "Temperature: ", T);
+    od;
+    return [Xbest, Sum(List([1..n], i -> P[i]*Xbest[i]))];
+end);

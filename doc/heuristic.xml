@@ -28,5 +28,12 @@
     <#Include Label="KSRevisedStinsonAlgorithm">
     
   </Section>
+
+
+  <Section Label="The knapsack problem">
+    <Heading>The knapsack problem</Heading>
+  
+    <#Include Label="KSKnapsackSimulatedAnnealing">
+  </Section>
   
 </Chapter>
