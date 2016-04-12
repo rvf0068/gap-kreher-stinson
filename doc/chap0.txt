@@ -64,25 +64,26 @@
     2.4 [33X[0;0YBounding functions[133X
       2.4-1 KSSortForRationalKnapsack
       2.4-2 KSRationalKnapsackSorted
-      2.4-3 KSKnapsack3
-      2.4-4 KSRandomKnapsackInstance
-      2.4-5 KSRandomTSPInstance
-      2.4-6 KSTSP1
-      2.4-7 KSMinCostBound
-      2.4-8 KSReduce
-      2.4-9 KSReduceBound
-      2.4-10 KSTSP2
-      2.4-11 KSMaxClique1
-      2.4-12 KSMaxClique2
-      2.4-13 KSSizeBound
-      2.4-14 KSGenerateRandomGraph
-      2.4-15 KSEdgeListToAdjacencyList
-      2.4-16 KSGreedyColor
-      2.4-17 KSSamplingBound
-      2.4-18 KSInducedSubgraph
-      2.4-19 KSGreedyBound
-      2.4-20 KSGenerateRandomGraph2
-      2.4-21 KSTSP3
+      2.4-3 KSRationalKnapsack
+      2.4-4 KSKnapsack3
+      2.4-5 KSRandomKnapsackInstance
+      2.4-6 KSRandomTSPInstance
+      2.4-7 KSTSP1
+      2.4-8 KSMinCostBound
+      2.4-9 KSReduce
+      2.4-10 KSReduceBound
+      2.4-11 KSTSP2
+      2.4-12 KSMaxClique1
+      2.4-13 KSMaxClique2
+      2.4-14 KSSizeBound
+      2.4-15 KSGenerateRandomGraph
+      2.4-16 KSEdgeListToAdjacencyList
+      2.4-17 KSGreedyColor
+      2.4-18 KSSamplingBound
+      2.4-19 KSInducedSubgraph
+      2.4-20 KSGreedyBound
+      2.4-21 KSGenerateRandomGraph2
+      2.4-22 KSTSP3
     2.5 [33X[0;0YExercises[133X
       2.5-1 KSQueens
       2.5-2 KSWalks

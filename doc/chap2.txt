@@ -6,21 +6,26 @@
   
   [1X2.1-1 KSCheckKnapsackInput[101X
   
-  [29X[2XKSCheckKnapsackInput[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  [29X[2XKSCheckKnapsackInput[102X( [3XK[103X ) [32X function
   
-  [33X[0;0YChecks for valid input data for the Knapsack problems (Problems 1.1-1.4).[133X
+  [33X[0;0YChecks  for valid input data for the Knapsack problems (Problems 1.1-1.4). [3XK[103X
+  is  a  list, which first element is the vector of profits, the second is the
+  vector of weights, and the third is the capacity of the knapsack, which must
+  be an integer.[133X
   
   [1X2.1-2 KSKnapsack1[101X
   
-  [29X[2XKSKnapsack1[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  [29X[2XKSKnapsack1[102X( [3XK[103X ) [32X function
   
-  [33X[0;0YImplementation of Algorithm 4.1.[133X
+  [33X[0;0YImplementation  of  Algorithm  4.1. [3XK[103X is a list, which elements are profits,
+  weights, capacity.[133X
   
   [1X2.1-3 KSKnapsack2[101X
   
-  [29X[2XKSKnapsack2[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  [29X[2XKSKnapsack2[102X( [3XK[103X ) [32X function
   
-  [33X[0;0YImplementation of Algorithm 4.3.[133X
+  [33X[0;0YImplementation  of  Algorithm  4.3. [3XK[103X is a list, which elements are profits,
+  weights, capacity.[133X
   
   
   [1X2.2 [33X[0;0YGenerating all cliques[133X[101X
@@ -55,27 +60,36 @@
   
   [1X2.4-1 KSSortForRationalKnapsack[101X
   
-  [29X[2XKSSortForRationalKnapsack[102X( [3Xprofits[103X, [3Xweights[103X ) [32X function
+  [29X[2XKSSortForRationalKnapsack[102X( [3XK[103X ) [32X function
   
-  [33X[0;0YGiven two vectors [3Xprofits[103X, [3Xweights[103X of the same length, this function returns
-  a  vector  of  the  two vectors, sorted in non-decreasing order of values of
-  [22X[3Xprofits[i][103X/[3Xweights[i][103X[122X.[133X
+  [33X[0;0YGiven  an instance [3XK[103X of the Knapsack Problem, where the two first components
+  of  [3XK[103X represent profits and weights, this function returns a list, where the
+  first  component  is  the  same instance of the problem, but the profits and
+  weights   have   been   sorted   in   non-increasing   order  of  values  of
+  [22X[3Xprofits[i][103X/[3Xweights[i][103X[122X.  The  second  component is the permutation applied to
+  the original problem.[133X
   
   [1X2.4-2 KSRationalKnapsackSorted[101X
   
-  [29X[2XKSRationalKnapsackSorted[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  [29X[2XKSRationalKnapsackSorted[102X( [3XK[103X ) [32X function
   
-  [33X[0;0YSolves  the  rational  Knapsack  problem  with parameters given. The vectors
-  [3Xprofits[103X, [3Xweights[103X must already be sorted.[133X
+  [33X[0;0YSolves the rational Knapsack problem for the instance [3XK[103X. Profits and weights
+  must be sorted in non-increasing order of values of [22X[3Xprofits[i][103X/[3Xweights[i][103X[122X.[133X
   
-  [1X2.4-3 KSKnapsack3[101X
+  [1X2.4-3 KSRationalKnapsack[101X
   
-  [29X[2XKSKnapsack3[102X( [3Xprofits[103X, [3Xweights[103X, [3Xcapacity[103X ) [32X function
+  [29X[2XKSRationalKnapsack[102X( [3XK[103X ) [32X function
   
-  [33X[0;0YSolves  the  Knapsack  problem  with  parameters  given,  using the function
-  KSRationalKnapsackSorted as bounding function.[133X
+  [33X[0;0YSolves the rational Knapsack problem for the instance [3XK[103X.[133X
   
-  [1X2.4-4 KSRandomKnapsackInstance[101X
+  [1X2.4-4 KSKnapsack3[101X
+  
+  [29X[2XKSKnapsack3[102X( [3XK[103X ) [32X function
+  
+  [33X[0;0YSolves   the  Knapsack  problem  for  the  instace  [3XK[103X,  using  the  function
+  KSRationalKnapsack as bounding function.[133X
+  
+  [1X2.4-5 KSRandomKnapsackInstance[101X
   
   [29X[2XKSRandomKnapsackInstance[102X( [3Xsize[103X, [3Xmaximum_weight[103X ) [32X function
   
@@ -83,7 +97,7 @@
   maximum  weight  is [3Xmaximum_weight[103X. For each [22Xi[122X, the profit [22XP[i][122X is [22X2*W[i]*ϵ[122X,
   where [22Xϵ[122X is a random number between [22X0.9[122X and [22X1.1[122X.[133X
   
-  [1X2.4-5 KSRandomTSPInstance[101X
+  [1X2.4-6 KSRandomTSPInstance[101X
   
   [29X[2XKSRandomTSPInstance[102X( [3Xn[103X, [3XWmax[103X ) [32X function
   
@@ -92,81 +106,81 @@
   The  entries  in  the  diagonal  are  made equal to [22X∞[122X. Each cost is a random
   integer between 1 and [3XWmax[103X.[133X
   
-  [1X2.4-6 KSTSP1[101X
+  [1X2.4-7 KSTSP1[101X
   
   [29X[2XKSTSP1[102X( [3XG[103X ) [32X function
   
   [33X[0;0YSolves the TSP problem, for the instance [3XG[103X, traversing the whole tree space.[133X
   
-  [1X2.4-7 KSMinCostBound[101X
+  [1X2.4-8 KSMinCostBound[101X
   
   [29X[2XKSMinCostBound[102X( [3XV[103X, [3XG[103X ) [32X function
   
   [33X[0;0YA bounding function for the TSP problem.[133X
   
-  [1X2.4-8 KSReduce[101X
+  [1X2.4-9 KSReduce[101X
   
   [29X[2XKSReduce[102X( [3XM[103X ) [32X function
   
   [33X[0;0YReduce  function  for  matrices, which will be useful to implement a secound
   bounding function for the TSP problem.[133X
   
-  [1X2.4-9 KSReduceBound[101X
+  [1X2.4-10 KSReduceBound[101X
   
   [29X[2XKSReduceBound[102X( [3XV[103X, [3XM[103X ) [32X function
   
   [33X[0;0YA second bounding function for the TSP problem. [3XV[103X is a partial solution, and
   [3XM[103X is the problem instance. This implements Algorithm 4.12.[133X
   
-  [1X2.4-10 KSTSP2[101X
+  [1X2.4-11 KSTSP2[101X
   
   [29X[2XKSTSP2[102X( [3XG[103X, [3XF[103X ) [32X function
   
   [33X[0;0YSolves the TSP problem for instance [3XG[103X, using the bounding function [3XF[103X.[133X
   
-  [1X2.4-11 KSMaxClique1[101X
+  [1X2.4-12 KSMaxClique1[101X
   
   [29X[2XKSMaxClique1[102X( [3XG[103X ) [32X function
   
   [33X[0;0YAdapts the function that lists the complete subgraphs of [3XG[103X, to find the size
   of the largest clique of [3XG[103X. This implements Algorithm 4.14.[133X
   
-  [1X2.4-12 KSMaxClique2[101X
+  [1X2.4-13 KSMaxClique2[101X
   
   [29X[2XKSMaxClique2[102X( [3XG[103X, [3XF[103X ) [32X function
   
   [33X[0;0YFinds  the  size  of  the  maximum clique in the graph [3XG[103X, using the bounding
   function [3XF[103X. This implements Algorithm 4.19.[133X
   
-  [1X2.4-13 KSSizeBound[101X
+  [1X2.4-14 KSSizeBound[101X
   
   [29X[2XKSSizeBound[102X( [3XXX[103X, [3XG[103X, [3XCl[103X ) [32X function
   
   [33X[0;0YA  bounding function for the MaxClique problem. [3XXX[103X is a complete subgraph of
   [3XG[103X, and [3XCl[103X is the set of candidates to extend [3XXX[103X.[133X
   
-  [1X2.4-14 KSGenerateRandomGraph[101X
+  [1X2.4-15 KSGenerateRandomGraph[101X
   
   [29X[2XKSGenerateRandomGraph[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YReturns  a  list  of  edges of a random graph on [3Xn[103X vertices. This implements
   Algorithm 4.20.[133X
   
-  [1X2.4-15 KSEdgeListToAdjacencyList[101X
+  [1X2.4-16 KSEdgeListToAdjacencyList[101X
   
   [29X[2XKSEdgeListToAdjacencyList[102X( [3XGed[103X, [3Xn[103X ) [32X function
   
   [33X[0;0YGiven  the  list  of  edges  [3XGed[103X  of  a  graph  with [3Xn[103X vertices, returns the
   adjacency list of such graph.[133X
   
-  [1X2.4-16 KSGreedyColor[101X
+  [1X2.4-17 KSGreedyColor[101X
   
   [29X[2XKSGreedyColor[102X( [3XG[103X ) [32X function
   
   [33X[0;0YColors  the  vertices  of a graph [3XG[103X using a greedy strategy. This implements
   Algorithm 4.16.[133X
   
-  [1X2.4-17 KSSamplingBound[101X
+  [1X2.4-18 KSSamplingBound[101X
   
   [29X[2XKSSamplingBound[102X( [3XXX[103X, [3XG[103X, [3XCl[103X ) [32X function
   
@@ -174,14 +188,14 @@
   [3XG[103X,  and [3XCl[103X is the set of candidates to extend [3XXX[103X. This function uses a fixed
   greedy coloring of the graph [3XG[103X. Implements Algorithm 4.17.[133X
   
-  [1X2.4-18 KSInducedSubgraph[101X
+  [1X2.4-19 KSInducedSubgraph[101X
   
   [29X[2XKSInducedSubgraph[102X( [3XG[103X, [3XL[103X ) [32X function
   
   [33X[0;0YReturns  the  adjacency list of the subgraph of [3XG[103X induced by the vertices in
   [3XL[103X.[133X
   
-  [1X2.4-19 KSGreedyBound[101X
+  [1X2.4-20 KSGreedyBound[101X
   
   [29X[2XKSGreedyBound[102X( [3XXX[103X, [3XG[103X, [3XCl[103X ) [32X function
   
@@ -189,14 +203,14 @@
   [3XG[103X, and [3XCl[103X is the set of candidates to extend [3XXX[103X. This uses a greedy coloring
   of the subgraph of [3XG[103X induced by [3XL[103X.[133X
   
-  [1X2.4-20 KSGenerateRandomGraph2[101X
+  [1X2.4-21 KSGenerateRandomGraph2[101X
   
   [29X[2XKSGenerateRandomGraph2[102X( [3Xn[103X, [3Xdelta[103X ) [32X function
   
   [33X[0;0YReturns  the list of edges of a random graph on [3Xn[103X vertices with edge density
   [3Xdelta[103X.[133X
   
-  [1X2.4-21 KSTSP3[101X
+  [1X2.4-22 KSTSP3[101X
   
   [29X[2XKSTSP3[102X( [3XG[103X, [3XF[103X ) [32X function
   
@@ -222,5 +236,6 @@
   
   [29X[2XKSWalks[102X( [3Xnumber[103X ) [32X function
   
-  [33X[0;0YFinds all the walks in the plane of lenght [3Xnumber[103X. (Exercise 4.1.(b))[133X
+  [33X[0;0YFinds  all  non-overlapping  walks  in the plane of length [3Xnumber[103X. (Exercise
+  4.1.(b))[133X
   

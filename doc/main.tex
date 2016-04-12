@@ -211,36 +211,38 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 \subsection{\textcolor{Chapter }{KSCheckKnapsackInput}}
 \logpage{[ 2, 1, 1 ]}\nobreak
 \hyperdef{L}{X7FB05C427FBC528B}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSCheckKnapsackInput({\mdseries\slshape profits, weights, capacity})\index{KSCheckKnapsackInput@\texttt{KSCheckKnapsackInput}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSCheckKnapsackInput({\mdseries\slshape K})\index{KSCheckKnapsackInput@\texttt{KSCheckKnapsackInput}}
 \label{KSCheckKnapsackInput}
 }\hfill{\scriptsize (function)}}\\
 
 
- Checks for valid input data for the Knapsack problems (Problems 1.1-1.4). }
+ Checks for valid input data for the Knapsack problems (Problems 1.1-1.4). \mbox{\texttt{\mdseries\slshape K}} is a list, which first element is the vector of profits, the second is the
+vector of weights, and the third is the capacity of the knapsack, which must
+be an integer. }
 
  
 
 \subsection{\textcolor{Chapter }{KSKnapsack1}}
 \logpage{[ 2, 1, 2 ]}\nobreak
 \hyperdef{L}{X84E39E7E8371D3BB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack1({\mdseries\slshape profits, weights, capacity})\index{KSKnapsack1@\texttt{KSKnapsack1}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack1({\mdseries\slshape K})\index{KSKnapsack1@\texttt{KSKnapsack1}}
 \label{KSKnapsack1}
 }\hfill{\scriptsize (function)}}\\
 
 
- Implementation of Algorithm 4.1. }
+ Implementation of Algorithm 4.1. \mbox{\texttt{\mdseries\slshape K}} is a list, which elements are profits, weights, capacity. }
 
  
 
 \subsection{\textcolor{Chapter }{KSKnapsack2}}
 \logpage{[ 2, 1, 3 ]}\nobreak
 \hyperdef{L}{X7D730B657AEFF5DB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack2({\mdseries\slshape profits, weights, capacity})\index{KSKnapsack2@\texttt{KSKnapsack2}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack2({\mdseries\slshape K})\index{KSKnapsack2@\texttt{KSKnapsack2}}
 \label{KSKnapsack2}
 }\hfill{\scriptsize (function)}}\\
 
 
- Implementation of Algorithm 4.3. }
+ Implementation of Algorithm 4.3. \mbox{\texttt{\mdseries\slshape K}} is a list, which elements are profits, weights, capacity. }
 
  }
 
@@ -304,43 +306,55 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 \subsection{\textcolor{Chapter }{KSSortForRationalKnapsack}}
 \logpage{[ 2, 4, 1 ]}\nobreak
 \hyperdef{L}{X7C63779C8478C20C}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSortForRationalKnapsack({\mdseries\slshape profits, weights})\index{KSSortForRationalKnapsack@\texttt{KSSortForRationalKnapsack}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSortForRationalKnapsack({\mdseries\slshape K})\index{KSSortForRationalKnapsack@\texttt{KSSortForRationalKnapsack}}
 \label{KSSortForRationalKnapsack}
 }\hfill{\scriptsize (function)}}\\
 
 
- Given two vectors \mbox{\texttt{\mdseries\slshape profits}}, \mbox{\texttt{\mdseries\slshape weights}} of the same length, this function returns a vector of the two vectors, sorted
-in non-decreasing order of values of $\mbox{\texttt{\mdseries\slshape profits[i]}}/\mbox{\texttt{\mdseries\slshape weights[i]}}$. }
+ Given an instance \mbox{\texttt{\mdseries\slshape K}} of the Knapsack Problem, where the two first components of \mbox{\texttt{\mdseries\slshape K}} represent profits and weights, this function returns a list, where the first
+component is the same instance of the problem, but the profits and weights
+have been sorted in non-increasing order of values of $\mbox{\texttt{\mdseries\slshape profits[i]}}/\mbox{\texttt{\mdseries\slshape weights[i]}}$. The second component is the permutation applied to the original problem. }
 
  
 
 \subsection{\textcolor{Chapter }{KSRationalKnapsackSorted}}
 \logpage{[ 2, 4, 2 ]}\nobreak
 \hyperdef{L}{X87F7D9DD7B0E9DE4}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRationalKnapsackSorted({\mdseries\slshape profits, weights, capacity})\index{KSRationalKnapsackSorted@\texttt{KSRationalKnapsackSorted}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRationalKnapsackSorted({\mdseries\slshape K})\index{KSRationalKnapsackSorted@\texttt{KSRationalKnapsackSorted}}
 \label{KSRationalKnapsackSorted}
 }\hfill{\scriptsize (function)}}\\
 
 
- Solves the rational Knapsack problem with parameters given. The vectors \mbox{\texttt{\mdseries\slshape profits}}, \mbox{\texttt{\mdseries\slshape weights}} must already be sorted. }
+ Solves the rational Knapsack problem for the instance \mbox{\texttt{\mdseries\slshape K}}. Profits and weights must be sorted in non-increasing order of values of $\mbox{\texttt{\mdseries\slshape profits[i]}}/\mbox{\texttt{\mdseries\slshape weights[i]}}$. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSRationalKnapsack}}
+\logpage{[ 2, 4, 3 ]}\nobreak
+\hyperdef{L}{X81A085627DA480A4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRationalKnapsack({\mdseries\slshape K})\index{KSRationalKnapsack@\texttt{KSRationalKnapsack}}
+\label{KSRationalKnapsack}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Solves the rational Knapsack problem for the instance \mbox{\texttt{\mdseries\slshape K}}. }
 
  
 
 \subsection{\textcolor{Chapter }{KSKnapsack3}}
-\logpage{[ 2, 4, 3 ]}\nobreak
+\logpage{[ 2, 4, 4 ]}\nobreak
 \hyperdef{L}{X7A03786C86F71827}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack3({\mdseries\slshape profits, weights, capacity})\index{KSKnapsack3@\texttt{KSKnapsack3}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack3({\mdseries\slshape K})\index{KSKnapsack3@\texttt{KSKnapsack3}}
 \label{KSKnapsack3}
 }\hfill{\scriptsize (function)}}\\
 
 
- Solves the Knapsack problem with parameters given, using the function
-KSRationalKnapsackSorted as bounding function. }
+ Solves the Knapsack problem for the instace \mbox{\texttt{\mdseries\slshape K}}, using the function KSRationalKnapsack as bounding function. }
 
  
 
 \subsection{\textcolor{Chapter }{KSRandomKnapsackInstance}}
-\logpage{[ 2, 4, 4 ]}\nobreak
+\logpage{[ 2, 4, 5 ]}\nobreak
 \hyperdef{L}{X7F7AF9917C7513E0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomKnapsackInstance({\mdseries\slshape size, maximum{\textunderscore}weight})\index{KSRandomKnapsackInstance@\texttt{KSRandomKnapsackInstance}}
 \label{KSRandomKnapsackInstance}
@@ -352,7 +366,7 @@ KSRationalKnapsackSorted as bounding function. }
  
 
 \subsection{\textcolor{Chapter }{KSRandomTSPInstance}}
-\logpage{[ 2, 4, 5 ]}\nobreak
+\logpage{[ 2, 4, 6 ]}\nobreak
 \hyperdef{L}{X824023CC7A1DAEEE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomTSPInstance({\mdseries\slshape n, Wmax})\index{KSRandomTSPInstance@\texttt{KSRandomTSPInstance}}
 \label{KSRandomTSPInstance}
@@ -364,7 +378,7 @@ KSRationalKnapsackSorted as bounding function. }
  
 
 \subsection{\textcolor{Chapter }{KSTSP1}}
-\logpage{[ 2, 4, 6 ]}\nobreak
+\logpage{[ 2, 4, 7 ]}\nobreak
 \hyperdef{L}{X8208350A7F23DC4F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSTSP1({\mdseries\slshape G})\index{KSTSP1@\texttt{KSTSP1}}
 \label{KSTSP1}
@@ -376,7 +390,7 @@ KSRationalKnapsackSorted as bounding function. }
  
 
 \subsection{\textcolor{Chapter }{KSMinCostBound}}
-\logpage{[ 2, 4, 7 ]}\nobreak
+\logpage{[ 2, 4, 8 ]}\nobreak
 \hyperdef{L}{X845476007D8005D4}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMinCostBound({\mdseries\slshape V, G})\index{KSMinCostBound@\texttt{KSMinCostBound}}
 \label{KSMinCostBound}
@@ -388,7 +402,7 @@ KSRationalKnapsackSorted as bounding function. }
  
 
 \subsection{\textcolor{Chapter }{KSReduce}}
-\logpage{[ 2, 4, 8 ]}\nobreak
+\logpage{[ 2, 4, 9 ]}\nobreak
 \hyperdef{L}{X8683492082A8C4B4}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSReduce({\mdseries\slshape M})\index{KSReduce@\texttt{KSReduce}}
 \label{KSReduce}
@@ -401,7 +415,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSReduceBound}}
-\logpage{[ 2, 4, 9 ]}\nobreak
+\logpage{[ 2, 4, 10 ]}\nobreak
 \hyperdef{L}{X7C74326D7CA8BA24}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSReduceBound({\mdseries\slshape V, M})\index{KSReduceBound@\texttt{KSReduceBound}}
 \label{KSReduceBound}
@@ -413,7 +427,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSTSP2}}
-\logpage{[ 2, 4, 10 ]}\nobreak
+\logpage{[ 2, 4, 11 ]}\nobreak
 \hyperdef{L}{X7B98A011874A9B65}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSTSP2({\mdseries\slshape G, F})\index{KSTSP2@\texttt{KSTSP2}}
 \label{KSTSP2}
@@ -425,7 +439,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSMaxClique1}}
-\logpage{[ 2, 4, 11 ]}\nobreak
+\logpage{[ 2, 4, 12 ]}\nobreak
 \hyperdef{L}{X7E670BAD7D143608}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMaxClique1({\mdseries\slshape G})\index{KSMaxClique1@\texttt{KSMaxClique1}}
 \label{KSMaxClique1}
@@ -437,7 +451,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSMaxClique2}}
-\logpage{[ 2, 4, 12 ]}\nobreak
+\logpage{[ 2, 4, 13 ]}\nobreak
 \hyperdef{L}{X87F79EB67A6DDB27}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMaxClique2({\mdseries\slshape G, F})\index{KSMaxClique2@\texttt{KSMaxClique2}}
 \label{KSMaxClique2}
@@ -449,7 +463,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSSizeBound}}
-\logpage{[ 2, 4, 13 ]}\nobreak
+\logpage{[ 2, 4, 14 ]}\nobreak
 \hyperdef{L}{X7A6A4127818EDC0E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSizeBound({\mdseries\slshape XX, G, Cl})\index{KSSizeBound@\texttt{KSSizeBound}}
 \label{KSSizeBound}
@@ -461,7 +475,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSGenerateRandomGraph}}
-\logpage{[ 2, 4, 14 ]}\nobreak
+\logpage{[ 2, 4, 15 ]}\nobreak
 \hyperdef{L}{X78E238A984F3911E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGenerateRandomGraph({\mdseries\slshape n})\index{KSGenerateRandomGraph@\texttt{KSGenerateRandomGraph}}
 \label{KSGenerateRandomGraph}
@@ -473,7 +487,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSEdgeListToAdjacencyList}}
-\logpage{[ 2, 4, 15 ]}\nobreak
+\logpage{[ 2, 4, 16 ]}\nobreak
 \hyperdef{L}{X7C0E333A7B200D4C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSEdgeListToAdjacencyList({\mdseries\slshape Ged, n})\index{KSEdgeListToAdjacencyList@\texttt{KSEdgeListToAdjacencyList}}
 \label{KSEdgeListToAdjacencyList}
@@ -485,7 +499,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSGreedyColor}}
-\logpage{[ 2, 4, 16 ]}\nobreak
+\logpage{[ 2, 4, 17 ]}\nobreak
 \hyperdef{L}{X7C4BB3897802A465}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGreedyColor({\mdseries\slshape G})\index{KSGreedyColor@\texttt{KSGreedyColor}}
 \label{KSGreedyColor}
@@ -497,7 +511,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSSamplingBound}}
-\logpage{[ 2, 4, 17 ]}\nobreak
+\logpage{[ 2, 4, 18 ]}\nobreak
 \hyperdef{L}{X83A5C32080EA9396}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSamplingBound({\mdseries\slshape XX, G, Cl})\index{KSSamplingBound@\texttt{KSSamplingBound}}
 \label{KSSamplingBound}
@@ -509,7 +523,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSInducedSubgraph}}
-\logpage{[ 2, 4, 18 ]}\nobreak
+\logpage{[ 2, 4, 19 ]}\nobreak
 \hyperdef{L}{X800A04C2811D4374}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSInducedSubgraph({\mdseries\slshape G, L})\index{KSInducedSubgraph@\texttt{KSInducedSubgraph}}
 \label{KSInducedSubgraph}
@@ -521,7 +535,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSGreedyBound}}
-\logpage{[ 2, 4, 19 ]}\nobreak
+\logpage{[ 2, 4, 20 ]}\nobreak
 \hyperdef{L}{X807E30DC7CDAD9D3}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGreedyBound({\mdseries\slshape XX, G, Cl})\index{KSGreedyBound@\texttt{KSGreedyBound}}
 \label{KSGreedyBound}
@@ -533,7 +547,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSGenerateRandomGraph2}}
-\logpage{[ 2, 4, 20 ]}\nobreak
+\logpage{[ 2, 4, 21 ]}\nobreak
 \hyperdef{L}{X7A8E9FCD8238638C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGenerateRandomGraph2({\mdseries\slshape n, delta})\index{KSGenerateRandomGraph2@\texttt{KSGenerateRandomGraph2}}
 \label{KSGenerateRandomGraph2}
@@ -545,7 +559,7 @@ bounding function for the TSP problem. }
  
 
 \subsection{\textcolor{Chapter }{KSTSP3}}
-\logpage{[ 2, 4, 21 ]}\nobreak
+\logpage{[ 2, 4, 22 ]}\nobreak
 \hyperdef{L}{X7CE8D3187BFF565F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSTSP3({\mdseries\slshape G, F})\index{KSTSP3@\texttt{KSTSP3}}
 \label{KSTSP3}
@@ -589,7 +603,7 @@ bounding function for the TSP problem. }
 }\hfill{\scriptsize (function)}}\\
 
 
- Finds all the walks in the plane of lenght \mbox{\texttt{\mdseries\slshape number}}. (Exercise 4.1.(b)) }
+ Finds all non-overlapping walks in the plane of length \mbox{\texttt{\mdseries\slshape number}}. (Exercise 4.1.(b)) }
 
  }
 
