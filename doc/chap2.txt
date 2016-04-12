@@ -43,6 +43,13 @@
   [33X[0;0YFinds an subcollection of [3Xcover[103X (which is a set of subsets of [22X{1,..,[3Xnumber[103X}[122X)
   that is an exact cover of [22X{1,..,[3Xnumber[103X}[122X, if it exists.[133X
   
+  [1X2.3-2 KSRandomSubsetOfSubsets[101X
+  
+  [29X[2XKSRandomSubsetOfSubsets[102X( [3Xn[103X, [3Xdelta[103X ) [32X function
+  
+  [33X[0;0YGenerates  a random subset of the set of all subsets of [22X{1..[3Xn[103X}[122X, with density
+  [3Xdelta[103X. This can be used as an instance of the ExactCover problem.[133X
+  
   
   [1X2.4 [33X[0;0YBounding functions[133X[101X
   

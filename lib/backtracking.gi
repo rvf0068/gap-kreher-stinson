@@ -9,16 +9,19 @@
 
 #F  KSCheckKnapsackInput( P, W, M )
 ##
-InstallGlobalFunction(
-    KSCheckKnapsackInput, function(P, W, M)
+InstallGlobalFunction( KSCheckKnapsackInput, function( K )
+    local P, W, M;
+    P := K[1];
+    W := K[2];
+    M := K[3];
     if not(IsList(P) and IsList(W)) then
-        Print("Error. First two arguments must be lists.\n");
+        Print("Error. First two components must be lists.\n");
         return false;
     elif not (Length(P)=Length(W)) then
-        Print("Error. The first two arguments must be lists of the same length.\n");
+        Print("Error. The first two components must be lists of the same length.\n");
         return false;
     elif not(IsInt(M)) then
-        Print("Error. The third arguments must be an integer.\n");
+        Print("Error. The third component must be an integer.\n");
         return false;
     else
         return true;
@@ -36,17 +39,17 @@ InstallGlobalFunction( KSKnapsack1, function(P, W, M)
     n := Length(P);
     knapaux := function(l)
         if l = n then
-            Print("Checking ",XX);
+            Info(InfoKS, 1, "Checking: ", XX);
             if Sum(List([1..n], i -> W[i]*XX[i])) <= M then
                 CurP := Sum(List([1..n], i -> P[i]*XX[i]));
-                Print(", feasible, with profit ",CurP,".\n");
+                Info(InfoKS, 1, ", feasible, with profit ", CurP, ".");
                 if CurP > OptP then
-                    Print("Improved profit!\n");
+                    Info(InfoKS, 1, "Improved profit!");
                     OptP := CurP;
                     OptX := ShallowCopy(XX);
                 fi;
             else
-                Print(", not feasible.\n");
+                Info(InfoKS, 1, ", not feasible.");
             fi;
         else
             l := l+1;
@@ -58,9 +61,9 @@ InstallGlobalFunction( KSKnapsack1, function(P, W, M)
     end;
     if KSCheckKnapsackInput(P, W, M) then
         knapaux(0);
-        Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
+        Info(InfoKS, 1, "Maximum profit is ",OptP," with vector ",OptX,".");
     fi;
-    return;
+    return [OptP,OptX];
 end );
 
 #F  KSKnapsack2( P, W, M ) 
@@ -72,22 +75,22 @@ InstallGlobalFunction( KSKnapsack2, function(P, W, M)
     OptP := 0;
     OptX := 0;
     n := Length(P);
-    knapaux := function(l,CurW)
+    knapaux := function(l, CurW)
         if l = n+1 then
             CurP := Sum(List([1..n], i -> P[i]*XX[i]));
-            Print("Checking ",XX,"\n");
+            Info(InfoKS, 1, "Checking: ", XX);
             if CurP > OptP then
-                Print("Improved profit!\n");
+                Info(InfoKS, 1, "Improved profit: ", CurP);
                 OptP := CurP;
                 OptX := ShallowCopy(XX);
             fi;
             C[l] := [];
         else
             if CurW + W[l] <= M then
-                C[l] := [1,0];
+                C[l] := [1, 0];
             else
                 C[l] := [0];
-                Print("Pruning!\n");
+                Info(InfoKS, 1, "Pruning!");
             fi;
         fi;
         for x in C[l] do
@@ -96,10 +99,10 @@ InstallGlobalFunction( KSKnapsack2, function(P, W, M)
         od;
     end;
     if KSCheckKnapsackInput(P, W, M) then
-        knapaux(1,0);
-        Print("Maximum profit is ",OptP," with vector ",OptX,"\n");
+        knapaux(1, 0);
+        Info(InfoKS, 1, "Maximum profit is ", OptP, " with vector ",OptX);
     fi;
-    return;
+    return [OptX, OptP];
 end );
 
 #F  KSAllCliques( G ) 
@@ -125,7 +128,7 @@ InstallGlobalFunction( KSAllCliques, function( G )
             N[l+1] := Intersection( G[XX[l]], N[l] );
         fi;
         if N[l+1] = [] then
-            Print(XX," is maximal!\n");
+            Info(InfoKS, 1, XX, " is maximal!");
         fi;
         if l = 0 then
             C[l+1] := V;
@@ -145,22 +148,23 @@ end );
 #F  KSQueens( n ) 
 ##
 InstallGlobalFunction( KSQueens, function( n )
-    local C, XX, queens,k;
+    local C, XX, queens, k, sols;
     C := [];
     XX := [];
-    k:=0;
+    k :=0;
+    sols := [];
     queens := function(l)
-        local x,valid;
+        local x, valid;
         valid := function()
             local i, j, Bad;
             Bad := [];
             for i in [1..l] do
-                Append(Bad,[XX[i],XX[i]-l-1+i,XX[i]+l+1-i]);
+                Append(Bad, [XX[i], XX[i]-l-1+i, XX[i]+l+1-i]);
             od;
-            return Difference( [1..n], Bad );
+            return Difference([1..n], Bad);
         end;
         if l = n then
-            Print(XX,"\n");    
+            Add(sols, XX);
         fi;
         C[l+1] := valid();
         for x in C[l+1] do
@@ -171,13 +175,13 @@ InstallGlobalFunction( KSQueens, function( n )
         od;
     end;
     queens(0);
-    return;
+    return sols;
 end);
 
 #F  KSExactCover( n, S ) 
 ##
 InstallGlobalFunction( KSExactCover, function( n, S )
-    local C, XX, cover, m, A, B, H, i, j, U, Cp;
+    local C, XX, cover, m, A, B, H, i, j, U, Cp, covs;
     cover := function (l, rp)
         local r, x, sol;
         if l = 0 then
@@ -192,7 +196,8 @@ InstallGlobalFunction( KSExactCover, function( n, S )
         fi;
         if r = n+1 then
             sol := List(XX,i->S[i]);
-            Print(sol,"\n");
+            Info(InfoKS, 1, sol," is an exact cover.");
+            Add(covs, sol);
         fi;
         if l = 0 then
             Cp[l+1] := [1..m];
@@ -214,6 +219,7 @@ InstallGlobalFunction( KSExactCover, function( n, S )
     XX := [];
     U := [];
     Cp := [];
+    covs := [];
     SortBy( S, x -> KSSubsetLexRank (n, x) );
     S := Reversed( S );
     for i in [1..m] do
@@ -225,65 +231,78 @@ InstallGlobalFunction( KSExactCover, function( n, S )
     od;
     H[n+1] := [];
     cover(0, 1);
+    return covs;
 end);
+
+#F  KSRandomSubsetOfSubsets( n, delta ) 
+##
+InstallGlobalFunction( KSRandomSubsetOfSubsets, function( n, delta )
+    local tot, i, r, subs;
+    subs := [];
+    tot := Random(0, 2^n-1);
+    i := 0;
+    while i <= tot do
+        r := 0.0 + (1/100000000)*Random(0, 100000000);
+        if r <= delta then
+            Add(subs, KSSubsetLexUnrank(n, i));
+        fi;
+        i := i + 1;
+    od;
+    return subs;
+end);
+
 
 #F  KSWalks( n ) 
 ##
 InstallGlobalFunction( KSWalks, function( n )
-    local walksaux, C, steps, walk, x, s, p, i, j, k, a, suma,valores, c;
-      steps:=[[-1,0],[1,0],[0,1],[0,-1]];
-      C:=[[]];                                                 
-      walk:=[[]];
-      suma:=[0,0]; 
-      valores:=[];
-      c:=0;
-      walksaux:=function( s )
-          if s=n+1 then
-              Print("Walk ", walk, "\n");             
-              C[s]:=[];
-              c:=c+1;
-          else
-              C[s]:=[];
-              suma:=[0,0];
-              for i in [1..s] do
-                  valores:=[];
-                  C[s]:=[];
-                  a:=0;
-                  for p in [1..4] do
-                      for j in [1..i] do
-                          suma :=Sum(List([1..j-1], k -> Reversed(walk)[k])) + steps[p];
-                          if suma=[0,0] then
-                              a:=0;
-                              Print("Pruning! \n");
-                              break;
-                          else
-                              a:=1;
-                          fi;
-                      od; 
-                      if a=1 then 
-                          Add(valores,p);
-                      fi;
-                      suma:=[0,0];
-                  od;   
-              od;
-                  for x in valores do
-                      Add(C[s], steps[x]);
-                  od;                   
-          fi;
-          for x in C[s] do
-              walk[s] :=x; 
-              walk :=walk{[1..s]};
-              walksaux(s+1);
-          od;
-      end;
-      if IsPosInt(n) then 
-          walksaux(1);
-      else
-          Print("Needs a positive integer number \n");
-      fi;
-      Print("Total self-avoiding walks of length ", n, ":  ", c, "\n");
-      return;
-end);
+    local walksaux, C, steps, walk, suma, valores, c, sols;
+    steps := [ [-1,0], [1,0], [0,1], [0,-1] ];
+    C := [];                                                 
+    walk := [];
+    suma := [0, 0]; 
+    c := 0;
+    sols := [];
+    walksaux:=function( s )
+        local x, p, j, k, a;
+        if s = n+1 then
+            Info(InfoKS, 1, "Walk: ", walk);
+            Add(sols, ShallowCopy(walk));
+            C[s] := [];
+            c := c+1;
+        else
+            C[s] := [];
+            for p in [1..4] do
+                a := true;
+                j := 1;
+                while a and j <= s do
+                    suma := Sum(List([j..s-1], k -> walk[k])) + steps[p];
+                    Info(InfoKS, 2, "Walk so far: ", walk,", p=", p,
+                         ", j=",j,", suma=", suma,"\n");
+                    if suma = [0, 0] then
+                        Info(InfoKS, 1, "Pruning!");
+                        a := false;
+                    fi;
+                    j := j + 1;
+                od;
+                if a then
+                    Add(C[s], steps[p]);
+                fi;
+            od;
+        fi;
+        for x in C[s] do
+            walk[s] := x; 
+            walk := walk{[1..s]};
+            walksaux(s+1);
+        od;
+    end;
+    if IsPosInt(n) then 
+        walksaux(1);
+    else
+        Print("Needs a positive integer number.\n");
+    fi;
+    Info(InfoKS, 1,"Total self-avoiding walks of length ", n, ": ", c);
+    return sols;
+end );
 
 #F  KSSortForRationalKnapsack(P, W) 
 ##
@@ -294,7 +313,7 @@ InstallGlobalFunction( KSSortForRationalKnapsack, function(P, W)
     Sort(ls);
     ls := Reversed(ls);
     perm := PermListList(ls, l);
-    return [Permuted(P, perm), Permuted(W, perm)];
+    return [Permuted(P, perm), Permuted(W, perm), perm];
 end);
 
 #F  KSRationalKnapsackSorted( P, W, M ) 
@@ -378,7 +397,7 @@ InstallGlobalFunction( KSRandomKnapsackInstance, function( n, Wmax )
     local P, W, M, i, epsilon;
     P := [];
     W := [];
-    epsilon := 0.9 + (0.2/1000000)*Random(0,1000000);
+    epsilon := 0.8 + (0.4/1000000)*Random(0,1000000);
     # epsilon is a random real number between 0.9 and 1.1
     for i in [1..n] do
         W[i] := Random(1,Wmax);
@@ -762,7 +781,7 @@ InstallGlobalFunction( KSGenerateRandomGraph2, function( n, delta )
     edges := [];
     for x in [1..n-1] do
         for y in [x+1..n] do
-            r:=0.0+(1/1000000)*Random(0,1000000);
+            r := 0.0 + (1/100000000)*Random(0, 100000000);
             if r >= 1-delta then
                 Add(edges,[x,y]);
             fi;

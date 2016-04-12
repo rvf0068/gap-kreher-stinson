@@ -28,6 +28,8 @@
     
     <#Include Label="KSExactCover">
 
+    <#Include Label="KSRandomSubsetOfSubsets">
+
   </Section>
 
   <Section Label="bounding-functions">

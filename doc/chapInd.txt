@@ -27,6 +27,7 @@
   [2XKSRandomCostMatrix[102X  3.1-5
   [2XKSRandomKnapsackInstance[102X  2.4-4
   [2XKSRandomkSubset[102X  3.1-1
+  [2XKSRandomSubsetOfSubsets[102X  2.3-2
   [2XKSRandomTSPInstance[102X  2.4-5
   [2XKSRationalKnapsackSorted[102X  2.4-2
   [2XKSReduce[102X  2.4-8

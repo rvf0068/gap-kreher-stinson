@@ -95,6 +95,25 @@ DeclareGlobalFunction( "KSQueens" );
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSExactCover" );
 
+#F  KSRandomSubsetOfSubsets( n, delta ) 
+##
+##  <#GAPDoc Label="KSRandomSubsetOfSubsets">
+##  <ManSection>
+##  <Func Name="KSRandomSubsetOfSubsets" Arg="n, delta"/>
+##
+##  <Description>
+##
+##  Generates a random subset of the set of all subsets of
+##  <M>\{1..<A>n</A>\}</M>, with density <A>delta</A>. This can be
+##  used as an instance of the ExactCover problem.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSRandomSubsetOfSubsets" );
+
+
 #F KSWalks( n )
 ##
 ##  
