@@ -15,4 +15,11 @@
     <#Include Label="KSkSubsetLexUnrank">
 
   </Section>
+
+  <Section Label="Permutations">
+    <Heading>Permutations</Heading>
+  
+    <#Include Label="KSPermLexRank">    
+  </Section>
+
 </Chapter>

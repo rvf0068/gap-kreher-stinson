@@ -59,3 +59,37 @@ DeclareGlobalFunction( "KSkSubsetLexRank" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSkSubsetLexUnrank" );
+
+#F  KSPermLexRank( n, pi ) 
+##
+##  <#GAPDoc Label="KSPermLexRank">
+##  <ManSection>
+##  <Func Name="KSPermLexRank" Arg="n, pi"/>
+##
+##  <Description>
+##
+##  Given a permutation <A>pi</A> of <M>\{1..<A>n</A>\}</M>, returns
+##  the rank of <A>pi</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSPermLexRank" );
+
+#F  KSPermLexUnrank( n, r ) 
+##
+##  <#GAPDoc Label="KSPermLexUnrank">
+##  <ManSection>
+##  <Func Name="KSPermLexUnrank" Arg="n, r"/>
+##
+##  <Description>
+##
+##  Returns the permutation of <M>\{1..<A>n</A>\}</M> with rank
+##  <A>r</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSPermLexUnrank" );
