@@ -410,7 +410,7 @@ InstallGlobalFunction( KSKnapsack3, function( K )
     end;
     if KSCheckKnapsackInput(K) then
         knapaux(1,0);
-        Info(InfoKS, 1, "Maximum profit is ", OptP, " with vector ", OptX);
+        Info(InfoKS, 1, "Maximum profit is ", OptP);
     fi;
     return [Permuted(OptX,perm^-1), OptP];
 end);

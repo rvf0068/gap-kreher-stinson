@@ -98,6 +98,10 @@
     3.2 [33X[0;0YSteiner systems[133X
       3.2-1 KSConstructBlocks
       3.2-2 KSRevisedStinsonAlgorithm
+    3.3 [33X[0;0YThe knapsack problem[133X
+      3.3-1 KSKnapsackSimulatedAnnealing
+      3.3-2 KSRandomFeasibleSolutionKnapsack
+      3.3-3 KSKnapsackTabuSearch
   
   
   [32X

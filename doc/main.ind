@@ -16,6 +16,8 @@
   \item \texttt  {KSKnapsack1}, \hyperpage{5}
   \item \texttt  {KSKnapsack2}, \hyperpage{5}
   \item \texttt  {KSKnapsack3}, \hyperpage{6}
+  \item \texttt  {KSKnapsackSimulatedAnnealing}, \hyperpage{11}
+  \item \texttt  {KSKnapsackTabuSearch}, \hyperpage{11}
   \item \texttt  {KSkSubsetLexRank}, \hyperpage{4}
   \item \texttt  {KSkSubsetLexUnrank}, \hyperpage{4}
   \item \texttt  {KSMaxClique1}, \hyperpage{8}
@@ -23,6 +25,7 @@
   \item \texttt  {KSMinCostBound}, \hyperpage{7}
   \item \texttt  {KSQueens}, \hyperpage{9}
   \item \texttt  {KSRandomCostMatrix}, \hyperpage{10}
+  \item \texttt  {KSRandomFeasibleSolutionKnapsack}, \hyperpage{11}
   \item \texttt  {KSRandomKnapsackInstance}, \hyperpage{7}
   \item \texttt  {KSRandomkSubset}, \hyperpage{10}
   \item \texttt  {KSRandomSubsetOfSubsets}, \hyperpage{6}

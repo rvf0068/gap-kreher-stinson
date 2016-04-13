@@ -65,3 +65,29 @@
   [33X[0;0YConstructs  a  Steiner  triple  system  with [3Xv[103X points, using a hill-climbing
   algorithm. Implements Algorithm 5.19.[133X
   
+  
+  [1X3.3 [33X[0;0YThe knapsack problem[133X[101X
+  
+  [1X3.3-1 KSKnapsackSimulatedAnnealing[101X
+  
+  [29X[2XKSKnapsackSimulatedAnnealing[102X( [3XK[103X, [3Xcmax[103X, [3XT0[103X, [3Xalpha[103X ) [32X function
+  
+  [33X[0;0YImplements  Algorithm  5.20.  [3XK[103X  is  the instance of the Knapsack problem to
+  solve.  [3Xcmax[103X  is  the  number  of  iterations  to be done. [3XT0[103X is the initial
+  "temperature" and [3Xalpha[103X is the parameter of the "cooling schedule".[133X
+  
+  [1X3.3-2 KSRandomFeasibleSolutionKnapsack[101X
+  
+  [29X[2XKSRandomFeasibleSolutionKnapsack[102X( [3XK[103X ) [32X function
+  
+  [33X[0;0YReturns a randomly chosen feasible solution to the Knapsack problem instance
+  [3XK[103X.[133X
+  
+  [1X3.3-3 KSKnapsackTabuSearch[101X
+  
+  [29X[2XKSKnapsackTabuSearch[102X( [3XK[103X, [3Xcmax[103X, [3XL[103X ) [32X function
+  
+  [33X[0;0YSearches  for an optimal solution to the Knapsack problem instance [3XK[103X using a
+  tabu search list. [3Xcmax[103X is the maximum number of iterations, and [3XL[103X the length
+  of iterations a tabu search should be kept.[133X
+  

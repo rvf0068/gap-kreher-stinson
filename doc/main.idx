@@ -40,3 +40,6 @@
 \indexentry{KSAscend@\texttt  {KSAscend}|hyperpage}{11}
 \indexentry{KSConstructBlocks@\texttt  {KSConstructBlocks}|hyperpage}{11}
 \indexentry{KSRevisedStinsonAlgorithm@\texttt  {KSRevisedStinsonAlgorithm}|hyperpage}{11}
+\indexentry{KSKnapsackSimulatedAnnealing@\texttt  {KSKnapsackSimulatedAnnealing}|hyperpage}{11}
+\indexentry{KSRandomFeasibleSolutionKnapsack@\texttt  {KSRandomFeasibleSolutionKnapsack}|hyperpage}{11}
+\indexentry{KSKnapsackTabuSearch@\texttt  {KSKnapsackTabuSearch}|hyperpage}{11}

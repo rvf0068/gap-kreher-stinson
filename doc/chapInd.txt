@@ -18,6 +18,8 @@
   [2XKSKnapsack1[102X  2.1-2
   [2XKSKnapsack2[102X  2.1-3
   [2XKSKnapsack3[102X  2.4-4
+  [2XKSKnapsackSimulatedAnnealing[102X  3.3-1
+  [2XKSKnapsackTabuSearch[102X  3.3-3
   [2XKSkSubsetLexRank[102X  1.1-3
   [2XKSkSubsetLexUnrank[102X  1.1-4
   [2XKSMaxClique1[102X  2.4-12
@@ -25,6 +27,7 @@
   [2XKSMinCostBound[102X  2.4-8
   [2XKSQueens[102X  2.5-1
   [2XKSRandomCostMatrix[102X  3.1-5
+  [2XKSRandomFeasibleSolutionKnapsack[102X  3.3-2
   [2XKSRandomKnapsackInstance[102X  2.4-5
   [2XKSRandomkSubset[102X  3.1-1
   [2XKSRandomSubsetOfSubsets[102X  2.3-2

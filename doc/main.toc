@@ -51,4 +51,8 @@
 \contentsline {section}{\numberline {3.2}\leavevmode {\color {Chapter }Steiner systems}}{11}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}\leavevmode {\color {Chapter }KSConstructBlocks}}{11}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}\leavevmode {\color {Chapter }KSRevisedStinsonAlgorithm}}{11}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}\leavevmode {\color {Chapter }The knapsack problem}}{11}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}\leavevmode {\color {Chapter }KSKnapsackSimulatedAnnealing}}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}\leavevmode {\color {Chapter }KSRandomFeasibleSolutionKnapsack}}{11}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}\leavevmode {\color {Chapter }KSKnapsackTabuSearch}}{11}{subsection.3.3.3}
 \contentsline {chapter}{Index}{12}{section*.3}
