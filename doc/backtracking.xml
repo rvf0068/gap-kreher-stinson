@@ -28,6 +28,8 @@
     
     <#Include Label="KSExactCover">
 
+    <#Include Label="KSRandomSubsetOfSubsets">
+
   </Section>
 
   <Section Label="bounding-functions">
@@ -38,9 +40,45 @@
 
     <#Include Label="KSRationalKnapsackSorted">
 
+    <#Include Label="KSRationalKnapsack">
+
     <#Include Label="KSKnapsack3">
 
     <#Include Label="KSRandomKnapsackInstance">
+
+    <#Include Label="KSRandomTSPInstance">
+
+    <#Include Label="KSTSP1">
+
+    <#Include Label="KSMinCostBound">
+
+    <#Include Label="KSReduce">
+
+    <#Include Label="KSReduceBound">
+
+    <#Include Label="KSTSP2">
+
+    <#Include Label="KSMaxClique1">
+
+    <#Include Label="KSMaxClique2">
+
+    <#Include Label="KSSizeBound">
+
+    <#Include Label="KSGenerateRandomGraph">
+
+    <#Include Label="KSEdgeListToAdjacencyList">
+
+    <#Include Label="KSGreedyColor">
+
+    <#Include Label="KSSamplingBound">
+
+    <#Include Label="KSInducedSubgraph">
+
+    <#Include Label="KSGreedyBound">
+
+    <#Include Label="KSGenerateRandomGraph2">
+
+    <#Include Label="KSTSP3">
 
   </Section>
   
@@ -49,6 +87,8 @@
     <Heading>Exercises</Heading>
     
     <#Include Label="KSQueens">
+
+    <#Include Label="KSWalks">
 
   </Section>
 

@@ -98,15 +98,18 @@
 {\Huge \textbf{Algorithms from the book implemented in GAP\mbox{}}}\\
 \vfill
 
-{\Huge Version 1.0\mbox{}}\\[1cm]
-{29 January 2016\mbox{}}\\[1cm]
+{\Huge Version 0.1\mbox{}}\\[1cm]
+{8 April 2016\mbox{}}\\[1cm]
 \mbox{}\\[2cm]
+{\Large \textbf{Bert{\a'\i}n Hern{\a'a}ndez-Trejo  \mbox{}}}\\
 {\Large \textbf{ Rafael Villarroel-Flores   \mbox{}}}\\
 {\Large \textbf{Citlalli Zamora-Mej{\a'\i}a  \mbox{}}}\\
-\hypersetup{pdfauthor= Rafael Villarroel-Flores   ; Citlalli Zamora-Mej{\a'\i}a  }
+\hypersetup{pdfauthor=Bert{\a'\i}n Hern{\a'a}ndez-Trejo  ;  Rafael Villarroel-Flores   ; Citlalli Zamora-Mej{\a'\i}a  }
 \end{center}\vfill
 
 \mbox{}\\
+{\mbox{}\\
+\small \noindent \textbf{Bert{\a'\i}n Hern{\a'a}ndez-Trejo  }  Email: \href{mailto://bertin13@gmail.com} {\texttt{bertin13@gmail.com}}}\\
 {\mbox{}\\
 \small \noindent \textbf{ Rafael Villarroel-Flores   }  Email: \href{mailto://rvf0068@gmail.com} {\texttt{rvf0068@gmail.com}}\\
   Homepage: \href{http://rvf0068.github.io} {\texttt{http://rvf0068.github.io}}}\\
@@ -118,7 +121,8 @@
 {\small 
 \section*{Copyright}
 \logpage{[ 0, 0, 1 ]}
- {\copyright} 2016 by Rafael Villarroel-Flores and Citlalli Zamora-Mej{\a'\i}a
+ {\copyright} 2016 by Bert{\a'\i}n Hern{\a'a}ndez-Trejo, Rafael
+Villarroel-Flores and Citlalli Zamora-Mej{\a'\i}a
 
  \textsf{kreher-stinson} package is free software; you can redistribute it and/or modify it under the
 terms of the \href{http://www.fsf.org/licenses/gpl.html} {GNU General Public License} as published by the Free Software Foundation; either version 2 of the License,
@@ -164,6 +168,30 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 
  Returns the subset of $\{1..\mbox{\texttt{\mdseries\slshape number}}\}$ whose rank is \mbox{\texttt{\mdseries\slshape rank}}. (Algorithm 2.2). }
 
+ 
+
+\subsection{\textcolor{Chapter }{KSkSubsetLexRank}}
+\logpage{[ 1, 1, 3 ]}\nobreak
+\hyperdef{L}{X83526EE47D6343F1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSkSubsetLexRank({\mdseries\slshape T, k, n})\index{KSkSubsetLexRank@\texttt{KSkSubsetLexRank}}
+\label{KSkSubsetLexRank}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Finds the rank of \mbox{\texttt{\mdseries\slshape T}}, among all \mbox{\texttt{\mdseries\slshape k}}-subsets of an \mbox{\texttt{\mdseries\slshape n}}-set. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSkSubsetLexUnrank}}
+\logpage{[ 1, 1, 4 ]}\nobreak
+\hyperdef{L}{X807C3B077BCCA874}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSkSubsetLexUnrank({\mdseries\slshape r, k, n})\index{KSkSubsetLexUnrank@\texttt{KSkSubsetLexUnrank}}
+\label{KSkSubsetLexUnrank}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given an integer \mbox{\texttt{\mdseries\slshape r}} between 0 and ${n \choose k}-1$, returns the \mbox{\texttt{\mdseries\slshape k}}-subset of an \mbox{\texttt{\mdseries\slshape n}}-set with rank \mbox{\texttt{\mdseries\slshape r}}. }
+
  }
 
  }
@@ -183,36 +211,38 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 \subsection{\textcolor{Chapter }{KSCheckKnapsackInput}}
 \logpage{[ 2, 1, 1 ]}\nobreak
 \hyperdef{L}{X7FB05C427FBC528B}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSCheckKnapsackInput({\mdseries\slshape profits, weights, capacity})\index{KSCheckKnapsackInput@\texttt{KSCheckKnapsackInput}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSCheckKnapsackInput({\mdseries\slshape K})\index{KSCheckKnapsackInput@\texttt{KSCheckKnapsackInput}}
 \label{KSCheckKnapsackInput}
 }\hfill{\scriptsize (function)}}\\
 
 
- Checks for valid input data for the Knapsack problems (Problems 1.1-1.4). }
+ Checks for valid input data for the Knapsack problems (Problems 1.1-1.4). \mbox{\texttt{\mdseries\slshape K}} is a list, which first element is the vector of profits, the second is the
+vector of weights, and the third is the capacity of the knapsack, which must
+be an integer. }
 
  
 
 \subsection{\textcolor{Chapter }{KSKnapsack1}}
 \logpage{[ 2, 1, 2 ]}\nobreak
 \hyperdef{L}{X84E39E7E8371D3BB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack1({\mdseries\slshape profits, weights, capacity})\index{KSKnapsack1@\texttt{KSKnapsack1}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack1({\mdseries\slshape K})\index{KSKnapsack1@\texttt{KSKnapsack1}}
 \label{KSKnapsack1}
 }\hfill{\scriptsize (function)}}\\
 
 
- Implementation of Algorithm 4.1. }
+ Implementation of Algorithm 4.1. \mbox{\texttt{\mdseries\slshape K}} is a list, which elements are profits, weights, capacity. }
 
  
 
 \subsection{\textcolor{Chapter }{KSKnapsack2}}
 \logpage{[ 2, 1, 3 ]}\nobreak
 \hyperdef{L}{X7D730B657AEFF5DB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack2({\mdseries\slshape profits, weights, capacity})\index{KSKnapsack2@\texttt{KSKnapsack2}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack2({\mdseries\slshape K})\index{KSKnapsack2@\texttt{KSKnapsack2}}
 \label{KSKnapsack2}
 }\hfill{\scriptsize (function)}}\\
 
 
- Implementation of Algorithm 4.3. }
+ Implementation of Algorithm 4.3. \mbox{\texttt{\mdseries\slshape K}} is a list, which elements are profits, weights, capacity. }
 
  }
 
@@ -252,6 +282,18 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 
  Finds an subcollection of \mbox{\texttt{\mdseries\slshape cover}} (which is a set of subsets of $\{1,..,\mbox{\texttt{\mdseries\slshape number}}\}$) that is an exact cover of $\{1,..,\mbox{\texttt{\mdseries\slshape number}}\}$, if it exists. }
 
+ 
+
+\subsection{\textcolor{Chapter }{KSRandomSubsetOfSubsets}}
+\logpage{[ 2, 3, 2 ]}\nobreak
+\hyperdef{L}{X79F75FD58281A839}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomSubsetOfSubsets({\mdseries\slshape n, delta})\index{KSRandomSubsetOfSubsets@\texttt{KSRandomSubsetOfSubsets}}
+\label{KSRandomSubsetOfSubsets}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Generates a random subset of the set of all subsets of $\{1..\mbox{\texttt{\mdseries\slshape n}}\}$, with density \mbox{\texttt{\mdseries\slshape delta}}. This can be used as an instance of the ExactCover problem. }
+
  }
 
  
@@ -264,43 +306,55 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 \subsection{\textcolor{Chapter }{KSSortForRationalKnapsack}}
 \logpage{[ 2, 4, 1 ]}\nobreak
 \hyperdef{L}{X7C63779C8478C20C}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSortForRationalKnapsack({\mdseries\slshape profits, weights})\index{KSSortForRationalKnapsack@\texttt{KSSortForRationalKnapsack}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSortForRationalKnapsack({\mdseries\slshape K})\index{KSSortForRationalKnapsack@\texttt{KSSortForRationalKnapsack}}
 \label{KSSortForRationalKnapsack}
 }\hfill{\scriptsize (function)}}\\
 
 
- Given two vectors \mbox{\texttt{\mdseries\slshape profits}}, \mbox{\texttt{\mdseries\slshape weights}} of the same length, this function returns a vector of the two vectors, sorted
-in non-decreasing order of values of $\mbox{\texttt{\mdseries\slshape profits[i]}}/\mbox{\texttt{\mdseries\slshape weights[i]}}$. }
+ Given an instance \mbox{\texttt{\mdseries\slshape K}} of the Knapsack Problem, where the two first components of \mbox{\texttt{\mdseries\slshape K}} represent profits and weights, this function returns a list, where the first
+component is the same instance of the problem, but the profits and weights
+have been sorted in non-increasing order of values of $\mbox{\texttt{\mdseries\slshape profits[i]}}/\mbox{\texttt{\mdseries\slshape weights[i]}}$. The second component is the permutation applied to the original problem. }
 
  
 
 \subsection{\textcolor{Chapter }{KSRationalKnapsackSorted}}
 \logpage{[ 2, 4, 2 ]}\nobreak
 \hyperdef{L}{X87F7D9DD7B0E9DE4}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRationalKnapsackSorted({\mdseries\slshape profits, weights, capacity})\index{KSRationalKnapsackSorted@\texttt{KSRationalKnapsackSorted}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRationalKnapsackSorted({\mdseries\slshape K})\index{KSRationalKnapsackSorted@\texttt{KSRationalKnapsackSorted}}
 \label{KSRationalKnapsackSorted}
 }\hfill{\scriptsize (function)}}\\
 
 
- Solves the rational Knapsack problem with parameters given. The vectors \mbox{\texttt{\mdseries\slshape profits}}, \mbox{\texttt{\mdseries\slshape weights}} must already be sorted. }
+ Solves the rational Knapsack problem for the instance \mbox{\texttt{\mdseries\slshape K}}. Profits and weights must be sorted in non-increasing order of values of $\mbox{\texttt{\mdseries\slshape profits[i]}}/\mbox{\texttt{\mdseries\slshape weights[i]}}$. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSRationalKnapsack}}
+\logpage{[ 2, 4, 3 ]}\nobreak
+\hyperdef{L}{X81A085627DA480A4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRationalKnapsack({\mdseries\slshape K})\index{KSRationalKnapsack@\texttt{KSRationalKnapsack}}
+\label{KSRationalKnapsack}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Solves the rational Knapsack problem for the instance \mbox{\texttt{\mdseries\slshape K}}. }
 
  
 
 \subsection{\textcolor{Chapter }{KSKnapsack3}}
-\logpage{[ 2, 4, 3 ]}\nobreak
+\logpage{[ 2, 4, 4 ]}\nobreak
 \hyperdef{L}{X7A03786C86F71827}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack3({\mdseries\slshape profits, weights, capacity})\index{KSKnapsack3@\texttt{KSKnapsack3}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSKnapsack3({\mdseries\slshape K})\index{KSKnapsack3@\texttt{KSKnapsack3}}
 \label{KSKnapsack3}
 }\hfill{\scriptsize (function)}}\\
 
 
- Solves the Knapsack problem with parameters given, using the function
-KSRationalKnapsackSorted as bounding function. }
+ Solves the Knapsack problem for the instace \mbox{\texttt{\mdseries\slshape K}}, using the function KSRationalKnapsack as bounding function. }
 
  
 
 \subsection{\textcolor{Chapter }{KSRandomKnapsackInstance}}
-\logpage{[ 2, 4, 4 ]}\nobreak
+\logpage{[ 2, 4, 5 ]}\nobreak
 \hyperdef{L}{X7F7AF9917C7513E0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomKnapsackInstance({\mdseries\slshape size, maximum{\textunderscore}weight})\index{KSRandomKnapsackInstance@\texttt{KSRandomKnapsackInstance}}
 \label{KSRandomKnapsackInstance}
@@ -308,6 +362,211 @@ KSRationalKnapsackSorted as bounding function. }
 
 
  Returns a random instance of a Knapsack problem, for \mbox{\texttt{\mdseries\slshape size}} objects. The maximum weight is \mbox{\texttt{\mdseries\slshape maximum{\textunderscore}weight}}. For each $i$, the profit $P[i]$ is $2*W[i]*\epsilon$, where $\epsilon$ is a random number between $0.9$ and $1.1$. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSRandomTSPInstance}}
+\logpage{[ 2, 4, 6 ]}\nobreak
+\hyperdef{L}{X824023CC7A1DAEEE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomTSPInstance({\mdseries\slshape n, Wmax})\index{KSRandomTSPInstance@\texttt{KSRandomTSPInstance}}
+\label{KSRandomTSPInstance}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a random instance of the TSP problem, which is a symmetric \mbox{\texttt{\mdseries\slshape n}} by \mbox{\texttt{\mdseries\slshape n}} matrix, such that its $ij$ entry is the cost to travel from city $i$ to city $j$. The entries in the diagonal are made equal to $\infty$. Each cost is a random integer between 1 and \mbox{\texttt{\mdseries\slshape Wmax}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSTSP1}}
+\logpage{[ 2, 4, 7 ]}\nobreak
+\hyperdef{L}{X8208350A7F23DC4F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSTSP1({\mdseries\slshape G})\index{KSTSP1@\texttt{KSTSP1}}
+\label{KSTSP1}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Solves the TSP problem, for the instance \mbox{\texttt{\mdseries\slshape G}}, traversing the whole tree space. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSMinCostBound}}
+\logpage{[ 2, 4, 8 ]}\nobreak
+\hyperdef{L}{X845476007D8005D4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMinCostBound({\mdseries\slshape V, G})\index{KSMinCostBound@\texttt{KSMinCostBound}}
+\label{KSMinCostBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A bounding function for the TSP problem. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSReduce}}
+\logpage{[ 2, 4, 9 ]}\nobreak
+\hyperdef{L}{X8683492082A8C4B4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSReduce({\mdseries\slshape M})\index{KSReduce@\texttt{KSReduce}}
+\label{KSReduce}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Reduce function for matrices, which will be useful to implement a secound
+bounding function for the TSP problem. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSReduceBound}}
+\logpage{[ 2, 4, 10 ]}\nobreak
+\hyperdef{L}{X7C74326D7CA8BA24}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSReduceBound({\mdseries\slshape V, M})\index{KSReduceBound@\texttt{KSReduceBound}}
+\label{KSReduceBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A second bounding function for the TSP problem. \mbox{\texttt{\mdseries\slshape V}} is a partial solution, and \mbox{\texttt{\mdseries\slshape M}} is the problem instance. This implements Algorithm 4.12. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSTSP2}}
+\logpage{[ 2, 4, 11 ]}\nobreak
+\hyperdef{L}{X7B98A011874A9B65}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSTSP2({\mdseries\slshape G, F})\index{KSTSP2@\texttt{KSTSP2}}
+\label{KSTSP2}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Solves the TSP problem for instance \mbox{\texttt{\mdseries\slshape G}}, using the bounding function \mbox{\texttt{\mdseries\slshape F}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSMaxClique1}}
+\logpage{[ 2, 4, 12 ]}\nobreak
+\hyperdef{L}{X7E670BAD7D143608}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMaxClique1({\mdseries\slshape G})\index{KSMaxClique1@\texttt{KSMaxClique1}}
+\label{KSMaxClique1}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Adapts the function that lists the complete subgraphs of \mbox{\texttt{\mdseries\slshape G}}, to find the size of the largest clique of \mbox{\texttt{\mdseries\slshape G}}. This implements Algorithm 4.14. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSMaxClique2}}
+\logpage{[ 2, 4, 13 ]}\nobreak
+\hyperdef{L}{X87F79EB67A6DDB27}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSMaxClique2({\mdseries\slshape G, F})\index{KSMaxClique2@\texttt{KSMaxClique2}}
+\label{KSMaxClique2}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Finds the size of the maximum clique in the graph \mbox{\texttt{\mdseries\slshape G}}, using the bounding function \mbox{\texttt{\mdseries\slshape F}}. This implements Algorithm 4.19. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSSizeBound}}
+\logpage{[ 2, 4, 14 ]}\nobreak
+\hyperdef{L}{X7A6A4127818EDC0E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSizeBound({\mdseries\slshape XX, G, Cl})\index{KSSizeBound@\texttt{KSSizeBound}}
+\label{KSSizeBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A bounding function for the MaxClique problem. \mbox{\texttt{\mdseries\slshape XX}} is a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}, and \mbox{\texttt{\mdseries\slshape Cl}} is the set of candidates to extend \mbox{\texttt{\mdseries\slshape XX}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGenerateRandomGraph}}
+\logpage{[ 2, 4, 15 ]}\nobreak
+\hyperdef{L}{X78E238A984F3911E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGenerateRandomGraph({\mdseries\slshape n})\index{KSGenerateRandomGraph@\texttt{KSGenerateRandomGraph}}
+\label{KSGenerateRandomGraph}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a list of edges of a random graph on \mbox{\texttt{\mdseries\slshape n}} vertices. This implements Algorithm 4.20. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSEdgeListToAdjacencyList}}
+\logpage{[ 2, 4, 16 ]}\nobreak
+\hyperdef{L}{X7C0E333A7B200D4C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSEdgeListToAdjacencyList({\mdseries\slshape Ged, n})\index{KSEdgeListToAdjacencyList@\texttt{KSEdgeListToAdjacencyList}}
+\label{KSEdgeListToAdjacencyList}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given the list of edges \mbox{\texttt{\mdseries\slshape Ged}} of a graph with \mbox{\texttt{\mdseries\slshape n}} vertices, returns the adjacency list of such graph. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGreedyColor}}
+\logpage{[ 2, 4, 17 ]}\nobreak
+\hyperdef{L}{X7C4BB3897802A465}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGreedyColor({\mdseries\slshape G})\index{KSGreedyColor@\texttt{KSGreedyColor}}
+\label{KSGreedyColor}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Colors the vertices of a graph \mbox{\texttt{\mdseries\slshape G}} using a greedy strategy. This implements Algorithm 4.16. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSSamplingBound}}
+\logpage{[ 2, 4, 18 ]}\nobreak
+\hyperdef{L}{X83A5C32080EA9396}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSamplingBound({\mdseries\slshape XX, G, Cl})\index{KSSamplingBound@\texttt{KSSamplingBound}}
+\label{KSSamplingBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A bounding function for the MaxClique problem. \mbox{\texttt{\mdseries\slshape XX}} is a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}, and \mbox{\texttt{\mdseries\slshape Cl}} is the set of candidates to extend \mbox{\texttt{\mdseries\slshape XX}}. This function uses a fixed greedy coloring of the graph \mbox{\texttt{\mdseries\slshape G}}. Implements Algorithm 4.17. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSInducedSubgraph}}
+\logpage{[ 2, 4, 19 ]}\nobreak
+\hyperdef{L}{X800A04C2811D4374}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSInducedSubgraph({\mdseries\slshape G, L})\index{KSInducedSubgraph@\texttt{KSInducedSubgraph}}
+\label{KSInducedSubgraph}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns the adjacency list of the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by the vertices in \mbox{\texttt{\mdseries\slshape L}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGreedyBound}}
+\logpage{[ 2, 4, 20 ]}\nobreak
+\hyperdef{L}{X807E30DC7CDAD9D3}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGreedyBound({\mdseries\slshape XX, G, Cl})\index{KSGreedyBound@\texttt{KSGreedyBound}}
+\label{KSGreedyBound}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A bounding function for the MaxClique problem. \mbox{\texttt{\mdseries\slshape XX}} is a complete subgraph of \mbox{\texttt{\mdseries\slshape G}}, and \mbox{\texttt{\mdseries\slshape Cl}} is the set of candidates to extend \mbox{\texttt{\mdseries\slshape XX}}. This uses a greedy coloring of the subgraph of \mbox{\texttt{\mdseries\slshape G}} induced by \mbox{\texttt{\mdseries\slshape L}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGenerateRandomGraph2}}
+\logpage{[ 2, 4, 21 ]}\nobreak
+\hyperdef{L}{X7A8E9FCD8238638C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGenerateRandomGraph2({\mdseries\slshape n, delta})\index{KSGenerateRandomGraph2@\texttt{KSGenerateRandomGraph2}}
+\label{KSGenerateRandomGraph2}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns the list of edges of a random graph on \mbox{\texttt{\mdseries\slshape n}} vertices with edge density \mbox{\texttt{\mdseries\slshape delta}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSTSP3}}
+\logpage{[ 2, 4, 22 ]}\nobreak
+\hyperdef{L}{X7CE8D3187BFF565F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSTSP3({\mdseries\slshape G, F})\index{KSTSP3@\texttt{KSTSP3}}
+\label{KSTSP3}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Solves the TSP problem for instance \mbox{\texttt{\mdseries\slshape G}}, using bounding function \mbox{\texttt{\mdseries\slshape F}}, applying the branch and bound technique. }
 
  }
 
@@ -326,13 +585,144 @@ KSRationalKnapsackSorted as bounding function. }
 }\hfill{\scriptsize (function)}}\\
 
 
- Solves the $n$ queens problem for a $\mbox{\texttt{\mdseries\slshape size}}\times\mbox{\texttt{\mdseries\slshape size}}$ board. 
+ Solves the $n$ queens problem for a $\mbox{\texttt{\mdseries\slshape size}}\times\mbox{\texttt{\mdseries\slshape size}}$ board. (Exercise 4.1.(a)) 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@KSQueens(4);|
   [ 2, 4, 1, 3 ]
   [ 3, 1, 4, 2 ]
 \end{Verbatim}
  }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSWalks}}
+\logpage{[ 2, 5, 2 ]}\nobreak
+\hyperdef{L}{X869469F9844C627C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSWalks({\mdseries\slshape number})\index{KSWalks@\texttt{KSWalks}}
+\label{KSWalks}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Finds all non-overlapping walks in the plane of length \mbox{\texttt{\mdseries\slshape number}}. (Exercise 4.1.(b)) }
+
+ }
+
+ }
+
+ 
+\chapter{\textcolor{Chapter }{Heuristic Search}}\label{heuristic}
+\logpage{[ 3, 0, 0 ]}
+\hyperdef{L}{X7A00AAD585C388D4}{}
+{
+  
+\section{\textcolor{Chapter }{Uniform graph partition}}\label{uniform}
+\logpage{[ 3, 1, 0 ]}
+\hyperdef{L}{X7FF662447A34596B}{}
+{
+  
+
+\subsection{\textcolor{Chapter }{KSRandomkSubset}}
+\logpage{[ 3, 1, 1 ]}\nobreak
+\hyperdef{L}{X7FDB1D757B321B26}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomkSubset({\mdseries\slshape k, n})\index{KSRandomkSubset@\texttt{KSRandomkSubset}}
+\label{KSRandomkSubset}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a randomly chosen \mbox{\texttt{\mdseries\slshape k}}-subset of the set of integers from 1 to \mbox{\texttt{\mdseries\slshape n}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSSelectPartition}}
+\logpage{[ 3, 1, 2 ]}\nobreak
+\hyperdef{L}{X79D69A0584EEE941}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSelectPartition({\mdseries\slshape n})\index{KSSelectPartition@\texttt{KSSelectPartition}}
+\label{KSSelectPartition}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a random partition of the set $\{1,2,\ldots,2n\}$ into two subsets of size \mbox{\texttt{\mdseries\slshape n}} each. (Algorithm 5.7) }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSCost}}
+\logpage{[ 3, 1, 3 ]}\nobreak
+\hyperdef{L}{X7D5EA8347E9AE782}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSCost({\mdseries\slshape G, P})\index{KSCost@\texttt{KSCost}}
+\label{KSCost}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns the cost of the partition \mbox{\texttt{\mdseries\slshape P}} of the vertices of the weighted graph \mbox{\texttt{\mdseries\slshape G}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSGain}}
+\logpage{[ 3, 1, 4 ]}\nobreak
+\hyperdef{L}{X81D593AB78665091}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGain({\mdseries\slshape G, P, u, v})\index{KSGain@\texttt{KSGain}}
+\label{KSGain}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape P}} is a partition in equal parts of the vertices of \mbox{\texttt{\mdseries\slshape G}}. This function calculates the change in the value of the cost function when
+interchanging the vertex \mbox{\texttt{\mdseries\slshape u}} from the first set in the partition \mbox{\texttt{\mdseries\slshape P}} with the vertex \mbox{\texttt{\mdseries\slshape v}} which is in the second set of the partition. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSRandomCostMatrix}}
+\logpage{[ 3, 1, 5 ]}\nobreak
+\hyperdef{L}{X7F66F41C836329D7}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRandomCostMatrix({\mdseries\slshape n, Wmax})\index{KSRandomCostMatrix@\texttt{KSRandomCostMatrix}}
+\label{KSRandomCostMatrix}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a symmetric \mbox{\texttt{\mdseries\slshape n}} by \mbox{\texttt{\mdseries\slshape n}} matrix, such that its entries are random integers from 0 to \mbox{\texttt{\mdseries\slshape Wmax}}, and with zeros in the main diagonal. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSAscend}}
+\logpage{[ 3, 1, 6 ]}\nobreak
+\hyperdef{L}{X8418E55085D15E1F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSAscend({\mdseries\slshape G, P})\index{KSAscend@\texttt{KSAscend}}
+\label{KSAscend}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given a partition \mbox{\texttt{\mdseries\slshape P}} of the vertices of the weighted graph \mbox{\texttt{\mdseries\slshape G}}, it returns a partition \mbox{\texttt{\mdseries\slshape Q}} with less cost than \mbox{\texttt{\mdseries\slshape P}}, by exchanging one vertex of the partition, if such partition exists.
+Otherwise, returns the same partition \mbox{\texttt{\mdseries\slshape P}}. }
+
+ }
+
+ 
+\section{\textcolor{Chapter }{Steiner systems}}\label{steiner}
+\logpage{[ 3, 2, 0 ]}
+\hyperdef{L}{X79DB42D47FB0C42A}{}
+{
+  
+
+\subsection{\textcolor{Chapter }{KSConstructBlocks}}
+\logpage{[ 3, 2, 1 ]}\nobreak
+\hyperdef{L}{X7F97E5CB831AA666}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSConstructBlocks({\mdseries\slshape v, other})\index{KSConstructBlocks@\texttt{KSConstructBlocks}}
+\label{KSConstructBlocks}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Constructs a list of blocks of length \mbox{\texttt{\mdseries\slshape v}} from the list of lists \mbox{\texttt{\mdseries\slshape other}}. (Algorithm 5.12) }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSRevisedStinsonAlgorithm}}
+\logpage{[ 3, 2, 2 ]}\nobreak
+\hyperdef{L}{X84C3665F829A89E6}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSRevisedStinsonAlgorithm({\mdseries\slshape v})\index{KSRevisedStinsonAlgorithm@\texttt{KSRevisedStinsonAlgorithm}}
+\label{KSRevisedStinsonAlgorithm}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Constructs a Steiner triple system with \mbox{\texttt{\mdseries\slshape v}} points, using a hill-climbing algorithm. Implements Algorithm 5.19. }
 
  }
 

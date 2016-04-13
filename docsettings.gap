@@ -7,6 +7,8 @@ files := [
            "../lib/generating.gi",
            "../lib/backtracking.gd",
            "../lib/backtracking.gi",
+           "../lib/heuristic.gd",
+           "../lib/heuristic.gi",
            "../PackageInfo.g"];;
 bookname := "kreher-stinson";;
 

@@ -10,5 +10,9 @@
 
     <#Include Label="KSSubsetLexUnrank">
 
+    <#Include Label="KSkSubsetLexRank">
+
+    <#Include Label="KSkSubsetLexUnrank">
+
   </Section>
 </Chapter>
