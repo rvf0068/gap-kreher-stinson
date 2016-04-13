@@ -51,6 +51,9 @@
       1.1-2 KSSubsetLexUnrank
       1.1-3 KSkSubsetLexRank
       1.1-4 KSkSubsetLexUnrank
+    1.2 [33X[0;0YPermutations[133X
+      1.2-1 KSPermLexRank
+      1.2-2 KSPermLexUnrank
   2 [33X[0;0YBactracking[133X
     2.1 [33X[0;0YKnapsack[133X
       2.1-1 KSCheckKnapsackInput

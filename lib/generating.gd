@@ -69,7 +69,7 @@ DeclareGlobalFunction( "KSkSubsetLexUnrank" );
 ##  <Description>
 ##
 ##  Given a permutation <A>pi</A> of <M>\{1..<A>n</A>\}</M>, returns
-##  the rank of <A>pi</A>.
+##  the rank of <A>pi</A>. (Algorithm 2.15)
 ##
 ##  </Description>
 ##
@@ -86,7 +86,7 @@ DeclareGlobalFunction( "KSPermLexRank" );
 ##  <Description>
 ##
 ##  Returns the permutation of <M>\{1..<A>n</A>\}</M> with rank
-##  <A>r</A>.
+##  <A>r</A>. (Algorithm 2.16)
 ##
 ##  </Description>
 ##
