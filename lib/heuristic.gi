@@ -312,7 +312,7 @@ InstallGlobalFunction( KSKnapsackSimulatedAnnealing, function( K, cmax, T0, alph
                     Xbest := ShallowCopy(XX);
                 fi;
             else
-                r := 0.0 + (1/1000000)*Random(0,1000000);
+                r := Float((1/1000000)*Random(0,1000000));
                 Info(InfoKS, 1, "Downward move with probability ", Exp(-P[j]/T));
                 if r < Exp(-P[j]/T) then
                     Info(InfoKS, 1, "Downward move!");
