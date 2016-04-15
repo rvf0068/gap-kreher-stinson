@@ -298,7 +298,7 @@ InstallGlobalFunction( KSKnapsackSimulatedAnnealing, function( K, cmax, T0, alph
     CurW := 0;
     Xbest := XX;
     while c <= cmax do
-        Info(InfoKS, 1, "Attempt: ", c);
+        Info(InfoKS, 1, "Attempt: ", c, ", XX=", XX);
         j := Random(1,n);
         Y := ShallowCopy(XX);
         Y[j] := 1 - XX[j];
