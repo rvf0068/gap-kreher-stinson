@@ -283,3 +283,134 @@ InstallGlobalFunction( KSRevisedStinsonAlgorithm, function( v )
     od;
     return KSConstructBlocks(v, other);
 end);
+
+#F  KSKnapsackSimulatedAnnealing( K, cmax, T0, alpha ) 
+##
+InstallGlobalFunction( KSKnapsackSimulatedAnnealing, function( K, cmax, T0, alpha )
+    local c, T, XX, CurW, CurP, Xbest, n, j, Y, P, W, M, r;
+    c := 0;
+    T := T0;
+    P := K[1];
+    W := K[2];
+    M := K[3];
+    n := Length(K[1]);
+    XX := List([1..n], x -> 0);
+    CurW := 0;
+    Xbest := XX;
+    while c <= cmax do
+        Info(InfoKS, 1, "Attempt: ", c, ", XX=", XX);
+        j := Random(1,n);
+        Y := ShallowCopy(XX);
+        Y[j] := 1 - XX[j];
+        if not((Y[j] = 1) and (CurW + W[j] > M)) then
+            if Y[j] = 1 then
+                XX := ShallowCopy(Y);
+                CurW := CurW + W[j];
+                CurP := Sum(List([1..n], i -> P[i]*XX[i]));
+                if CurP > Sum(List([1..n], i -> P[i]*Xbest[i])) then
+                    Info(InfoKS, 1, "Improved profit: ", CurP);
+                    Xbest := ShallowCopy(XX);
+                fi;
+            else
+                r := Float((1/1000000)*Random(0,1000000));
+                Info(InfoKS, 1, "Downward move with probability ", Exp(-P[j]/T));
+                if r < Exp(-P[j]/T) then
+                    Info(InfoKS, 1, "Downward move!");
+                    XX := ShallowCopy(Y);
+                    CurW := CurW - W[j];
+                fi;
+            fi;
+        fi;
+        c := c + 1;
+        T := alpha*T;
+        Info(InfoKS, 2, "Temperature: ", T);
+    od;
+    return [Xbest, Sum(List([1..n], i -> P[i]*Xbest[i]))];
+end);
+
+#F  KSRandomFeasibleSolutionKnapsack( K ) 
+##
+InstallGlobalFunction( KSRandomFeasibleSolutionKnapsack, function( K )
+    local P, W, M, i, n, XX, x;
+    P := K[1];
+    W := K[2];
+    M := K[3];
+    n := Length(K[1]);
+    XX := List([1..n], x -> 0);
+    i := 1;
+    while i <= n and Sum(List([1..n], x -> W[x]*XX[x])) <= M do
+        XX[i] := Random(0, 1);
+        i := i + 1;
+    od;
+    if i = n+1 and Sum(List([1..n], x -> W[x]*XX[x])) <= M then
+        Info(InfoKS, 3, "Done!");
+        return XX;
+    else
+        XX[i-1] := 0;
+        Info(InfoKS, 3, "i=", i, ". A lot of weight!");
+        return XX;
+    fi;
+end);
+
+#F  KSKnapsackTabuSearch( K, cmax, L ) 
+##
+InstallGlobalFunction( KSKnapsackTabuSearch, function( K, cmax, L )
+    local c, XX, CurW, CurP, Xbest, n, i, j, N, P, W, M, start, TabuList, 
+          maxinlist;
+    maxinlist := function(l, F)
+        local i, l2, best, ibest;
+        l2 := List(l,F);
+        best := -infinity;
+        ibest := 0;
+        for i in [1..Length(l)] do
+            if l2[i] > best then
+                ibest := i;
+                best := l[i];
+            fi;
+        od;
+        return l[ibest];
+    end;
+    c := 1;
+    P := K[1];
+    W := K[2];
+    M := K[3];
+    n := Length(K[1]);
+    XX := KSRandomFeasibleSolutionKnapsack(K);
+    CurW := Sum(List([1..n], i -> W[i]*XX[i]));
+    Xbest := ShallowCopy(XX);
+    TabuList := [];
+    while c <= cmax do
+        Info(InfoKS, 1, "Attempt: ", c);
+        Info(InfoKS, 1, "XX: ", XX);
+        Info(InfoKS, 2, "TabuList: ", TabuList);
+        N := [1..n];
+        start := Maximum(1, c-L);
+        N := Difference(N, TabuList{[start..c-1]});
+        for i in N do
+            if (XX[i] = 0) and (CurW + W[i] > M) then
+                N := Difference(N, [i]);
+            fi;
+        od;
+        Info(InfoKS, 2, "N: ", N);
+        if N = [] then
+            break;
+        fi;
+        Info(InfoKS, 2, "List: ", List(N, i->(-1)^XX[i]*(P[i]/W[i])));
+        i := maxinlist(N,i->(-1)^XX[i]*(P[i]/W[i]));
+        Info(InfoKS, 2, "i: ", i);
+        TabuList[c] := i;
+        XX[i] := 1 - XX[i];
+        if XX[i] = 1 then
+            CurW := CurW + W[i];
+        else
+            CurW := CurW - W[i];
+        fi;
+        if Sum(List([1..n], i -> P[i]*XX[i])) > 
+           Sum(List([1..n], i -> P[i]*Xbest[i])) then
+            Xbest := ShallowCopy(XX);
+        fi;
+        Info(InfoKS, 2, "Xbest: ", Xbest, ", CurW: ", CurW);
+        c := c+1;
+    od;
+    return [Xbest, Sum(List([1..n], i -> P[i]*Xbest[i]))];
+end);

@@ -1,46 +1,51 @@
 \begin{theindex}
 
-  \item \texttt  {KSAllCliques}, \hyperpage{5}
-  \item \texttt  {KSAscend}, \hyperpage{11}
-  \item \texttt  {KSCheckKnapsackInput}, \hyperpage{5}
-  \item \texttt  {KSConstructBlocks}, \hyperpage{11}
-  \item \texttt  {KSCost}, \hyperpage{10}
-  \item \texttt  {KSEdgeListToAdjacencyList}, \hyperpage{8}
-  \item \texttt  {KSExactCover}, \hyperpage{6}
-  \item \texttt  {KSGain}, \hyperpage{10}
-  \item \texttt  {KSGenerateRandomGraph}, \hyperpage{8}
-  \item \texttt  {KSGenerateRandomGraph2}, \hyperpage{9}
-  \item \texttt  {KSGreedyBound}, \hyperpage{9}
-  \item \texttt  {KSGreedyColor}, \hyperpage{8}
-  \item \texttt  {KSInducedSubgraph}, \hyperpage{9}
-  \item \texttt  {KSKnapsack1}, \hyperpage{5}
-  \item \texttt  {KSKnapsack2}, \hyperpage{5}
-  \item \texttt  {KSKnapsack3}, \hyperpage{6}
+  \item \texttt  {KSAllCliques}, \hyperpage{6}
+  \item \texttt  {KSAscend}, \hyperpage{12}
+  \item \texttt  {KSCheckKnapsackInput}, \hyperpage{6}
+  \item \texttt  {KSConstructBlocks}, \hyperpage{12}
+  \item \texttt  {KSCost}, \hyperpage{11}
+  \item \texttt  {KSEdgeListToAdjacencyList}, \hyperpage{9}
+  \item \texttt  {KSExactCover}, \hyperpage{7}
+  \item \texttt  {KSGain}, \hyperpage{11}
+  \item \texttt  {KSGenerateRandomGraph}, \hyperpage{9}
+  \item \texttt  {KSGenerateRandomGraph2}, \hyperpage{10}
+  \item \texttt  {KSGreedyBound}, \hyperpage{10}
+  \item \texttt  {KSGreedyColor}, \hyperpage{9}
+  \item \texttt  {KSInducedSubgraph}, \hyperpage{10}
+  \item \texttt  {KSKnapsack1}, \hyperpage{6}
+  \item \texttt  {KSKnapsack2}, \hyperpage{6}
+  \item \texttt  {KSKnapsack3}, \hyperpage{7}
+  \item \texttt  {KSKnapsackSimulatedAnnealing}, \hyperpage{12}
+  \item \texttt  {KSKnapsackTabuSearch}, \hyperpage{12}
   \item \texttt  {KSkSubsetLexRank}, \hyperpage{4}
   \item \texttt  {KSkSubsetLexUnrank}, \hyperpage{4}
-  \item \texttt  {KSMaxClique1}, \hyperpage{8}
-  \item \texttt  {KSMaxClique2}, \hyperpage{8}
-  \item \texttt  {KSMinCostBound}, \hyperpage{7}
-  \item \texttt  {KSQueens}, \hyperpage{9}
-  \item \texttt  {KSRandomCostMatrix}, \hyperpage{10}
-  \item \texttt  {KSRandomKnapsackInstance}, \hyperpage{7}
-  \item \texttt  {KSRandomkSubset}, \hyperpage{10}
-  \item \texttt  {KSRandomSubsetOfSubsets}, \hyperpage{6}
-  \item \texttt  {KSRandomTSPInstance}, \hyperpage{7}
-  \item \texttt  {KSRationalKnapsack}, \hyperpage{6}
-  \item \texttt  {KSRationalKnapsackSorted}, \hyperpage{6}
-  \item \texttt  {KSReduce}, \hyperpage{7}
-  \item \texttt  {KSReduceBound}, \hyperpage{7}
-  \item \texttt  {KSRevisedStinsonAlgorithm}, \hyperpage{11}
-  \item \texttt  {KSSamplingBound}, \hyperpage{8}
-  \item \texttt  {KSSelectPartition}, \hyperpage{10}
-  \item \texttt  {KSSizeBound}, \hyperpage{8}
-  \item \texttt  {KSSortForRationalKnapsack}, \hyperpage{6}
+  \item \texttt  {KSMaxClique1}, \hyperpage{9}
+  \item \texttt  {KSMaxClique2}, \hyperpage{9}
+  \item \texttt  {KSMinCostBound}, \hyperpage{8}
+  \item \texttt  {KSPermLexRank}, \hyperpage{4}
+  \item \texttt  {KSPermLexUnrank}, \hyperpage{5}
+  \item \texttt  {KSQueens}, \hyperpage{10}
+  \item \texttt  {KSRandomCostMatrix}, \hyperpage{11}
+  \item \texttt  {KSRandomFeasibleSolutionKnapsack}, \hyperpage{12}
+  \item \texttt  {KSRandomKnapsackInstance}, \hyperpage{8}
+  \item \texttt  {KSRandomkSubset}, \hyperpage{11}
+  \item \texttt  {KSRandomSubsetOfSubsets}, \hyperpage{7}
+  \item \texttt  {KSRandomTSPInstance}, \hyperpage{8}
+  \item \texttt  {KSRationalKnapsack}, \hyperpage{7}
+  \item \texttt  {KSRationalKnapsackSorted}, \hyperpage{7}
+  \item \texttt  {KSReduce}, \hyperpage{8}
+  \item \texttt  {KSReduceBound}, \hyperpage{8}
+  \item \texttt  {KSRevisedStinsonAlgorithm}, \hyperpage{12}
+  \item \texttt  {KSSamplingBound}, \hyperpage{9}
+  \item \texttt  {KSSelectPartition}, \hyperpage{11}
+  \item \texttt  {KSSizeBound}, \hyperpage{9}
+  \item \texttt  {KSSortForRationalKnapsack}, \hyperpage{7}
   \item \texttt  {KSSubsetLexRank}, \hyperpage{4}
   \item \texttt  {KSSubsetLexUnrank}, \hyperpage{4}
-  \item \texttt  {KSTSP1}, \hyperpage{7}
-  \item \texttt  {KSTSP2}, \hyperpage{7}
-  \item \texttt  {KSTSP3}, \hyperpage{9}
-  \item \texttt  {KSWalks}, \hyperpage{9}
+  \item \texttt  {KSTSP1}, \hyperpage{8}
+  \item \texttt  {KSTSP2}, \hyperpage{8}
+  \item \texttt  {KSTSP3}, \hyperpage{10}
+  \item \texttt  {KSWalks}, \hyperpage{10}
 
 \end{theindex}

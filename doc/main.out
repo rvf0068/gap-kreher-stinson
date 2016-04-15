@@ -1,12 +1,14 @@
 \BOOKMARK [0][-]{chapter.1}{Generating Combinatorial Objects}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Subsets}{chapter.1}% 2
-\BOOKMARK [0][-]{chapter.2}{Bactracking}{}% 3
-\BOOKMARK [1][-]{section.2.1}{Knapsack}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.2}{Generating all cliques}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.3}{Exact cover}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.4}{Bounding functions}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.5}{Exercises}{chapter.2}% 8
-\BOOKMARK [0][-]{chapter.3}{Heuristic Search}{}% 9
-\BOOKMARK [1][-]{section.3.1}{Uniform graph partition}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.2}{Steiner systems}{chapter.3}% 11
-\BOOKMARK [0][-]{section*.3}{Index}{}% 12
+\BOOKMARK [1][-]{section.1.2}{Permutations}{chapter.1}% 3
+\BOOKMARK [0][-]{chapter.2}{Bactracking}{}% 4
+\BOOKMARK [1][-]{section.2.1}{Knapsack}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.2}{Generating all cliques}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.3}{Exact cover}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.4}{Bounding functions}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.5}{Exercises}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.3}{Heuristic Search}{}% 10
+\BOOKMARK [1][-]{section.3.1}{Uniform graph partition}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.2}{Steiner systems}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.3}{The knapsack problem}{chapter.3}% 13
+\BOOKMARK [0][-]{section*.3}{Index}{}% 14

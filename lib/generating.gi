@@ -61,3 +61,40 @@ InstallGlobalFunction( KSkSubsetLexUnrank, function( r, k, n )
     od;
     return T;
 end);
+
+#F  KSPermLexRank( n, pi ) 
+##
+InstallGlobalFunction( KSPermLexRank, function( n, pi )
+    local r, rho, i, j;
+    r := 0;
+    rho := ListPerm(pi, n);
+    for j in [1..n] do
+        Info(InfoKS, 2, "rho=", rho, ", r=", r);
+        r := r + (rho[j]-1)*Factorial(n-j);
+        for i in [j+1..n] do
+            if (rho[i] > rho[j]) then
+                rho[i] := rho[i] - 1;
+            fi;
+        od;
+    od;
+    return r;
+end);
+
+#F  KSPermLexUnrank( n, r ) 
+##
+InstallGlobalFunction( KSPermLexUnrank, function( n, r )
+    local pi, i, j, d;
+    pi := [];
+    pi[n] := 1;
+    for j in [1..n-1] do
+        d := (r mod Factorial(j+1))/Factorial(j);
+        r := r - d * Factorial(j);
+        pi[n-j] := d+1;
+        for i in [n-j+1..n] do
+            if pi[i] > d then
+                pi[i] := pi[i] + 1;
+            fi;
+        od;
+    od;
+    return PermList(pi);
+end);

@@ -37,6 +37,13 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F97E5CB831AA666">3.2-1 KSConstructBlocks</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X84C3665F829A89E6">3.2-2 KSRevisedStinsonAlgorithm</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X8165BE5D7D465211">3.3 <span class="Heading">The knapsack problem</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7D54A90C7F631FF5">3.3-1 KSKnapsackSimulatedAnnealing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B069B0D7CAC98E0">3.3-2 KSRandomFeasibleSolutionKnapsack</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7A1AD5D47A2522CA">3.3-3 KSKnapsackTabuSearch</a></span>
+</div></div>
 </div>
 
 <h3>3 <span class="Heading">Heuristic Search</span></h3>
@@ -104,6 +111,31 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRevisedStinsonAlgorithm</code>( <var class="Arg">v</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Constructs a Steiner triple system with <var class="Arg">v</var> points, using a hill-climbing algorithm. Implements Algorithm 5.19.</p>
+
+<p><a id="X8165BE5D7D465211" name="X8165BE5D7D465211"></a></p>
+
+<h4>3.3 <span class="Heading">The knapsack problem</span></h4>
+
+<p><a id="X7D54A90C7F631FF5" name="X7D54A90C7F631FF5"></a></p>
+
+<h5>3.3-1 KSKnapsackSimulatedAnnealing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSKnapsackSimulatedAnnealing</code>( <var class="Arg">K</var>, <var class="Arg">cmax</var>, <var class="Arg">T0</var>, <var class="Arg">alpha</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Implements Algorithm 5.20. <var class="Arg">K</var> is the instance of the Knapsack problem to solve. <var class="Arg">cmax</var> is the number of iterations to be done. <var class="Arg">T0</var> is the initial "temperature" and <var class="Arg">alpha</var> is the parameter of the "cooling schedule".</p>
+
+<p><a id="X7B069B0D7CAC98E0" name="X7B069B0D7CAC98E0"></a></p>
+
+<h5>3.3-2 KSRandomFeasibleSolutionKnapsack</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSRandomFeasibleSolutionKnapsack</code>( <var class="Arg">K</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns a randomly chosen feasible solution to the Knapsack problem instance <var class="Arg">K</var>.</p>
+
+<p><a id="X7A1AD5D47A2522CA" name="X7A1AD5D47A2522CA"></a></p>
+
+<h5>3.3-3 KSKnapsackTabuSearch</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSKnapsackTabuSearch</code>( <var class="Arg">K</var>, <var class="Arg">cmax</var>, <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Searches for an optimal solution to the Knapsack problem instance <var class="Arg">K</var> using a tabu search list. <var class="Arg">cmax</var> is the maximum number of iterations, and <var class="Arg">L</var> the length of iterations a tabu search should be kept.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd.html">[Next Chapter]</a>&nbsp;  </div>

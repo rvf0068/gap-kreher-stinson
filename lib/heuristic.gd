@@ -157,3 +157,58 @@ DeclareGlobalFunction( "KSConstructBlocks" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSRevisedStinsonAlgorithm" );
+
+#F  KSKnapsackSimulatedAnnealing( K, cmax, T0, alpha ) 
+##
+##  <#GAPDoc Label="KSKnapsackSimulatedAnnealing">
+##  <ManSection>
+##  <Func Name="KSKnapsackSimulatedAnnealing" Arg="K, cmax, T0, alpha"/>
+##
+##  <Description>
+##
+##  Implements Algorithm 5.20. <A>K</A> is the instance of the
+##  Knapsack problem to solve. <A>cmax</A> is the number of iterations
+##  to be done. <A>T0</A> is the initial "temperature" and
+##  <A>alpha</A> is the parameter of the "cooling schedule".
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSKnapsackSimulatedAnnealing" );
+
+#F  KSRandomFeasibleSolutionKnapsack( K ) 
+##
+##  <#GAPDoc Label="KSRandomFeasibleSolutionKnapsack">
+##  <ManSection>
+##  <Func Name="KSRandomFeasibleSolutionKnapsack" Arg="K"/>
+##
+##  <Description>
+##
+##  Returns a randomly chosen feasible solution to the Knapsack
+##  problem instance <A>K</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSRandomFeasibleSolutionKnapsack" );
+
+#F  KSKnapsackTabuSearch( K, cmax, L ) 
+##
+##  <#GAPDoc Label="KSKnapsackTabuSearch">
+##  <ManSection>
+##  <Func Name="KSKnapsackTabuSearch" Arg="K, cmax, L"/>
+##
+##  <Description>
+##
+##  Searches for an optimal solution to the Knapsack problem instance
+##  <A>K</A> using a tabu search list. <A>cmax</A> is the maximum
+##  number of iterations, and <A>L</A> the length of iterations a tabu
+##  search should be kept.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSKnapsackTabuSearch" );

@@ -30,3 +30,18 @@
   [33X[0;0YGiven  an  integer  [3Xr[103X between 0 and [22Xn choose k-1[122X, returns the [3Xk[103X-subset of an
   [3Xn[103X-set with rank [3Xr[103X.[133X
   
+  
+  [1X1.2 [33X[0;0YPermutations[133X[101X
+  
+  [1X1.2-1 KSPermLexRank[101X
+  
+  [29X[2XKSPermLexRank[102X( [3Xn[103X, [3Xpi[103X ) [32X function
+  
+  [33X[0;0YGiven a permutation [3Xpi[103X of [22X{1..[3Xn[103X}[122X, returns the rank of [3Xpi[103X. (Algorithm 2.15)[133X
+  
+  [1X1.2-2 KSPermLexUnrank[101X
+  
+  [29X[2XKSPermLexUnrank[102X( [3Xn[103X, [3Xr[103X ) [32X function
+  
+  [33X[0;0YReturns the permutation of [22X{1..[3Xn[103X}[122X with rank [3Xr[103X. (Algorithm 2.16)[133X
+  
