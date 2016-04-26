@@ -731,7 +731,7 @@ end);
 ##
 InstallGlobalFunction( KSGenerateRandomGraph, function( n )
     local r, u, T, edges, e, j;
-    u := NrCombinations([1..n],2);         # u= 10choose2 =45
+    u := Binomial(n, 2);         # u= 10choose2 =45
     r := Random(0,2^u-1);                  # r= random in [0..2^45-1]
     T := KSSubsetLexUnrank(u, r);          # T= a subset of [1..45]
     edges := [];

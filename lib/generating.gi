@@ -38,7 +38,7 @@ InstallGlobalFunction( KSkSubsetLexRank, function( T, k, n )
     for i in [1..k] do
         if U[i] + 1 <= U[i+1] - 1 then
             for j in [U[i]+1..U[i+1]-1] do
-                r := r + NrCombinations([1..n-j],k-i);
+                r := r + Binomial(n-j,k-i);
             od;
         fi;
     od;
@@ -52,8 +52,8 @@ InstallGlobalFunction( KSkSubsetLexUnrank, function( r, k, n )
     T := [];
     x := 1;
     for i in [1..k] do
-        while n-x>=k-i and NrCombinations([1..n-x], k-i) <= r do
-            r := r - NrCombinations([1..n-x], k-i);
+        while n-x>=k-i and Binomial(n-x, k-i) <= r do
+            r := r - Binomial(n-x, k-i);
             x := x+1;
         od;
         T[i] := x;

@@ -2,7 +2,7 @@
 ##
 InstallGlobalFunction( KSRandomkSubset, function( k, n )
     local r;
-    r := Random(0, NrCombinations([1..n],k)-1);
+    r := Random(0, Binomial(n,k)-1);
     return KSkSubsetLexUnrank(r, k, n);
 end);
 
