@@ -39,5 +39,17 @@
 
     <#Include Label="KSKnapsackTabuSearch">
   </Section>
+
+  <Section Label="Heuristics for the TSP">
+    <Heading>Heuristics for the TSP</Heading>
+
+    <#Include Label="KSGainTSP">
+
+    <#Include Label="KSSteepestAscentTwoOpt">
+
+    <#Include Label="KSSelect">
+
+    <#Include Label="KSPartiallyMatchedCrossover">
+  </Section>
   
 </Chapter>

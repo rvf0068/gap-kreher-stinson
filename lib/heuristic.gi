@@ -414,3 +414,83 @@ InstallGlobalFunction( KSKnapsackTabuSearch, function( K, cmax, L )
     od;
     return [Xbest, Sum(List([1..n], i -> P[i]*Xbest[i]))];
 end);
+
+#F  KSGainTSP( XX, i, j, M ) 
+##
+InstallGlobalFunction( KSGainTSP, function( XX, i, j, M )
+    local Y;
+    Y := ShallowCopy(XX);
+    Y[Length(M)+1] := XX[1];
+    return M[Y[i]][Y[i+1]] + M[Y[j]][Y[j+1]] - M[Y[i+1]][Y[j+1]] - M[Y[i]][Y[j]];
+end);
+
+#F  KSSteepestAscentTwoOpt( XX, M ) 
+##
+InstallGlobalFunction( KSSteepestAscentTwoOpt, function( XX, M )
+    local done, g0, i0, j0, g, i, j, n, Y;
+    n := Length(M);
+    done := false;
+    Y := ShallowCopy(XX);
+    while not(done) do
+        Info(InfoKS, 2, "Y=", Y);
+        done := true;
+        g0 := 0;
+        for i in [1..n] do
+            for j in [i+2..n] do
+                Info(InfoKS, 3, "i=", i, ", j=", j);
+                g := KSGainTSP(Y, i, j, M);
+                Info(InfoKS, 3, "g=", g, ", g0=", g0);
+                if g > g0 then
+                    g0 := g;
+                    i0 := i;
+                    j0 := j;
+                fi;
+            od;
+        od;
+        if g0 > 0 then
+            Y := Concatenation(Y{[1..i0]}, Y{[j0,j0-1..i0+1]}, Y{[j0+1..n]});
+            Info(InfoKS, 2, "i0=", i0, ", j0=", j0);
+            done := false;
+        fi;
+        for i in [1..n] do
+            XX[i] := Y[i];
+        od;
+    od;
+    return;
+end);
+
+#F  KSSelect( popsize, M ) 
+##
+InstallGlobalFunction( KSSelect, function( popsize, M )
+    local r, i, P, n;
+    n := Length(M);
+    P := [];
+    for i in [1..popsize] do
+        r := Random(0, Factorial(n)-1);
+        P[i] := ListPerm(KSPermLexUnrank(n, r), n);
+        KSSteepestAscentTwoOpt(P[i], M);
+    od;
+    return P;
+end);
+
+#F  KSPartiallyMatchedCrossover( n, alpha, beta, j, k ) 
+##
+InstallGlobalFunction( KSPartiallyMatchedCrossover, function( n, alpha, beta, j, k )
+    local gamma, delta, i, r, s;
+    gamma := ShallowCopy(alpha);
+    delta := ShallowCopy(beta);
+    for i in [j..k] do
+        Info(InfoKS, 2, "i=", i, ", gamma=", gamma, ", delta=", delta);
+        if alpha[i] <> beta[i] then
+            r := Position(gamma, alpha[i]);
+            s := Position(gamma, beta[i]);
+            gamma[r] := beta[i];
+            gamma[s] := alpha[i];
+            r := Position(delta, alpha[i]);
+            s := Position(delta, beta[i]);
+            delta[r] := beta[i];
+            delta[s] := alpha[i];
+        fi;
+    od;
+    return [gamma, delta];
+end);

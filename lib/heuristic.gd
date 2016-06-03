@@ -212,3 +212,69 @@ DeclareGlobalFunction( "KSRandomFeasibleSolutionKnapsack" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "KSKnapsackTabuSearch" );
+
+#F  KSGainTSP( XX, i, j, M ) 
+##
+##  <#GAPDoc Label="KSGainTSP">
+##  <ManSection>
+##  <Func Name="KSGainTSP" Arg="XX, i, j, M"/>
+##
+##  <Description>
+##
+##  Gain function for the Traveling Salesman Problem.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSGainTSP" );
+
+#F  KSSteepestAscentTwoOpt( XX, M ) 
+##
+##  <#GAPDoc Label="KSSteepestAscentTwoOpt">
+##  <ManSection>
+##  <Func Name="KSSteepestAscentTwoOpt" Arg="XX, M"/>
+##
+##  <Description>
+##
+##  Given an instance of the TSP problem <A>M</A>, and an initial
+##  permutation <M>XX</M>, applies steepest ascent heuristic.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSSteepestAscentTwoOpt" );
+
+#F  KSSelect( popsize, M ) 
+##
+##  <#GAPDoc Label="KSSelect">
+##  <ManSection>
+##  <Func Name="KSSelect" Arg="popsize, M"/>
+##
+##  <Description>
+##
+##  Returns a population of size <A>popsize</A> for the TSP problem <A>M</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSSelect" );
+
+#F  KSPartiallyMatchedCrossover( n, alpha, beta, j, k ) 
+##
+##  <#GAPDoc Label="KSPartiallyMatchedCrossover">
+##  <ManSection>
+##  <Func Name="KSPartiallyMatchedCrossover" Arg="n, alpha, beta, j, k"/>
+##
+##  <Description>
+##
+##  One way to obtain two new permutations from permutations
+##  <A>alpha</A>, <A>beta</A>.
+##
+##  </Description>
+##
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "KSPartiallyMatchedCrossover" );

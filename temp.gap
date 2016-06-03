@@ -1,83 +1,3 @@
-KSGainTSP := function(XX, i, j, M)
-    local Y;
-    Y := ShallowCopy(XX);
-    #Add(Y, XX[1]);
-    Y[Length(M)+1] := XX[1];
-    return M[Y[i]][Y[i+1]] + M[Y[j]][Y[j+1]] - M[Y[i+1]][Y[j+1]] - M[Y[i]][Y[j]];
-end;
-
-KSSteepestAscentTwoOpt := function(XX, M)
-    local done, g0, i0, j0, g, i, j, n, Y;
-    n := Length(M);
-    done := false;
-    Y := ShallowCopy(XX);
-    while not(done) do
-        Info(InfoKS, 2, "Y=", Y);
-        done := true;
-        g0 := 0;
-        for i in [1..n] do
-            for j in [i+2..n] do
-                Info(InfoKS, 3, "i=", i, ", j=", j);
-                g := KSGainTSP(Y, i, j, M);
-                Info(InfoKS, 3, "g=", g, ", g0=", g0);
-                if g > g0 then
-                    g0 := g;
-                    i0 := i;
-                    j0 := j;
-                fi;
-            od;
-        od;
-        if g0 > 0 then
-            Y := Concatenation(Y{[1..i0]}, Y{[j0,j0-1..i0+1]}, Y{[j0+1..n]});
-            Info(InfoKS, 2, "i0=", i0, ", j0=", j0);
-            done := false;
-        fi;
-        for i in [1..n] do
-            XX[i] := Y[i];
-        od;
-    od;
-    return;
-end;
-
-testlist := function(l)
-    l := Concatenation(l,["hi"]);
-    #l[Length(l)+1] := "hi";
-    Print(l,"\n");
-    return;
-end;
-
-KSSelect := function (popsize, M)
-    local r, i, P, n;
-    n := Length(M);
-    P := [];
-    for i in [1..popsize] do
-        r := Random(0, Factorial(n)-1);
-        P[i] := ListPerm(KSPermLexUnrank(n, r), n);
-        KSSteepestAscentTwoOpt(P[i], M);
-    od;
-    return P;
-end;
-
-KSPartiallyMatchedCrossover := function(n, alpha, beta, j, k)
-    local gamma, delta, i, r, s;
-    gamma := ShallowCopy(alpha);
-    delta := ShallowCopy(beta);
-    for i in [j..k] do
-        Info(InfoKS, 2, "i=", i, ", gamma=", gamma, ", delta=", delta);
-        if alpha[i] <> beta[i] then
-            r := Position(gamma, alpha[i]);
-            s := Position(gamma, beta[i]);
-            gamma[r] := beta[i];
-            gamma[s] := alpha[i];
-            r := Position(delta, alpha[i]);
-            s := Position(delta, beta[i]);
-            delta[r] := beta[i];
-            delta[s] := alpha[i];
-        fi;
-    od;
-    return [gamma, delta];
-end;
-
 KSPMRec := function (A, B, M)
     local h, j, n, U, C, D;
     n := Length(A);
@@ -171,6 +91,151 @@ KSGeneticTSP := function(popsize, cmax, M, R)
     return [Xbest, cost(Xbest)];
 end;
 
-            
-    
-    
+KSMult := function(alpha, beta, gamma)
+    local i, pi0, n;
+    n := Length(alpha);
+    pi0 := [];
+    for i in [1..n] do
+        pi0[i] := alpha[beta[i]];
+    od;
+    for i in [1..n] do
+        gamma[i] := pi0[i];
+    od;
+    return;
+end;
+
+KSInv := function(alpha, beta)
+    local i, n;
+    n := Length(alpha);
+    for i in [1..n] do
+        beta[alpha[i]] := i;
+    od;
+    return;
+end;
+
+KSSimpleGen := function(n, Gamma)
+    local G, New, Last, g, h, f;
+    G := [];
+    New := [[1..n]];
+    f := [];
+    while New <> [] do
+        Info(InfoKS, 2, "New=",New, ", G=", G);
+        G := Union(G, New);
+        Last := New;
+        New := [];
+        for g in Gamma do
+            for h in Last do
+                KSMult(n, g, h, f);
+                Info(InfoKS, 3, "g=", g, ", h=", h, ", f=", f);
+                if not(f in G) then
+                    New := Union(New, [ShallowCopy(f)]);
+                fi;
+            od;
+        od;
+    od;
+    return G;
+end;
+
+KSTrivialSSR := function(n)
+    local T, i, j;
+    T := [];
+    for i in [1..n] do
+        T[i] := [];
+        for j in [1..n] do
+            T[i][j] := 0;
+        od;
+        T[i][i] := [1..n];
+    od;
+    return T;
+end;
+
+KSPrettySSR := function(T)
+    local T2, i, n, pretty;
+    pretty := function(u)
+        if IsList(u) then
+            return PermList(u);
+        else
+            return u;
+        fi;
+    end;
+    n := Length(T);
+    T2 := [];
+    for i in [1..n] do
+        T2[i] := List(T[i], pretty);
+    od;
+    return T2;
+end;
+                 
+KSTest := function(g, T)
+    local i, j, h, pi2, pi3, n, done;
+    n := Length(g);
+    pi2 := [];
+    pi3 := [];
+    i := 0;
+    done := false;
+    while i < n and not(done) do
+        i := i+1;
+        h := T[i][g[i]];
+        if h <> 0 then
+            KSInv(h, pi2);
+            KSMult(pi2, g, pi3);
+            for j in [1..n] do
+                g[j] := pi3[j];
+            od;
+        else
+            done := true;
+        fi;
+    od;
+    return i;
+end;
+
+KSEnter := function (g, U)
+    local i, j, h, f, n;
+    n := Length(g);
+    Info(InfoKS, 2, "g=", g, ", U=", U);
+    f := [];
+    i := KSTest(g, U);
+    Info(InfoKS, 2, "i=", i);
+    if i = n then
+        return;
+    else
+        U[i][g[i]] := ShallowCopy(g);
+    fi;
+    for j in [1..i] do
+        for h in U[j] do
+            if h <> 0 and h <> [1..n] then
+                KSMult(g, h, f);
+                Info(InfoKS, 2, "g=", g, ", h=", h, ", f=", f);
+                KSEnter(f, U);
+            fi;
+        od;
+    od;
+end;
+
+KSGen := function(Gamma)
+    local U, alpha, i, n;
+    n := Length(Gamma[1]);
+    U := KSTrivialSSR(n);
+    for alpha in Gamma do
+        KSEnter(alpha, U);
+    od;
+    return U;
+end;
+
+### no están en el libro
+
+KSOrbit := function(i, Gamma)
+    local perm, Delta, n, x;
+    Delta := [i];
+    for x in Delta do
+        for perm in Gamma do
+            if not(perm[x] in Delta) then
+                Add(Delta, perm[x]);
+            fi;
+        od;
+    od;
+    return Delta;
+end;
+
+# KSRun := function(T, Use)
+#     local 
