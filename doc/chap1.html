@@ -68,15 +68,43 @@ Error, the set [ 1, 2, 3, 4, 5 ] is not a subset of [1 ..4]
 
 <h5>1.1-2 KSSubsetLexUnrank</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSubsetLexUnrank</code>( <var class="Arg">number</var>, <var class="Arg">rank</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns the subset of <span class="SimpleMath">{1..<var class="Arg">number</var>}</span> whose rank is <var class="Arg">rank</var>. (Algorithm 2.2).</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSubsetLexUnrank</code>( <var class="Arg">n</var>, <var class="Arg">r</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the subset of <span class="SimpleMath">{1..<var class="Arg">n</var>}</span> whose rank is <var class="Arg">r</var>. (Algorithm 2.2). The number <span class="SimpleMath">r</span> has to be greater than <span class="SimpleMath">0</span> and less than <span class="SimpleMath">2^n-1</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexUnrank(4,14);</span>
+[ 1, 2, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexUnrank(4,5);</span>
+[ 2, 4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexUnrank(4,0);</span>
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexUnrank(4,15);</span>
+[ 1, 2, 3, 4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexUnrank(4,17);</span>
+Error, there is no subset of [1 ..4] of rank 17
+</pre></div>
 
 <p><a id="X83526EE47D6343F1" name="X83526EE47D6343F1"></a></p>
 
 <h5>1.1-3 KSkSubsetLexRank</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSkSubsetLexRank</code>( <var class="Arg">T</var>, <var class="Arg">k</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Finds the rank of <var class="Arg">T</var>, among all <var class="Arg">k</var>-subsets of an <var class="Arg">n</var>-set.</p>
+<p>Finds the rank of <var class="Arg">T</var>, among all <var class="Arg">k</var>-subsets of <span class="SimpleMath">{1,2,...,n}</span>. If <var class="Arg">T</var> is not a <var class="Arg">k</var>-subset of <span class="SimpleMath">{1,2,...,n}</span>, then an error is produced.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexRank([1,2,3],3,5);</span>
+0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexRank([1,3,4],3,5);</span>
+3
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexRank([3,4,5],3,5);</span>
+9
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexRank([1,2,3,4],3,5);</span>
+Error, the set [ 1, 2, 3, 4 ] is not a 3-subset of [1 .. 5]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexRank([1,3,6],3,5);</span>
+Error, the set [ 1, 3, 6 ] is not a 3-subset of [1 .. 5]
+</pre></div>
 
 <p><a id="X807C3B077BCCA874" name="X807C3B077BCCA874"></a></p>
 
@@ -84,6 +112,20 @@ Error, the set [ 1, 2, 3, 4, 5 ] is not a subset of [1 ..4]
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSkSubsetLexUnrank</code>( <var class="Arg">r</var>, <var class="Arg">k</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Given an integer <var class="Arg">r</var> between 0 and <span class="SimpleMath">n choose k-1</span>, returns the <var class="Arg">k</var>-subset of an <var class="Arg">n</var>-set with rank <var class="Arg">r</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexUnrank(0,3,5);</span>
+[ 1, 2, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexUnrank(3,3,5);</span>
+[ 1, 3, 4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexUnrank(9,3,5);</span>
+[ 3, 4, 5 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexUnrank(-1,3,5);</span>
+Error, there is no 3-subset of [1 .. 5] of rank -1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSkSubsetLexUnrank(10,3,5);</span>
+Error, there is no 3-subset of [1 .. 5] of rank 10
+</pre></div>
 
 <p><a id="X80F808307A2D5AB8" name="X80F808307A2D5AB8"></a></p>
 

@@ -2,10 +2,10 @@
 ##
 InstallGlobalFunction( KSSubsetLexRank, function( n,T )
     local r, i;
-    r := 0;
     if not(IsSubset([1..n],T)) then
-        Error("the set ",T," is not a subset of [1 ..",n,"]\n");
+        Error("the set ",T," is not a subset of [1 .. ",n,"]\n");
     fi;
+    r := 0;
     for i in [1..n] do
         if i in T then
             r := r + 2^(n-i);
@@ -18,6 +18,9 @@ end);
 ##
 InstallGlobalFunction( KSSubsetLexUnrank, function( n,r )
     local T, i;
+    if (r<0) or (r>2^n-1) then
+        Error("there is no subset of [1 .. ",n,"] of rank ",r,"\n");
+    fi;
     T := [];
     for i in [n,n-1..1] do
         if r mod 2 = 1 then
@@ -32,6 +35,9 @@ end);
 ##
 InstallGlobalFunction( KSkSubsetLexRank, function( T, k, n )
     local U, r, i, j;
+    if (Length(T)<>k) or not(IsSubset([1..n],T)) then
+        Error("the set ",T," is not a ",k,"-subset of [1 .. ",n,"]\n");
+    fi;
     U := [];
     r := 0;
     U[1] := 0;
@@ -52,6 +58,9 @@ end);
 ##
 InstallGlobalFunction( KSkSubsetLexUnrank, function( r, k, n )
     local x, T, i, comb;
+    if (r<0) or (r>Binomial(n,k)-1) then
+        Error("there is no ",k,"-subset of [1 .. ",n,"] of rank ",r,"\n");
+    fi;
     T := [];
     x := 1;
     for i in [1..k] do

@@ -27,15 +27,43 @@
   
   [1X1.1-2 KSSubsetLexUnrank[101X
   
-  [29X[2XKSSubsetLexUnrank[102X( [3Xnumber[103X, [3Xrank[103X ) [32X function
+  [29X[2XKSSubsetLexUnrank[102X( [3Xn[103X, [3Xr[103X ) [32X function
   
-  [33X[0;0YReturns the subset of [22X{1..[3Xnumber[103X}[122X whose rank is [3Xrank[103X. (Algorithm 2.2).[133X
+  [33X[0;0YReturns  the subset of [22X{1..[3Xn[103X}[122X whose rank is [3Xr[103X. (Algorithm 2.2). The number [22Xr[122X
+  has to be greater than [22X0[122X and less than [22X2^n-1[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XKSSubsetLexUnrank(4,14);[127X[104X
+    [4X[28X[ 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XKSSubsetLexUnrank(4,5);[127X[104X
+    [4X[28X[ 2, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XKSSubsetLexUnrank(4,0);[127X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XKSSubsetLexUnrank(4,15);[127X[104X
+    [4X[28X[ 1, 2, 3, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XKSSubsetLexUnrank(4,17);[127X[104X
+    [4X[28XError, there is no subset of [1 ..4] of rank 17[128X[104X
+  [4X[32X[104X
   
   [1X1.1-3 KSkSubsetLexRank[101X
   
   [29X[2XKSkSubsetLexRank[102X( [3XT[103X, [3Xk[103X, [3Xn[103X ) [32X function
   
-  [33X[0;0YFinds the rank of [3XT[103X, among all [3Xk[103X-subsets of an [3Xn[103X-set.[133X
+  [33X[0;0YFinds  the  rank  of  [3XT[103X,  among  all [3Xk[103X-subsets of [22X{1,2,...,n}[122X. If [3XT[103X is not a
+  [3Xk[103X-subset of [22X{1,2,...,n}[122X, then an error is produced.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexRank([1,2,3],3,5);[127X[104X
+    [4X[28X0[128X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexRank([1,3,4],3,5);[127X[104X
+    [4X[28X3[128X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexRank([3,4,5],3,5);[127X[104X
+    [4X[28X9[128X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexRank([1,2,3,4],3,5);[127X[104X
+    [4X[28XError, the set [ 1, 2, 3, 4 ] is not a 3-subset of [1 .. 5][128X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexRank([1,3,6],3,5);[127X[104X
+    [4X[28XError, the set [ 1, 3, 6 ] is not a 3-subset of [1 .. 5][128X[104X
+  [4X[32X[104X
   
   [1X1.1-4 KSkSubsetLexUnrank[101X
   
@@ -43,6 +71,19 @@
   
   [33X[0;0YGiven  an  integer  [3Xr[103X between 0 and [22Xn choose k-1[122X, returns the [3Xk[103X-subset of an
   [3Xn[103X-set with rank [3Xr[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexUnrank(0,3,5);[127X[104X
+    [4X[28X[ 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexUnrank(3,3,5);[127X[104X
+    [4X[28X[ 1, 3, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexUnrank(9,3,5);[127X[104X
+    [4X[28X[ 3, 4, 5 ][128X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexUnrank(-1,3,5);[127X[104X
+    [4X[28XError, there is no 3-subset of [1 .. 5] of rank -1[128X[104X
+    [4X[25Xgap>[125X [27XKSkSubsetLexUnrank(10,3,5);[127X[104X
+    [4X[28XError, there is no 3-subset of [1 .. 5] of rank 10[128X[104X
+  [4X[32X[104X
   
   
   [1X1.2 [33X[0;0YPermutations[133X[101X

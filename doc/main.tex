@@ -174,12 +174,25 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 \subsection{\textcolor{Chapter }{KSSubsetLexUnrank}}
 \logpage{[ 1, 1, 2 ]}\nobreak
 \hyperdef{L}{X85B1636183D7350D}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSubsetLexUnrank({\mdseries\slshape number, rank})\index{KSSubsetLexUnrank@\texttt{KSSubsetLexUnrank}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSubsetLexUnrank({\mdseries\slshape n, r})\index{KSSubsetLexUnrank@\texttt{KSSubsetLexUnrank}}
 \label{KSSubsetLexUnrank}
 }\hfill{\scriptsize (function)}}\\
 
 
- Returns the subset of $\{1..\mbox{\texttt{\mdseries\slshape number}}\}$ whose rank is \mbox{\texttt{\mdseries\slshape rank}}. (Algorithm 2.2). }
+ Returns the subset of $\{1..\mbox{\texttt{\mdseries\slshape n}}\}$ whose rank is \mbox{\texttt{\mdseries\slshape r}}. (Algorithm 2.2). The number $r$ has to be greater than $0$ and less than $2^n-1$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@KSSubsetLexUnrank(4,14);|
+  [ 1, 2, 3 ]
+  !gapprompt@gap>| !gapinput@KSSubsetLexUnrank(4,5);|
+  [ 2, 4 ]
+  !gapprompt@gap>| !gapinput@KSSubsetLexUnrank(4,0);|
+  [  ]
+  !gapprompt@gap>| !gapinput@KSSubsetLexUnrank(4,15);|
+  [ 1, 2, 3, 4 ]
+  !gapprompt@gap>| !gapinput@KSSubsetLexUnrank(4,17);|
+  Error, there is no subset of [1 ..4] of rank 17
+\end{Verbatim}
+ }
 
  
 
@@ -191,7 +204,20 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 }\hfill{\scriptsize (function)}}\\
 
 
- Finds the rank of \mbox{\texttt{\mdseries\slshape T}}, among all \mbox{\texttt{\mdseries\slshape k}}-subsets of an \mbox{\texttt{\mdseries\slshape n}}-set. }
+ Finds the rank of \mbox{\texttt{\mdseries\slshape T}}, among all \mbox{\texttt{\mdseries\slshape k}}-subsets of $\{1,2,\ldots,n\}$. If \mbox{\texttt{\mdseries\slshape T}} is not a \mbox{\texttt{\mdseries\slshape k}}-subset of $\{1,2,\ldots,n\}$, then an error is produced. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@KSkSubsetLexRank([1,2,3],3,5);|
+  0
+  !gapprompt@gap>| !gapinput@KSkSubsetLexRank([1,3,4],3,5);|
+  3
+  !gapprompt@gap>| !gapinput@KSkSubsetLexRank([3,4,5],3,5);|
+  9
+  !gapprompt@gap>| !gapinput@KSkSubsetLexRank([1,2,3,4],3,5);|
+  Error, the set [ 1, 2, 3, 4 ] is not a 3-subset of [1 .. 5]
+  !gapprompt@gap>| !gapinput@KSkSubsetLexRank([1,3,6],3,5);|
+  Error, the set [ 1, 3, 6 ] is not a 3-subset of [1 .. 5]
+\end{Verbatim}
+ }
 
  
 
@@ -203,7 +229,20 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 }\hfill{\scriptsize (function)}}\\
 
 
- Given an integer \mbox{\texttt{\mdseries\slshape r}} between 0 and ${n \choose k}-1$, returns the \mbox{\texttt{\mdseries\slshape k}}-subset of an \mbox{\texttt{\mdseries\slshape n}}-set with rank \mbox{\texttt{\mdseries\slshape r}}. }
+ Given an integer \mbox{\texttt{\mdseries\slshape r}} between 0 and ${n \choose k}-1$, returns the \mbox{\texttt{\mdseries\slshape k}}-subset of an \mbox{\texttt{\mdseries\slshape n}}-set with rank \mbox{\texttt{\mdseries\slshape r}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@KSkSubsetLexUnrank(0,3,5);|
+  [ 1, 2, 3 ]
+  !gapprompt@gap>| !gapinput@KSkSubsetLexUnrank(3,3,5);|
+  [ 1, 3, 4 ]
+  !gapprompt@gap>| !gapinput@KSkSubsetLexUnrank(9,3,5);|
+  [ 3, 4, 5 ]
+  !gapprompt@gap>| !gapinput@KSkSubsetLexUnrank(-1,3,5);|
+  Error, there is no 3-subset of [1 .. 5] of rank -1
+  !gapprompt@gap>| !gapinput@KSkSubsetLexUnrank(10,3,5);|
+  Error, there is no 3-subset of [1 .. 5] of rank 10
+\end{Verbatim}
+ }
 
  }
 

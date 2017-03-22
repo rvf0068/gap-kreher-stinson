@@ -29,11 +29,23 @@ DeclareGlobalFunction( "KSSubsetLexRank" );
 ##
 ##  <#GAPDoc Label="KSSubsetLexUnrank">
 ##  <ManSection>
-##  <Func Name="KSSubsetLexUnrank" Arg="number, rank"/>
+##  <Func Name="KSSubsetLexUnrank" Arg="n, r"/>
 ##
-##  <Description>
-##  Returns the subset of <M>\{1..<A>number</A>\}</M> whose rank 
-##  is <A>rank</A>. (Algorithm 2.2).
+##  <Description> Returns the subset of <M>\{1..<A>n</A>\}</M> whose
+##  rank is <A>r</A>. (Algorithm 2.2). The number <M>r</M> has to be
+##  greater than <M>0</M> and less than <M>2^n-1</M>.
+##  <Example>
+##  gap> KSSubsetLexUnrank(4,14);
+##  [ 1, 2, 3 ]
+##  gap> KSSubsetLexUnrank(4,5);
+##  [ 2, 4 ]
+##  gap> KSSubsetLexUnrank(4,0);
+##  [  ]
+##  gap> KSSubsetLexUnrank(4,15);
+##  [ 1, 2, 3, 4 ]
+##  gap> KSSubsetLexUnrank(4,17);
+##  Error, there is no subset of [1 ..4] of rank 17
+##  </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -47,9 +59,22 @@ DeclareGlobalFunction( "KSSubsetLexUnrank" );
 ##
 ##  <Description>
 ##
-##  Finds the rank of <A>T</A>, among all <A>k</A>-subsets of an
-##  <A>n</A>-set.
+##  Finds the rank of <A>T</A>, among all <A>k</A>-subsets of
+##  <M>\{1,2,\ldots,n\}</M>.  If <A>T</A> is not a <A>k</A>-subset of
+##  <M>\{1,2,\ldots,n\}</M>, then an error is produced.
 ##
+##  <Example>
+##  gap> KSkSubsetLexRank([1,2,3],3,5);
+##  0
+##  gap> KSkSubsetLexRank([1,3,4],3,5);
+##  3
+##  gap> KSkSubsetLexRank([3,4,5],3,5);
+##  9
+##  gap> KSkSubsetLexRank([1,2,3,4],3,5);
+##  Error, the set [ 1, 2, 3, 4 ] is not a 3-subset of [1 .. 5]
+##  gap> KSkSubsetLexRank([1,3,6],3,5);
+##  Error, the set [ 1, 3, 6 ] is not a 3-subset of [1 .. 5]
+##  </Example>
 ##  </Description>
 ##
 ##  </ManSection>
@@ -66,7 +91,18 @@ DeclareGlobalFunction( "KSkSubsetLexRank" );
 ##
 ##  Given an integer <A>r</A> between 0 and <M>{n \choose k}-1</M>,
 ##  returns the <A>k</A>-subset of an <A>n</A>-set with rank <A>r</A>.
-##
+##  <Example>
+##  gap> KSkSubsetLexUnrank(0,3,5);
+##  [ 1, 2, 3 ]
+##  gap> KSkSubsetLexUnrank(3,3,5);
+##  [ 1, 3, 4 ]
+##  gap> KSkSubsetLexUnrank(9,3,5);
+##  [ 3, 4, 5 ]
+##  gap> KSkSubsetLexUnrank(-1,3,5);
+##  Error, there is no 3-subset of [1 .. 5] of rank -1
+##  gap> KSkSubsetLexUnrank(10,3,5);
+##  Error, there is no 3-subset of [1 .. 5] of rank 10
+##  </Example>
 ##  </Description>
 ##
 ##  </ManSection>
