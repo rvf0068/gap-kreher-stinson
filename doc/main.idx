@@ -2,7 +2,7 @@
 \indexentry{KSSubsetLexUnrank@\texttt  {KSSubsetLexUnrank}|hyperpage}{4}
 \indexentry{KSkSubsetLexRank@\texttt  {KSkSubsetLexRank}|hyperpage}{4}
 \indexentry{KSkSubsetLexUnrank@\texttt  {KSkSubsetLexUnrank}|hyperpage}{4}
-\indexentry{KSPermLexRank@\texttt  {KSPermLexRank}|hyperpage}{4}
+\indexentry{KSPermLexRank@\texttt  {KSPermLexRank}|hyperpage}{5}
 \indexentry{KSPermLexUnrank@\texttt  {KSPermLexUnrank}|hyperpage}{5}
 \indexentry{KSCheckKnapsackInput@\texttt  {KSCheckKnapsackInput}|hyperpage}{6}
 \indexentry{KSKnapsack1@\texttt  {KSKnapsack1}|hyperpage}{6}
@@ -45,3 +45,7 @@
 \indexentry{KSKnapsackSimulatedAnnealing@\texttt  {KSKnapsackSimulatedAnnealing}|hyperpage}{12}
 \indexentry{KSRandomFeasibleSolutionKnapsack@\texttt  {KSRandomFeasibleSolutionKnapsack}|hyperpage}{12}
 \indexentry{KSKnapsackTabuSearch@\texttt  {KSKnapsackTabuSearch}|hyperpage}{12}
+\indexentry{KSGainTSP@\texttt  {KSGainTSP}|hyperpage}{13}
+\indexentry{KSSteepestAscentTwoOpt@\texttt  {KSSteepestAscentTwoOpt}|hyperpage}{13}
+\indexentry{KSSelect@\texttt  {KSSelect}|hyperpage}{13}
+\indexentry{KSPartiallyMatchedCrossover@\texttt  {KSPartiallyMatchedCrossover}|hyperpage}{13}

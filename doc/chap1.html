@@ -47,8 +47,22 @@
 
 <h5>1.1-1 KSSubsetLexRank</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSubsetLexRank</code>( <var class="Arg">number</var>, <var class="Arg">subset</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Returns the rank of <var class="Arg">subset</var> as a subset of the set of numbers from 1 to <var class="Arg">number</var> (Algorithm 2.1).</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSubsetLexRank</code>( <var class="Arg">n</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the rank of <var class="Arg">T</var> as a subset of the set of numbers from 1 to <var class="Arg">n</var> (Algorithm 2.1). An error is produced if <var class="Arg">T</var> is not a subset of the set <span class="SimpleMath">{1..n}</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexRank(4,[1,2,3]);</span>
+14
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexRank(4,[2,4]);</span>
+5
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexRank(4,[]);</span>
+0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexRank(4,[1,2,3,4]);</span>
+15
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KSSubsetLexRank(4,[1,2,3,4,5]);</span>
+Error, the set [ 1, 2, 3, 4, 5 ] is not a subset of [1 ..4]
+</pre></div>
 
 <p><a id="X85B1636183D7350D" name="X85B1636183D7350D"></a></p>
 

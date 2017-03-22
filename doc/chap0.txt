@@ -105,6 +105,11 @@
       3.3-1 KSKnapsackSimulatedAnnealing
       3.3-2 KSRandomFeasibleSolutionKnapsack
       3.3-3 KSKnapsackTabuSearch
+    3.4 [33X[0;0YHeuristics for the TSP[133X
+      3.4-1 KSGainTSP
+      3.4-2 KSSteepestAscentTwoOpt
+      3.4-3 KSSelect
+      3.4-4 KSPartiallyMatchedCrossover
   
   
   [32X

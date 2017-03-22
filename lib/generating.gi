@@ -3,6 +3,9 @@
 InstallGlobalFunction( KSSubsetLexRank, function( n,T )
     local r, i;
     r := 0;
+    if not(IsSubset([1..n],T)) then
+        Error("the set ",T," is not a subset of [1 ..",n,"]\n");
+    fi;
     for i in [1..n] do
         if i in T then
             r := r + 2^(n-i);

@@ -10,6 +10,7 @@
   [2XKSEdgeListToAdjacencyList[102X  2.4-16
   [2XKSExactCover[102X  2.3-1
   [2XKSGain[102X  3.1-4
+  [2XKSGainTSP[102X  3.4-1
   [2XKSGenerateRandomGraph[102X  2.4-15
   [2XKSGenerateRandomGraph2[102X  2.4-21
   [2XKSGreedyBound[102X  2.4-20
@@ -25,6 +26,7 @@
   [2XKSMaxClique1[102X  2.4-12
   [2XKSMaxClique2[102X  2.4-13
   [2XKSMinCostBound[102X  2.4-8
+  [2XKSPartiallyMatchedCrossover[102X  3.4-4
   [2XKSPermLexRank[102X  1.2-1
   [2XKSPermLexUnrank[102X  1.2-2
   [2XKSQueens[102X  2.5-1
@@ -40,9 +42,11 @@
   [2XKSReduceBound[102X  2.4-10
   [2XKSRevisedStinsonAlgorithm[102X  3.2-2
   [2XKSSamplingBound[102X  2.4-18
+  [2XKSSelect[102X  3.4-3
   [2XKSSelectPartition[102X  3.1-2
   [2XKSSizeBound[102X  2.4-14
   [2XKSSortForRationalKnapsack[102X  2.4-1
+  [2XKSSteepestAscentTwoOpt[102X  3.4-2
   [2XKSSubsetLexRank[102X  1.1-1
   [2XKSSubsetLexUnrank[102X  1.1-2
   [2XKSTSP1[102X  2.4-7

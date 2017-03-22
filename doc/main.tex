@@ -149,12 +149,25 @@ or (at your option) any later version. \mbox{}}\\[1cm]
 \subsection{\textcolor{Chapter }{KSSubsetLexRank}}
 \logpage{[ 1, 1, 1 ]}\nobreak
 \hyperdef{L}{X7DF749F9873EBFAC}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSubsetLexRank({\mdseries\slshape number, subset})\index{KSSubsetLexRank@\texttt{KSSubsetLexRank}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSubsetLexRank({\mdseries\slshape n, T})\index{KSSubsetLexRank@\texttt{KSSubsetLexRank}}
 \label{KSSubsetLexRank}
 }\hfill{\scriptsize (function)}}\\
 
 
- Returns the rank of \mbox{\texttt{\mdseries\slshape subset}} as a subset of the set of numbers from 1 to \mbox{\texttt{\mdseries\slshape number}} (Algorithm 2.1). }
+ Returns the rank of \mbox{\texttt{\mdseries\slshape T}} as a subset of the set of numbers from 1 to \mbox{\texttt{\mdseries\slshape n}} (Algorithm 2.1). An error is produced if \mbox{\texttt{\mdseries\slshape T}} is not a subset of the set $\{1..n\}$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@KSSubsetLexRank(4,[1,2,3]);|
+  14
+  !gapprompt@gap>| !gapinput@KSSubsetLexRank(4,[2,4]);|
+  5
+  !gapprompt@gap>| !gapinput@KSSubsetLexRank(4,[]);|
+  0
+  !gapprompt@gap>| !gapinput@KSSubsetLexRank(4,[1,2,3,4]);|
+  15
+  !gapprompt@gap>| !gapinput@KSSubsetLexRank(4,[1,2,3,4,5]);|
+  Error, the set [ 1, 2, 3, 4, 5 ] is not a subset of [1 ..4]
+\end{Verbatim}
+ }
 
  
 
@@ -797,6 +810,61 @@ Otherwise, returns the same partition \mbox{\texttt{\mdseries\slshape P}}. }
 
 
  Searches for an optimal solution to the Knapsack problem instance \mbox{\texttt{\mdseries\slshape K}} using a tabu search list. \mbox{\texttt{\mdseries\slshape cmax}} is the maximum number of iterations, and \mbox{\texttt{\mdseries\slshape L}} the length of iterations a tabu search should be kept. }
+
+ }
+
+ 
+\section{\textcolor{Chapter }{Heuristics for the TSP}}\label{Heuristics for the TSP}
+\logpage{[ 3, 4, 0 ]}
+\hyperdef{L}{X878B948E7DF6D33B}{}
+{
+  
+
+\subsection{\textcolor{Chapter }{KSGainTSP}}
+\logpage{[ 3, 4, 1 ]}\nobreak
+\hyperdef{L}{X7F3649047B6F7BCF}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSGainTSP({\mdseries\slshape XX, i, j, M})\index{KSGainTSP@\texttt{KSGainTSP}}
+\label{KSGainTSP}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Gain function for the Traveling Salesman Problem. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSSteepestAscentTwoOpt}}
+\logpage{[ 3, 4, 2 ]}\nobreak
+\hyperdef{L}{X7C8E3F5B7E90B1D1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSteepestAscentTwoOpt({\mdseries\slshape XX, M})\index{KSSteepestAscentTwoOpt@\texttt{KSSteepestAscentTwoOpt}}
+\label{KSSteepestAscentTwoOpt}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given an instance of the TSP problem \mbox{\texttt{\mdseries\slshape M}}, and an initial permutation $XX$, applies steepest ascent heuristic. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSSelect}}
+\logpage{[ 3, 4, 3 ]}\nobreak
+\hyperdef{L}{X8104AEAC7A8F9599}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSSelect({\mdseries\slshape popsize, M})\index{KSSelect@\texttt{KSSelect}}
+\label{KSSelect}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns a population of size \mbox{\texttt{\mdseries\slshape popsize}} for the TSP problem \mbox{\texttt{\mdseries\slshape M}}. }
+
+ 
+
+\subsection{\textcolor{Chapter }{KSPartiallyMatchedCrossover}}
+\logpage{[ 3, 4, 4 ]}\nobreak
+\hyperdef{L}{X7A6F4A4E83614C33}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KSPartiallyMatchedCrossover({\mdseries\slshape n, alpha, beta, j, k})\index{KSPartiallyMatchedCrossover@\texttt{KSPartiallyMatchedCrossover}}
+\label{KSPartiallyMatchedCrossover}
+}\hfill{\scriptsize (function)}}\\
+
+
+ One way to obtain two new permutations from permutations \mbox{\texttt{\mdseries\slshape alpha}}, \mbox{\texttt{\mdseries\slshape beta}}. }
 
  }
 

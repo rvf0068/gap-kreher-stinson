@@ -2,11 +2,24 @@
 ##
 ##  <#GAPDoc Label="KSSubsetLexRank">
 ##  <ManSection>
-##  <Func Name="KSSubsetLexRank" Arg="number, subset"/>
+##  <Func Name="KSSubsetLexRank" Arg="n, T"/>
 ##
-##  <Description>
-##  Returns the rank of <A>subset</A> as a subset of the set of 
-##  numbers from 1 to <A>number</A> (Algorithm 2.1).
+##  <Description> 
+##  Returns the rank of <A>T</A> as a subset of the set
+##  of numbers from 1 to <A>n</A> (Algorithm 2.1). An error is
+##  produced if <A>T</A> is not a subset of the set <M>\{1..n\}</M>.
+##  <Example>
+##  gap> KSSubsetLexRank(4,[1,2,3]);
+##  14
+##  gap> KSSubsetLexRank(4,[2,4]);
+##  5
+##  gap> KSSubsetLexRank(4,[]);
+##  0
+##  gap> KSSubsetLexRank(4,[1,2,3,4]);
+##  15
+##  gap> KSSubsetLexRank(4,[1,2,3,4,5]);
+##  Error, the set [ 1, 2, 3, 4, 5 ] is not a subset of [1 ..4]
+##  </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>

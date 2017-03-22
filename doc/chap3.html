@@ -44,6 +44,14 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B069B0D7CAC98E0">3.3-2 KSRandomFeasibleSolutionKnapsack</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7A1AD5D47A2522CA">3.3-3 KSKnapsackTabuSearch</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X878B948E7DF6D33B">3.4 <span class="Heading">Heuristics for the TSP</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F3649047B6F7BCF">3.4-1 KSGainTSP</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7C8E3F5B7E90B1D1">3.4-2 KSSteepestAscentTwoOpt</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8104AEAC7A8F9599">3.4-3 KSSelect</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7A6F4A4E83614C33">3.4-4 KSPartiallyMatchedCrossover</a></span>
+</div></div>
 </div>
 
 <h3>3 <span class="Heading">Heuristic Search</span></h3>
@@ -136,6 +144,38 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSKnapsackTabuSearch</code>( <var class="Arg">K</var>, <var class="Arg">cmax</var>, <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Searches for an optimal solution to the Knapsack problem instance <var class="Arg">K</var> using a tabu search list. <var class="Arg">cmax</var> is the maximum number of iterations, and <var class="Arg">L</var> the length of iterations a tabu search should be kept.</p>
+
+<p><a id="X878B948E7DF6D33B" name="X878B948E7DF6D33B"></a></p>
+
+<h4>3.4 <span class="Heading">Heuristics for the TSP</span></h4>
+
+<p><a id="X7F3649047B6F7BCF" name="X7F3649047B6F7BCF"></a></p>
+
+<h5>3.4-1 KSGainTSP</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSGainTSP</code>( <var class="Arg">XX</var>, <var class="Arg">i</var>, <var class="Arg">j</var>, <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Gain function for the Traveling Salesman Problem.</p>
+
+<p><a id="X7C8E3F5B7E90B1D1" name="X7C8E3F5B7E90B1D1"></a></p>
+
+<h5>3.4-2 KSSteepestAscentTwoOpt</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSteepestAscentTwoOpt</code>( <var class="Arg">XX</var>, <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given an instance of the TSP problem <var class="Arg">M</var>, and an initial permutation <span class="SimpleMath">XX</span>, applies steepest ascent heuristic.</p>
+
+<p><a id="X8104AEAC7A8F9599" name="X8104AEAC7A8F9599"></a></p>
+
+<h5>3.4-3 KSSelect</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSSelect</code>( <var class="Arg">popsize</var>, <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns a population of size <var class="Arg">popsize</var> for the TSP problem <var class="Arg">M</var>.</p>
+
+<p><a id="X7A6F4A4E83614C33" name="X7A6F4A4E83614C33"></a></p>
+
+<h5>3.4-4 KSPartiallyMatchedCrossover</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KSPartiallyMatchedCrossover</code>( <var class="Arg">n</var>, <var class="Arg">alpha</var>, <var class="Arg">beta</var>, <var class="Arg">j</var>, <var class="Arg">k</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>One way to obtain two new permutations from permutations <var class="Arg">alpha</var>, <var class="Arg">beta</var>.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd.html">[Next Chapter]</a>&nbsp;  </div>

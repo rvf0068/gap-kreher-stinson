@@ -91,3 +91,31 @@
   tabu search list. [3Xcmax[103X is the maximum number of iterations, and [3XL[103X the length
   of iterations a tabu search should be kept.[133X
   
+  
+  [1X3.4 [33X[0;0YHeuristics for the TSP[133X[101X
+  
+  [1X3.4-1 KSGainTSP[101X
+  
+  [29X[2XKSGainTSP[102X( [3XXX[103X, [3Xi[103X, [3Xj[103X, [3XM[103X ) [32X function
+  
+  [33X[0;0YGain function for the Traveling Salesman Problem.[133X
+  
+  [1X3.4-2 KSSteepestAscentTwoOpt[101X
+  
+  [29X[2XKSSteepestAscentTwoOpt[102X( [3XXX[103X, [3XM[103X ) [32X function
+  
+  [33X[0;0YGiven  an  instance  of  the  TSP  problem [3XM[103X, and an initial permutation [22XXX[122X,
+  applies steepest ascent heuristic.[133X
+  
+  [1X3.4-3 KSSelect[101X
+  
+  [29X[2XKSSelect[102X( [3Xpopsize[103X, [3XM[103X ) [32X function
+  
+  [33X[0;0YReturns a population of size [3Xpopsize[103X for the TSP problem [3XM[103X.[133X
+  
+  [1X3.4-4 KSPartiallyMatchedCrossover[101X
+  
+  [29X[2XKSPartiallyMatchedCrossover[102X( [3Xn[103X, [3Xalpha[103X, [3Xbeta[103X, [3Xj[103X, [3Xk[103X ) [32X function
+  
+  [33X[0;0YOne way to obtain two new permutations from permutations [3Xalpha[103X, [3Xbeta[103X.[133X
+  
