@@ -119,7 +119,14 @@ DeclareGlobalFunction( "KSkSubsetLexUnrank" );
 ##
 ##  Given a permutation <A>pi</A> of <M>\{1..<A>n</A>\}</M>, returns
 ##  the rank of <A>pi</A>. (Algorithm 2.15)
-##
+##  <Example>
+##  gap> KSPermLexRank(5,(1,2,3));
+##  30
+##  gap> KSPermLexRank(5,(1,3)(2,4));
+##  60
+##  gap> KSPermLexRank(5,(1,2,6));
+##  Error, (1,2,6) is not a permutation of [1 .. 5]
+##  </Example>
 ##  </Description>
 ##
 ##  </ManSection>
@@ -135,8 +142,17 @@ DeclareGlobalFunction( "KSPermLexRank" );
 ##  <Description>
 ##
 ##  Returns the permutation of <M>\{1..<A>n</A>\}</M> with rank
-##  <A>r</A>. (Algorithm 2.16)
-##
+##  <A>r</A>. (Algorithm 2.16) The number <M>r</M> must satisfy
+##  <M>0\le r\le n!-1</M>.
+##  <Example>
+##  gap> KSPermLexUnrank(5,30);
+##  (1,2,3)
+##  gap> KSPermLexUnrank(5,60);
+##  (1,3)(2,4)
+##  gap> KSPermLexUnrank(5,130);
+##  Error, there is no permutation of [1 .. 5] of rank 130
+##  </Example>
+##  
 ##  </Description>
 ##
 ##  </ManSection>

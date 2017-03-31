@@ -94,9 +94,28 @@
   
   [33X[0;0YGiven a permutation [3Xpi[103X of [22X{1..[3Xn[103X}[122X, returns the rank of [3Xpi[103X. (Algorithm 2.15)[133X
   
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XKSPermLexRank(5,(1,2,3));[127X[104X
+    [4X[28X30[128X[104X
+    [4X[25Xgap>[125X [27XKSPermLexRank(5,(1,3)(2,4));[127X[104X
+    [4X[28X60[128X[104X
+    [4X[25Xgap>[125X [27XKSPermLexRank(5,(1,2,6));[127X[104X
+    [4X[28XError, (1,2,6) is not a permutation of [1 .. 5][128X[104X
+  [4X[32X[104X
+  
   [1X1.2-2 KSPermLexUnrank[101X
   
   [29X[2XKSPermLexUnrank[102X( [3Xn[103X, [3Xr[103X ) [32X function
   
-  [33X[0;0YReturns the permutation of [22X{1..[3Xn[103X}[122X with rank [3Xr[103X. (Algorithm 2.16)[133X
+  [33X[0;0YReturns the permutation of [22X{1..[3Xn[103X}[122X with rank [3Xr[103X. (Algorithm 2.16) The number [22Xr[122X
+  must satisfy [22X0le rle n!-1[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XKSPermLexUnrank(5,30);[127X[104X
+    [4X[28X(1,2,3)[128X[104X
+    [4X[25Xgap>[125X [27XKSPermLexUnrank(5,60);[127X[104X
+    [4X[28X(1,3)(2,4)[128X[104X
+    [4X[25Xgap>[125X [27XKSPermLexUnrank(5,130);[127X[104X
+    [4X[28XError, there is no permutation of [1 .. 5] of rank 130[128X[104X
+  [4X[32X[104X
   

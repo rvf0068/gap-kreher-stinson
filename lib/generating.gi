@@ -78,6 +78,9 @@ end);
 ##
 InstallGlobalFunction( KSPermLexRank, function( n, pi )
     local r, rho, i, j;
+    if not(pi in SymmetricGroup(n)) then
+        Error(pi, " is not a permutation of [1 .. ",n,"]\n");
+    fi;
     r := 0;
     rho := ListPerm(pi, n);
     for j in [1..n] do
@@ -96,6 +99,9 @@ end);
 ##
 InstallGlobalFunction( KSPermLexUnrank, function( n, r )
     local pi, i, j, d;
+    if (r<0) or (r>Factorial(n)-1) then
+        Error("there is no permutation of [1 .. ",n,"] of rank ",r,"\n");
+    fi;
     pi := [];
     pi[n] := 1;
     for j in [1..n-1] do
