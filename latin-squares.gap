@@ -124,7 +124,7 @@ ReducedLatinSquaresTwo := function(n)
             if col = 1 then
                 return [row-1];
             fi;
-            Good := [1..n];
+            Good := [0..n-1];
             Bad := [];
             for i in badindices() do
                 Bad := Union(Bad, [XX[i]]);
