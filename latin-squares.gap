@@ -1,10 +1,10 @@
 ReducedLatinSquares := function(n)
-    local latin, XX, sols, g, C;
+    local latin, XX, sols, g, C, Good, Bad;
     XX := [()];
     sols := [];
     C := [];
     g := SymmetricGroup(n);
-    latin := function(l, Good, Bad)
+    latin := function(l)
         local x, valid, BadNow;
         valid := function()
             local i, j, s, h;
@@ -30,10 +30,12 @@ ReducedLatinSquares := function(n)
         for x in C[l+1] do
             XX[l+1] := x;
             XX := XX{[1..l+1]};
-            latin(l+1, Good, Bad);
+            latin(l+1);
         od;      
     end;
-    latin(1, Elements(g), []);
+    Good := Elements(g);
+    Bad := [];
+    latin(1);
     return sols;
 end;
 
