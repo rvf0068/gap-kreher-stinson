@@ -93,3 +93,57 @@ AllLatinSquares := function(n)
     return sols;
 end;
 
+ReducedLatinSquaresTwo := function(n)
+    local latin, XX, sols, C;
+    XX := [];
+    sols := [];
+    C := [];
+    latin := function(l)
+        local x, valid, Good, Bad;
+        valid := function()
+            local i, badindices, row, col;
+            badindices := function()
+                local i, BadI, XX;
+                BadI := [];
+                for i in [n*(row-1)+1..l-1] do
+                    BadI := Union(BadI, [i]);
+                od;
+                for i in [col,col+n..l-n] do
+                    BadI := Union(BadI, [i]);
+                od;
+                return BadI;
+            end;
+            col := l mod n;
+            if col = 0 then
+                col := n;
+            fi;
+            row := (l-col)/n+1;
+            if row = 1 then
+                return [l-1];
+            fi;
+            if col = 1 then
+                return [row-1];
+            fi;
+            Good := [1..n];
+            Bad := [];
+            for i in badindices() do
+                Bad := Union(Bad, [XX[i]]);
+            od;
+            Good := Difference(Good, Bad);
+            #Print("l:= ",l,", Good: ",Good,", Bad: ", Bad, "\n");
+            return Good;
+        end;
+        if l = n^2+1 then
+            Add(sols, ShallowCopy(XX));
+        fi;
+        C[l] := valid();
+        for x in C[l] do
+            XX[l] := x;
+            XX := XX{[1..l]};
+            latin(l+1);
+        od;
+    end;
+    latin(1);
+    return sols;
+end;
+
