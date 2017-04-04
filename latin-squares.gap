@@ -44,3 +44,52 @@ PrintLatinSquare := function(sq)
     n := Length(sq);
     Display(List(sq,x->List([1..n],y->y^x)));
 end;
+
+AllLatinSquares := function(n)
+    local latin, XX, sols, C;
+    XX := [];
+    sols := [];
+    C := [];
+    latin := function(l)
+        local x, valid, Good, Bad;
+        valid := function()
+            local i, badindices;
+            badindices := function()
+                local row, col, i, BadI, XX;
+                BadI := [];
+                col := l mod n;
+                if col = 0 then
+                    col := n;
+                fi;
+                row := (l-col)/n+1;
+                for i in [n*(row-1)+1..l-1] do
+                    BadI := Union(BadI, [i]);
+                od;
+                for i in [col,col+n..l-n] do
+                    BadI := Union(BadI, [i]);
+                od;
+                return BadI;
+            end;
+            Good := [1..n];
+            Bad := [];
+            for i in badindices() do
+                Bad := Union(Bad, [XX[i]]);
+            od;
+            Good := Difference(Good, Bad);
+            #Print("l:= ",l,", Good: ",Good,", Bad: ", Bad, "\n");
+            return Good;
+        end;
+        if l = n^2+1 then
+            Add(sols, ShallowCopy(XX));
+        fi;
+        C[l] := valid();
+        for x in C[l] do
+            XX[l] := x;
+            XX := XX{[1..l]};
+            latin(l+1);
+        od;
+    end;
+    latin(1);
+    return sols;
+end;
+
